@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}S'enregistrer{% endblock %}
+
+{% block body_class %}page-color{% endblock %}
+
+{% block body %}
+
+{% block bandeau %}
+    <div class="bandeau-info"></div>
+{% endblock %}
+
+    <div class="form-container">
+        {% for flash_error in app.flashes('verify_email_error') %}
+            <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+        {% endfor %}
+        
+        <form method="post" class="register-form">
+            <div>
+                <h1 class="form-title">S'enregistrer</h1>
+            </div>
+            {{ form_start(registrationForm) }}
+            {# {{ form_errors(registrationForm.pseudo) }} #}
+            <label for="pseudo" class="form-label">Pseudo</label>
+            {{ form_widget(registrationForm.pseudo, { 'attr': {'id': 'pseudo', 'class': 'form-input'} }) }}
+            {# {{ form_errors(registrationForm.email) }} #}
+            <label for="email" class="form-label">Email</label>
+            {{ form_widget(registrationForm.email, { 'attr': {'id': 'email', 'class': 'form-input'} }) }}
+            
+            <label for="password" class="form-label">Mot de passe</label>
+            {{ form_widget(registrationForm.plainPassword, { 'attr': {'id': 'password', 'class': 'form-input'} }) }}
+            
+            <div class="checkbox mb-3">
+                {{ form_widget(registrationForm.agreeTerms, { 'attr': {'class': 'form-checkbox'} }) }}
+                <label class="terms">
+                    J'accepte les termes et conditions
+                </label>
+            </div>
+
+            <button type="submit" class="btn form-button">S'enregistrer</button>
+            
+            {{ form_end(registrationForm) }}
+        </form>
+    </div>  
+
+
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cours{% endblock %}
+
+{% block body %}
+
+{% block bandeau %}
+    <div class="bandeau-portage"></div>
+{% endblock %}
+
+<div class="container-margin">
+    <div class="container-showCours">
+        {% for cours in listeCours|slice(0, 3) %}
+            <div class="enfant enfant-cours pastel-blue1">
+                <h2>{{ cours.nomCours }}</h2> 
+                <p>{{ cours.description }}</p> 
+                <p>{{ cours.prix }}€</p>
+                <div class="img-dim"><img class="image-responsive" src="{{ cours.image }}" alt="Image du cours"></div>
+                <a href="{{ path('detailCours', {templateName: cours.slugCours}) }}#reservation-form">Aller au formulaire de réservation</a>
+            </div>
+        {% endfor %}
+        
+        {% for cours in listeCours|slice(3, 3) %}
+            <div class="enfant enfant-cours pastel-blue2">
+                <h2>{{ cours.nomCours }}</h2> 
+                <p>{{ cours.description }}</p>
+                <p>{{ cours.prix }}€</p>
+                <div class="img-dim"><img class="image-responsive" src="{{ cours.image }}" alt="Image du cours"></div>
+                <a href="{{ path('detailCours', {templateName: cours.slugCours}) }}#reservation-form">Aller au formulaire de réservation</a>
+            </div>
+        {% endfor %}
+
+        {% for cours in listeCours|slice(6, 3) %}
+            <div class="enfant enfant-cours pastel-blue1">
+                <h2>{{ cours.nomCours }}</h2> 
+                <p>{{ cours.description }}</p> 
+                <p>{{ cours.prix }}€</p>
+                <div class="img-dim"><img class="image-responsive" src="{{ cours.image }}" alt="Image du cours"></div>
+                <a href="{{ path('detailCours', {templateName: cours.slugCours}) }}#reservation-form">Aller au formulaire de réservation</a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

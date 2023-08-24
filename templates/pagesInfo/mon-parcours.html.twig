@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon parcours !{% endblock %}
+
+{% block body_class %}page-color{% endblock %}
+
+{% block body %}
+
+{% block bandeau %}
+    <div class="bandeau-info"></div>
+{% endblock %}
+
+<div class="container-parcours">
+    <div class="image-parcours-container" data-aos="fade-right" data-aos-duration="2000">
+        {# <p>Qui je suis, mon parcours</p> #}
+        <img src="{{ asset('img/laeti-about.61602ddb.webp') }}" alt="">
+    </div>
+    <div class="text-parcours-container">
+        <h1 data-aos="fade-left" data-aos-duration="2000">Qui je suis, mon parcours</h1>
+        <p> Je m'appelle <span>Laetitia</span>. <span>Infirmière de formation</span>, je me suis toujours intéressée au monde de la périnatalité, 
+            tant sur le plan professionnel que personnel. J'avais d'ailleurs, à l'époque, réalisé mon mémoire de fin d'étude à propos de l'attachement mère-bébé 
+            par le toucher. <br><br>
+
+            Une dizaine d'années et quelques milliers de patients plus tard, <span>Je suis devenue maman</span>. Et là… Illumination ! Disparition de quasiment tous mes principes, 
+            découverte de ce nouveau monde et surtout de ce nouveau rôle, <span>le rôle de ma vie</span>. J'étais devenue une maman ! Entourée, mais en fait bien seule. 
+            Toutes les attentions non plus vers mon joli ventre mais vers mon petit <span>Arthur</span> <i class="fa-solid fa-heart"></i> (il faut avouer qu'il est magnifique), 
+            des conseils contradictoires de partout, des principes culturels qui allaient à l'encontre de ce que je ressentais au fond de moi. <span></span> 
+            J'ai décidé de m'écouter et d'<span>apprendre à devenir la maman d'Arthur</span>, avec son aide à lui… Le guider en le laissant me guider. Ont naturellement suivi quelques dizaines de lectures en tout genre à propos de la maternité, 
+            de l'éducation, du sommeil, de l'alimentation, de la matrescence, du portage, de maternage, d'allaitement,…  <br><br>
+
+            Au fil du temps, je me rendais bien compte que <span>mes amies et patientes se posaient bien souvent les mêmes questions</span>, vivaient les mêmes doutes, problèmes, découvertes,… <br> <br>
+
+            Ce pan de ma vie, qui me passionne et me fait vibrer, a pris de plus en plus d'ampleur avec les années pour finir par s'imposer à moi au quotidient. 
+            J'ai décidé de <span>fusionner mes compétences d'infirmière et de maman</span> à la passion qui m'anime pour accompagner les futurs et/ou jeunes parents dans la découverte de leur nouveau rôle. 
+            <span>Je milite au quotidien</span> pour le respect de la <span>biologie</span> et de la <span>physiologie</span> dont nous nous sommes tellement éloignés. La biologie et la physiologie, c'est quoi ? C'est le respect de la femme, de son corps, 
+            de l'accouchement majoritairement dénaturé dans notre pays, de la naissance, du nouveau-né et de ses rythmes, des mères qui sont maltraitées par notre société, 
+            de l'allaitement qui pose les bases de la santé mais qui reste diabolisé et entouré de mythes infondés et ancrés dans la conscience collective.  <br><br>
+
+            Selon moi, notre civilisation ne pourra aller mieux que lorsque nous changerons notre rapport à la grossesse, la naissance, la maternité et la façon dont nous entrons en relation avec nos tout petits. 
+            J'essaye, avec Douceur de lune, d'apporter un petit caillou à l'édifice ! <br><br>
+        </p>
+        <ul class="formation"><span>Mes formations :</span> <br><br>
+            <li>- Infirmière diplômée d'Etat</li>
+            <li>- D.U. Recherche clinique au CHU de Montpellier</li>
+            <li>- Monitrice de portage avec TELP (Transmettre ensemble le portage)</li>
+            <li>- Portage à bras, Portage et RGO, Perfectionnement au portage avec le CNFPB</li>
+            <li>- Allaitement (formation + de 200h, certification IBCLC en cours) au CREFAM</li>
+            <li>- Transmission Les secrets du Rebozo avec Doula Nascentia</li>
+            <li>- Facilitatrice de Cercles Maman-Bébé avec le Village des Naissances</li>
+        </ul>
+    </div>
+</div>
+
+
+
+{% endblock %}

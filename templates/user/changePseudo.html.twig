@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello {{ app.user.pseudo }}{% endblock %}
+
+{% block body_class %}page-color{% endblock %}
+
+{% block body %}
+
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ label }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+    
+    {% block bandeau %}
+        <div class="bandeau-info"></div>
+    {% endblock %}
+
+    <div class="container-mt">
+
+        <div class="container-mt-p">
+
+            <h1 class="margin-tb change-profil">Modifier le profil :</h1>
+            
+                <p class="margin-tb change-profil">Changer le pseudo</p>
+
+                {{ form_start(changePseudoForm) }}
+                         
+                {{ form_row(changePseudoForm.pseudo, {
+                    'label': 'Nouveau pseudo : ',
+                    'attr': {'class': 'form-control'}
+                }) }}
+            
+                <button type="submit" class="custom-button margin-tb button-change-profil" onclick="return confirm('Êtes-vous sûr de vouloir modifier le pseudo ?')">Modifier le pseudo</button>
+                {{ form_end(changePseudoForm) }}
+
+                {# Faire un bouton pour revenir en arriere sur la page de profil #}
+                <a href="{{ path('app_user') }}">Revenir au profil</a>
+                {# user/profil.html.twig #}
+
+        </div>
+
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('script/script.js') }}"></script>
+{% endblock %}

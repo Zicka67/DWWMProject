@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Réinitialisez votre mot de passe{% endblock %}
+
+    {% block body %}
+
+    <div class="error-class">
+        {{ form_errors(resetForm.plainPassword) }}
+    </div>
+
+    {% block bandeau %}
+        <div class="bandeau-info"></div>
+    {% endblock %}
+
+    <div class="container-mt">
+        <div class="container-mt-p">
+            <h1 class="margin-tb">Réinitialisez votre mot de passe</h1>
+            {{ form_start(resetForm) }}
+            <div class="margin-tb">
+                {# {{ form_row(resetForm.plainPassword) }} #}
+                {{ form_label(resetForm.plainPassword.first) }}
+                {{ form_errors(resetForm.plainPassword.first) }}
+                {{ form_widget(resetForm.plainPassword.first) }}
+            </div>
+            <div class="margin-tb">
+                {{ form_label(resetForm.plainPassword.second) }}
+                {{ form_errors(resetForm.plainPassword.second) }}
+                {{ form_widget(resetForm.plainPassword.second) }}
+            </div>
+            <button class="margin-tb">Réinitialisez votre mot de passe</button>
+            {{ form_end(resetForm) }}
+        </div>      
+    </div>
+
+
+    
+{% endblock %}

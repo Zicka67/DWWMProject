@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Le portage{% endblock %}
+
+{% block body_class %}page-color-portage{% endblock %}
+
+{% block body %}
+
+{% block bandeau %}
+    <div class="bandeau-portage"></div>
+{% endblock %}
+
+<div class="container1">
+    <div class="enfant pastel-blue1 enfant-portage" data-aos="fade-right" data-aos-duration="2000">
+        <h2>Le portage physiologique</h2> 
+        <p> <br>
+            "Un bébé bien porté deviendra un enfant bien portant." <br><br>  Le terme “portage physiologique” est en fait un raccourci. Il faudrait normalement parler de portage respectant la position physiologique du bébé/enfant. C'est-à-dire, la posture naturelle prise par l'enfant en fonction de son âge, de son tonus, du développement de sa colonne vertébrale, de l'ouverture de son bassin, de son éveil et des ses capacités musculaires.
+            Je rappelle une notion très importante à connaitre quand on devient parent : le nouveau-né est compétent et dépendant. Il sait faire et comprendre plein de choses notamment sur les plans sensoriel et relationnel. Cependant, le petit humain reste complètement dépendant des adultes. Il ne se déplace pas seul, ne se nourrit pas seul, ne régule pas ses émotions, sa température tout seul,...
+            Le portage s'adapte au bébé sur le plan physique comme sur le plan émotionnel en répondant à la plupart de ses besoins fondamentaux. C'est le point de départ du développement moteur ex-utéro. <br><br> 
+        </p>
+    </div>
+    <div class="enfant" data-aos="fade-left" data-aos-duration="2000">
+        <img class="image-responsive" src="/img/portageminiature.png" alt="">
+    </div>
+</div>
+<div class="container2">
+    <div class="enfant pastel-blue2" data-aos="fade-right" data-aos-duration="2000">
+        <h2 class="enfant-portage">Pourquoi suivre un atelier ?</h2>  
+        <ul> <br>
+            <li><span  class="span-portage">Tester et pratiquer :</span > Apprendre les gestes techniques et découvrir tous les moyens de portage c'est bien. Mais pratiquer et vivre l'expérience permet de vraiment s'approprier le portage.
+                Je m'adapte entièrement à vous et vous propose d'essayer tous les moyens de portage existants afin de trouver LE bon, LE meilleur pour répondre aux besoins de votre famille ! </li> <br>
+            <li><span class="span-portage">S'informer - porter en sécurité</span> Pour trouver les bonnes informations à propos du portage et de tous les moyens disponibles, rien de mieux qu'une professionnelle formée qui met ses connaissances à jour en continu.
+                Le portage peut être technique et intégrer quelques notions de sécurité est indispensable. C'est également l'occasion d'apprendre à porter bébé en respectant sa physiologie et son développement psycho-moteur tout en gardant un maximum de confort pour le porteur.</li><br>
+            <li><span class="span-portage">Avoir confiance en soi :</span> Vous et votre bébé possédez toutes les compétences pour vivre le portage au mieux ! Pour oser, il manque en général juste un peu d'accompagnement et d'encouragements.
+                Entre doutes, peurs, gestes techniques et questions, je vous guide progressivement vers un portage tout en sérénité.  </li><br>
+        </ul>
+    </div>
+    <div class="enfant pastel-blue3 enfant-portage" data-aos="fade-left" data-aos-duration="2000">
+        <h2>Les bienfaits pour le bébé :</h2>  
+        <ul> <br>
+            <li><span class="span-portage">Renforce le lien parent-enfant :</span> Le contact physique rapproché encourage le développement de l'attachement entre le parent et le bébé.</li> <br>
+            <li><span class="span-portage">Stimule le développement physique :</span> Le portage permet au bébé d'adopter une position physiologique naturelle, ce qui peut favoriser le développement de ses hanches et de sa colonne vertébrale.</li><br>
+            <li><span class="span-portage">Favorise l'équilibre et la coordination :</span> Le mouvement constant aide le bébé à développer son sens de l'équilibre et sa coordination.</li><br>
+            <li><span class="span-portage">Favorise l'interaction sociale :</span> Porter votre bébé à la hauteur des yeux vous permet de mieux interagir avec lui et lui offre une perspective intéressante sur le monde.</li><br>
+            <li><span class="span-portage">Apaise et réconforte le bébé :</span> Le contact rapproché avec le parent peut aider à calmer un bébé agité, à réduire les pleurs et à favoriser un meilleur sommeil.</li><br>
+            <li><span class="span-portage">Facilite l'allaitement :</span> Le portage peut faciliter l'allaitement en permettant un accès facile au sein et en favorisant la production de lait grâce au contact peau à peau.</li> <br>
+        </ul>
+    </div>
+</div>
+
+<div id="calendar"></div>
+
+{# <form action="{{ path('checkout', {'slug': cours.slug}) }}" method="POST">
+    <button type="submit">Checkout</button>
+</form> #}
+
+{# script afficher le calendar #}
+<script src="{{ asset('js/calendar.js') }}"></script>
+{% endblock %}

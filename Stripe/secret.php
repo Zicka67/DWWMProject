@@ -1,0 +1,3 @@
+<?php
+
+define("STRIPE_SECRET_KEY", "sk_test_51NAwNZJWIv9Iz53oOKn37p6lx6EGH5x1BQRPdXkZAVD1dqeJcmLCvMITw8RuaMsqT8sWMgCa7A6UPbcsw8MlsBbe00odwndVen");

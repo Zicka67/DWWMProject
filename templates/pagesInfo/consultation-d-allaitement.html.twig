@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}L'allaitement{% endblock %}
+
+{% block body_class %}page-color-allaitement{% endblock %}
+
+{% block body %}
+
+{% block bandeau %}
+    <div class="bandeau-allaitement"></div>
+{% endblock %}
+
+<div class="container1">
+    <div class="enfant pastel-purple1" data-aos="fade-right" data-aos-duration="2000">
+        <h2 class="enfant-allaitement">Présentation du cours :</h2> 
+        <p> <br>
+            "Le lait maternel devrait être, selon l'OMS, le seul aliment ingéré par un bébé entre sa première heure de vie et 6 mois. L'allaitement devrait ensuite se poursuivre pendant au moins 2 ans en étant complété par une alimentation solide variée." <br><br> La femme est un mammifère presque comme les autres ! Son corps est conçu pour accoucher et nourrir son bébé, via l'allaitement. Très rares sont les couples mère-bébé porteurs d'une réelle pathologie mettant en échec l'allaitement.
+            Ceci dit, nourrir son enfant au sein n'est pas forcément inné surtout dans notre société actuelle, où l'allaitement est tabou, plein de mythes voire même diabolisé. Les gestes d'allaitement ont été oubliés et les représentations que la plupart des gens en ont sont souvent fausses. Les femmes ont, en général, besoin de soutien et de conseils. Tout ne va pas toujours de soit et ne se met pas en place tout seul, par instinct. Les mamans et leur bébé peuvent rencontrer tous types de difficultés. Il est alors bon d'avoir un œil extérieur bienveillant et compétent afin de trouver une solution. <br><br>
+        </p>
+    </div>
+    <div class="enfant" data-aos="fade-left" data-aos-duration="2000">
+        <img class="image-responsive" src="/img/mere-grand-angle-nouveau-ne-mignon.jpg" alt="">
+    </div>
+</div>
+<div class="container2">
+    <div class="enfant pastel-purple2" data-aos="fade-right" data-aos-duration="2000">
+        <h2 class="enfant-allaitement">Je suis formée pour vous accompagner dans les situations suivantes :</h2>  
+        <ul> <br>
+            <li><span class="span-allaitement">Enseigner les bases de l'allaitement maternel :</span> Comment tenir le bébé, comment obtenir une bonne prise, la fréquence et la durée des tétées, etc.</li> <br>
+            <li><span class="span-allaitement">Identifier et résoudre les problèmes d'allaitement :</span> Résoudre des problèmes courants tels que les douleurs aux mamelons, les crevasses, l'engorgement, le refus du sein, etc.</li><br>
+            <li><span class="span-allaitement">Fournir des informations sur la nutrition pendant l'allaitement :</span> Donner des conseils sur ce qu'une mère qui allaite devrait manger et boire pour assurer une bonne production de lait.</li><br>
+            <li><span class="span-allaitement">Offrir du soutien émotionnel :</span>  L'allaitement peut être difficile, surtout pour les nouvelles mamans. Je vous offre un soutien émotionnel, vous encourage vous aide à surmonter les difficultés.</li><br>
+            <li><span class="span-allaitement">Informer sur l'expression et la conservation du lait maternel :</span> Montrer comment utiliser un tire-lait, comment conserver le lait, combien de temps le lait peut être conservé, etc.</li><br>
+        </ul>
+    </div>
+    <div class="enfant pastel-purple3" data-aos="fade-left" data-aos-duration="2000">
+        <h2 class="enfant-allaitement">Les bienfaits pour le bébé :</h2>  
+        <ul> <br>
+            <li><span class="span-allaitement">Nutrition optimale :</span> Le lait maternel est spécifiquement conçu pour répondre aux besoins nutritionnels des bébés, en fournissant la quantité idéale de protéines, de glucides, de graisses, de vitamines et de minéraux nécessaires à leur croissance et à leur développement.</li> <br>
+            <li><span class="span-allaitement">Protection contre les maladies :</span> Le lait maternel contient des anticorps, des enzymes et des cellules immunitaires qui renforcent le système immunitaire du bébé, le protégeant ainsi contre les infections, les allergies, les maladies respiratoires, les troubles digestifs et les maladies chroniques.</li><br>
+            <li><span class="span-allaitement">Digestion facilitée :</span> Le lait maternel est plus facile à digérer pour les bébés que les substituts du lait maternel. Il réduit les risques de constipation, de diarrhée et de coliques chez les nourrissons.</li><br>
+            <li><span class="span-allaitement">Développement cognitif :</span> Des études ont montré que l'allaitement maternel favorise le développement cognitif des bébés, en améliorant leurs capacités intellectuelles, leur mémoire et leur concentration.</li><br>
+            <li><span class="span-allaitement">Renforcement du lien mère-enfant :</span> L'allaitement favorise une interaction étroite entre la mère et le bébé, ce qui contribue à renforcer le lien affectif et émotionnel entre eux.</li><br>
+        </ul>
+    </div>
+</div>
+
+<div id="calendar"></div>
+
+{# script afficher le calendar #}
+<script src="{{ asset('js/calendar.js') }}"></script>
+
+{% endblock %}
