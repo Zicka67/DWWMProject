@@ -196,7 +196,6 @@ span {
 /* ************************* ERREURS *************************** */
 .custom-alert {
     position: fixed;
-    /* top: 40px;  */
     left: 12%;
     border-radius: 4px;
     color: #ffffff;
@@ -510,10 +509,10 @@ body {
 }
 
 .bandeau-info {
-    height: 400px;
+    height: 300px;
     width: 100%;
     background-image: url('../img/f76197_19da170fd28646b197f0c6fa3612fb81~mv2.webp');
-    margin-top: 70px;
+    margin-top: 30px;
     margin-bottom: 20px;
     background-size: cover;
     background-attachment: fixed;
@@ -554,6 +553,7 @@ body {
     display: flex;
     justify-content: space-around;
     width: 80%;
+    margin-top: 10px;
 }
 
 .carousel-item {
@@ -891,7 +891,7 @@ body {
     margin: 20px 0;
 }
 
-.margin-tb:last-child {
+.margin-tb.verified {
     margin-top: 8px;
 }
 
@@ -903,9 +903,13 @@ body {
     font-size: 1.5rem;
 }
 
+.text-reset-password {
+    margin-top: 30px;
+}
+
 /* ****************** FOOTER ***************** */
 .footer {
-    height: 62.30vh;
+    height: 570px;
     width: 100%;
     background-image: url('../img/f76197_19da170fd28646b197f0c6fa3612fb81~mv2.webp');
     background-repeat: no-repeat;
@@ -956,7 +960,7 @@ body {
 .text-left {
     position: absolute;
     left: 3vh;
-    top: 0.2vh;
+    top: 5vh;
     color: var(--secondary-color);
     font-size: 1rem;
     font-family: 'Barlow', sans-serif; 
@@ -965,7 +969,7 @@ body {
 .text-right {
     position: absolute;
     right: 3vh;
-    top: 0.2vh;
+    top: 5vh;
     color: var(--secondary-color);
     font-size: 1rem;
     font-family: 'Barlow', sans-serif;
@@ -988,6 +992,7 @@ body {
     text-align: center;
     font-size: 1.5rem;
     font-weight: 500;
+    position: relative;
 }
 
 .container-mt-p h1{
@@ -1181,6 +1186,43 @@ body {
     margin-left: auto; 
 }
 
+/* ************* Button back profil ************* */
+
+.buttonBack {
+    display: flex;
+    height: 3em;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--darkPink-color);
+    border-radius: 20px;
+    letter-spacing: 1px;
+    transition: all 0.2s linear;
+    cursor: pointer;
+    border: none;
+    background: var(--darkPink-color);
+    position: absolute;
+    top: -50px;
+    left: -20px;
+}
+   
+.buttonBack > svg {
+    margin-right: 5px;
+    margin-left: 5px;
+    font-size: 20px;
+    transition: all 0.4s ease-in;
+}
+   
+.buttonBack:hover > svg {
+    font-size: 1.2em;
+    transform: translateX(-5px);
+}
+   
+.buttonBack:hover {
+    box-shadow: 9px 9px 33px #ffaeae, -9px -9px 33px #ffd5d5;
+    transform: translateY(-2px);
+}
+
 /* ******************************* */
 
 .custom-button {
@@ -1224,7 +1266,6 @@ body {
   .custom-button:hover {
     background-color: var(--darkPink-color);
   }
-  
 
 /* ************* MEDIA QUERIES ****************** */
 
@@ -1241,6 +1282,11 @@ body {
 }
 
 @media (max-width: 1280px) {
+
+    .buttonBack{
+        width: 90px;
+        height: 2.8em;
+    }
 
     .logo-site {
         width: 50px;
@@ -1259,9 +1305,17 @@ body {
 
 @media (max-width: 1145px) {
 
+    .buttonBack{
+        width: 80px;
+        height: 2.6em;
+    }
 
     .container-mt-p {
-        width: 65%;
+        width: 70%;
+    }
+
+    .container-mt-p h1{
+       font-size: 1.9rem;
     }
 
     .enfant-home h2 {
@@ -1480,7 +1534,7 @@ body {
 @media (max-width: 880px) {
 
     .container-mt-p {
-        width: 70%;
+        width: 75%;
         margin: 2vw auto;
         text-align: center;
     }
@@ -1506,7 +1560,7 @@ body {
       }
 
     .container-mt-p {
-        width: 78%;
+        width: 88%;
     }
 
     .margin-tb p{
@@ -1573,10 +1627,15 @@ body {
     }
 
     .container-mt-p {
-        width: 88%;
+        width: 95%;
         margin: 2vw auto;
         text-align: center;
     }
+
+    .container-mt-p h1{
+       font-size: 1.8rem;
+    }
+
 
     .footer-text {
         top: 75%;
@@ -1594,14 +1653,14 @@ body {
     }
     
     .text-left {
-        left: 3vw;
-        top: 2vw;
+        left: 2vh;
+        top: 5vh;
         font-size: 0.8rem;
     }
     
     .text-right {
-        right: 3vw;
-        top: 2vw;
+        right: 2vh;
+        top: 5vh;
         font-size: 0.8rem;
     }
 
@@ -1675,6 +1734,11 @@ body {
 
 @media (max-width: 500px) {
 
+    .buttonBack {
+        left: -35px;
+        width: 75px;
+    }
+
     .edit-button {
         width: 30px;
         height: 30px;
@@ -1690,6 +1754,10 @@ body {
 
     .container-mt-p {
         width: 100%;
+    }
+
+    .container-mt-p h1{
+        font-size: 1.7rem;
     }
 
     .margin-tb p{
@@ -1759,7 +1827,8 @@ body {
     }
 }
 
-/* KEYFRAMES */
+/* *************** KEYFRAMES **************** */
+
 @keyframes slideOut {
     from {
         transform: translateX(0);
