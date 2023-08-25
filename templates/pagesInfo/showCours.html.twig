@@ -30,9 +30,9 @@
         {% for cours in listeCours|slice(3, 3) %}
             <div class="enfant enfant-cours pastel-blue2">
                 <h2>{{ cours.nomCours }}</h2> 
-                <p>{{ cours.description | raw  }}</p>
-                <p class="price">{{ cours.prix }}€</p>
                 <div class="img-dim"><img class="image-responsive" src="{{ cours.image }}" alt="Image du cours"></div>
+                <p>{{ cours.description | raw  }}</p>
+                <p class="price2">{{ cours.prix }}€</p>
                 <a class="details-link" href="{{ path('detailCours', {templateName: cours.slugCours}) }}#reservation-form">
                     <button class="buttonMore">
                     En savoir plus !
@@ -47,9 +47,9 @@
         {% for cours in listeCours|slice(6, 3) %}
             <div class="enfant enfant-cours pastel-blue1">
                 <h2>{{ cours.nomCours }}</h2> 
-                <p>{{ cours.description | raw  }}</p> 
-                <p class="price">{{ cours.prix }}€</p>
                 <div class="img-dim"><img class="image-responsive" src="{{ cours.image }}" alt="Image du cours"></div>
+                <p>{{ cours.description | raw  }}</p> 
+                <p class="price2">{{ cours.prix }}€</p>
                 <a class="details-link" href="{{ path('detailCours', {templateName: cours.slugCours}) }}#reservation-form">
                     <button class="buttonMore">
                     En savoir plus !

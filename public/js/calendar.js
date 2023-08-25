@@ -188,7 +188,7 @@ function displayCalendarContent(){
                     // Ajoute un attribut data-date à la cellule pour stocker la date correspondante.
                     cell.setAttribute("data-date", currentDate);
 
-                    //Format la date
+                    //Formate la date
                     var currentDateParam = formatDate(currentDate);
 
                     // Ajoute les classes CSS appropriées à la cellule
