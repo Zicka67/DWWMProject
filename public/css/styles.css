@@ -512,7 +512,6 @@ body {
     height: 300px;
     width: 100%;
     background-image: url('../img/f76197_19da170fd28646b197f0c6fa3612fb81~mv2.webp');
-    margin-top: 30px;
     margin-bottom: 20px;
     background-size: cover;
     background-attachment: fixed;
@@ -693,6 +692,7 @@ body {
 .enfant-cours h2 {
     color: var(--darkPink-color);
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .enfant {
@@ -703,9 +703,10 @@ body {
 
 .enfant-cours .price2{
     font-weight: 400;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-family: 'Knewave', cursive;
     color: var(--darkPink-color);
+    margin-bottom: 10px;
 }
 
 .enfant p, .enfant ul {
@@ -1034,6 +1035,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin-bottom: 30px;
 }
 
 .enfant-cours {
@@ -1222,6 +1224,70 @@ body {
     box-shadow: 9px 9px 33px #ffaeae, -9px -9px 33px #ffd5d5;
     transform: translateY(-2px);
 }
+
+/* *************** BUTTON EN SAVOIR PLUS ************ */
+
+.buttonMore {
+    --primary-color: #645bff;
+    --secondary-color: #fff;
+    --hover-color: #111;
+    --arrow-width: 10px;
+    --arrow-stroke: 2px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 20px;
+    color: var(--lightPink-color);
+    padding: 1em 1.8em;
+    background: var(--darkPink-color);
+    display: flex;
+    transition: 0.2s background;
+    align-items: center;
+    gap: 0.6em;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  
+  .buttonMore .arrow-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .buttonMore .arrow {
+    margin-top: 1px;
+    width: var(--arrow-width);
+    background: var(--darkPink-color);
+    height: var(--arrow-stroke);
+    position: relative;
+    transition: 0.2s;
+  }
+  
+  .buttonMore .arrow::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    border: solid var(--lightPink-color);
+    border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+    display: inline-block;
+    top: -3px;
+    right: 3px;
+    transition: 0.2s;
+    padding: 3px;
+    transform: rotate(-45deg);
+  }
+  
+  .buttonMore:hover {
+    background-color: var(--darkPink-color);
+    cursor: pointer;
+  }
+  
+  .buttonMore:hover .arrow {
+    background: var(--lightPink-color);
+  }
+  
+  .buttonMore:hover .arrow:before {
+    right: 0;
+  }
 
 /* ******************************* */
 
@@ -1545,6 +1611,21 @@ body {
 } 
 
 @media (max-width: 760px) {
+
+    .container-parcours {
+        flex-direction: column;
+    }
+
+    .image-parcours-container{
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: center;
+        justify-content: center;
+    }
+
+    .image-parcours-container img{
+        min-width: 80%;
+    }
 
     .edit-button {
         width: 35px;
