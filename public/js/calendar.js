@@ -380,6 +380,23 @@ function formatDate(date) {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //Parcour la liste des jours créer et leurs donne la classe slot pour les afficher et avaible, si le jour est 
 //selectionné ou est déjà dans la lsite unavailable il a la class unavailable a la place.
 
