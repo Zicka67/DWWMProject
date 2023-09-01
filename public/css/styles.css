@@ -25,6 +25,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
     line-height: 1;
+    /* background-color: white !important; */
 }
 ol, ul, li, a {
     list-style: none;
@@ -138,8 +139,12 @@ table {
     background-color: #f6cec8;
 }
 
+body.page-color-home {
+    background-color: var(--lightPink-color);
+}
+
 body.page-color-allaitement{
-    background-color: #fdf4ff;
+    background-color: var(--lightPink-color);
 }
 
 body.page-color-portage{
@@ -211,6 +216,20 @@ span {
     margin: 100px auto 0 auto;
     z-index: 1000;
     font-size: 1.2vw;
+    font-family: 'Barlow', sans-serif;
+}
+
+.password-error {
+    color: var(--red-color);
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Barlow', sans-serif;
+}
+
+.email-error {
+    color: var(--red-color);
+    margin-bottom: 20px;
+    font-weight: bold;
     font-family: 'Barlow', sans-serif;
 }
 
@@ -391,7 +410,7 @@ body {
  }
 
 .register-ml {
-    margin-left: 40px;
+    margin-left: 20px;
 }
 
 .register-ml a{
@@ -737,7 +756,7 @@ body {
 /* LOGIN */
 .form-label {
     font-weight: bold;
-    margin: 10px 0 20px 0;
+    margin: 10px 0 10px 0;
     color: var(--darkPink-color);
     font-family: 'Barlow', sans-serif;
     font-size: 1.5rem;

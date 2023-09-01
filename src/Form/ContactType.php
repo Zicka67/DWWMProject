@@ -18,6 +18,15 @@ class ContactType extends AbstractType
             ->add('email', EmailType::class)
             ->add('sujet', TextType::class)
             ->add('message', TextareaType::class)
+            ->add('honeypot', TextType::class, [
+                'mapped' => false,
+                'required' => false,
+                // Enlever le label
+                'label' => false,
+                'attr' => [
+                    'style' => 'display:none;',
+                ],
+            ])
         ;
     }
 

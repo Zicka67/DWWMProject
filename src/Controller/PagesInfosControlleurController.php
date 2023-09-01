@@ -58,20 +58,28 @@ class PagesInfosControlleurController extends AbstractController
         $form = $this->createForm(ContactType::class);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $contactFormData = $form->getData();
+        if ($form->isSubmitted()) {
+            if ($form->get('honeypot')->getData()) {
+                // Le formulaire a probablement été soumis par un robot
+                // Redirige
+                return $this->redirectToRoute('app_home');
+            }
 
-            $email = (new Email())
-                ->from($contactFormData['email'])
-                ->to('littlecocon@gmail.com')
-                ->subject($contactFormData['sujet'])
-                ->text($contactFormData['message']);
+            if ($form->isValid()) {
+                $contactFormData = $form->getData();
 
-            $mailer->send($email);
+                $email = (new Email())
+                    ->from($contactFormData['email'])
+                    ->to('littlecocon@gmail.com')
+                    ->subject($contactFormData['sujet'])
+                    ->text($contactFormData['message']);
 
-            $this->addFlash('success', 'Merci pour votre message, il a bien été envoyé');
+                $mailer->send($email);
 
-            return $this->redirectToRoute('app_home');
+                $this->addFlash('success', 'Merci pour votre message, il a bien été envoyé');
+
+                return $this->redirectToRoute('contacts');
+            }
         }
 
         return $this->render('pagesInfo/contacts.html.twig', [
