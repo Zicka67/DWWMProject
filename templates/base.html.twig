@@ -51,7 +51,7 @@
             tarteaucitron.user.gtagUa = 'G-Q2N0D039VH';
             tarteaucitron.user.gtagMore = function () { /* add here your optionnal gtag() */ };
             (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
-            
+
         </script>
 
         <meta charset="UTF-8">
@@ -133,7 +133,7 @@
                             <a href="/logout">
                                 <button class="{{ app.user ? 'red' : 'green' }} Btn">
                                     <div class="sign"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg></div>
-                                    <div class="text">Se déconnecter</div>
+                                    <div class="text">Déconnexion</div>
                                 </button>
                             </a>
                         </li>
@@ -143,7 +143,7 @@
                         <a href="/login">
                                 <button class="{{ app.user ? 'red' : 'green' }} Btn">
                                     <div class="sign"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg></div>
-                                    <div class="text">Se connecter</div>
+                                    <div class="text">Connexion</div>
                                 </button>
                             </a>
                         </li>
@@ -207,9 +207,6 @@
                     <img src="{{ asset('img/LOGO6-footer.png') }}" alt="">
                     <div class="footer-text">
                         <div class="text-center">
-                           {# <p>Douceur de Lune vous propose ses itinéraires de grossesse, 
-                            préparation à l'accouchement, des ateliers de portage en écharpe et des séances 
-                            de massage prénatal, massage de la femme enceinte et de bébé, et soin rebozo. <br><br>  #}
                             Je me déplace pour les consultations à domicile: <br> <br>
                             - Dans un rayon entre <span>1</span> et <span>10 km</span>  autour de Prades-le-Lez : <span>5€</span> <br>
                             - Dans un rayon entre <span>10</span> et <span>20 km</span> autour de Prades-le-Lez : <span>10€</span> <br>
@@ -241,8 +238,8 @@
         
      
         {% block javascripts %}
-        <script  src="{{ asset('js/tarteAuCitron.js') }}" > </ script >
         {# {{ encore_entry_script_tags('app') }} #}
+        <script  src="{{ asset('js/tarteAuCitron.js') }}" > </ script >
 
         {# Pour uniquement charger le script sur home #}
         {% if app.request.attributes.get('_route') == 'app_home' %}
