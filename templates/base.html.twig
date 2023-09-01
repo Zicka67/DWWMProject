@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        {# <script type="text/javascript" src="{{ asset('tarteaucitron/tarteaucitron.js') }}"></script> #}
         <script src="/tarteaucitron/tarteaucitron.js"></script>
+
         <script type="text/javascript">
             tarteaucitron.init({
             "privacyUrl": "", /* Privacy policy url */
@@ -51,6 +51,7 @@
             tarteaucitron.user.gtagUa = 'G-Q2N0D039VH';
             tarteaucitron.user.gtagMore = function () { /* add here your optionnal gtag() */ };
             (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+            
         </script>
 
         <meta charset="UTF-8">
@@ -240,21 +241,23 @@
         
      
         {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
+        <script  src="{{ asset('js/tarteAuCitron.js') }}" > </ script >
+        {# {{ encore_entry_script_tags('app') }} #}
+
         {# Pour uniquement charger le script sur home #}
         {% if app.request.attributes.get('_route') == 'app_home' %}
         <script src="{{ asset('js/imgMouvement.js') }}"></script>
         {% endif %}
         <script src="{{ asset('js/script.js') }}"></script>  
-        {# Map leaflet #}
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+        {# AOS #}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
         <script>
             AOS.init({
                 once: true,
             });
         </script>
-        <script  src="{{ asset('js/tarteAuCitron.js') }}" > </ script >
+
         {% endblock %}
     </body>
 </html>
