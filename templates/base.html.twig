@@ -239,7 +239,7 @@
      
         {% block javascripts %}
         {# {{ encore_entry_script_tags('app') }} #}
-        <script  src="{{ asset('js/tarteAuCitron.js') }}" > </ script >
+        <script  src="{{ asset('js/tarteAuCitron.js') }}" > </script>
 
         {# Pour uniquement charger le script sur home #}
         {% if app.request.attributes.get('_route') == 'app_home' %}

@@ -1351,7 +1351,7 @@ body {
   /* text */
   .text {
     position: absolute;
-    margin-left: 10px;
+    margin-left: 20px;
     /* right: 5px; */
     opacity: 0;
     color: white;
