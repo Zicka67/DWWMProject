@@ -55,9 +55,10 @@
     </script>
 
     <meta charset="UTF-8">
+    <meta name="decription" content="Douceur de lune est un site proposant des cours d'allaitement, de portage de relaxation pour les jeunes ou futurs parents">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Bonjour!{% endblock %}</title>
+    <title>{% block title %}Bienvenue sur Douceur de lune !{% endblock %}</title>
     <link rel="icon" href="{{ asset('img/logo-croissant.png') }}">
     {# stripe #}
     <script src="https://js.stripe.com/v3/"></script>
@@ -95,7 +96,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
                 <ul class="navbar-menu">
                     <li class="dropdown">
-                        <a href="#">Le Cocon</a>
+                        <img class="arrow-down" src="{{ asset('img/expand_more_FILL0_wght400_GRAD0_opsz24.png') }}" alt="Flèche vers le bas">
+                        <a href="#" class="align"> Le Cocon</a>
                         <ul class="dropdown-menu">
                                                         {#nom du slug  cours/nom_du_slug #}
                             <li><a class="enfant-portage" href="/cours/atelier-de-portage">Portage</a></li>
@@ -104,7 +106,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <li><a class="enfant-cercle" href="/cours/cercle-mamans-bebes">Le cercle des mamans</a></li>
                         </ul>
                     </li>
-
                     <li><a href="/mon-parcours">Qui suis-je ?</a></li>
                     <li><a href="/showCours">Les prestations</a></li>
                     <li><a href="/contacts">Me contacter</a></li>
