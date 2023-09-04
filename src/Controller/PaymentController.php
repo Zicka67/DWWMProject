@@ -23,76 +23,76 @@ use Symfony\Bundle\SecurityBundle\SecurityBundle;
 class PaymentController extends AbstractController
 {
 
-    #[Route('/payment/{id}', name: 'reservation_payment')]
-    public function reservationPayment (int $id, ReservationRepository $reservationRepository, EntityManagerInterface $em, Security $security) 
+#[Route('/payment/{id}', name: 'reservation_payment')]
+public function reservationPayment (int $id, ReservationRepository $reservationRepository, EntityManagerInterface $em, Security $security) 
+{
+    $reservation = $reservationRepository->find($id);
+    $reservationUser = $reservation->getUser();
+    $user = $security->getUser();
+
+    /** @var \App\Entity\User $user docblock */ 
+    if ($user->getId() != $reservationUser->getId()) 
     {
-        $reservation = $reservationRepository->find($id);
-        $reservationUser = $reservation->getUser();
-        $user = $security->getUser();
-
-        /** @var \App\Entity\User $user docblock */ 
-        if ($user->getId() != $reservationUser->getId()) 
-        {
-            return $this->redirect('/');
-        }
-
-        return $this->render('payment/index.html.twig',[
-            'reservationId' => $id,
-            'userMail' => $reservationUser->getEmail()
-            ]);
+        return $this->redirect('/');
     }
 
-    #[Route('/create-payment-intent', name: 'checkout')]
-    public function checkout(ReservationRepository $reservationRepository, EntityManagerInterface $em, Request $request): Response
-    {
-        $jsonStr = file_get_contents('php://input');
-        $jsonObj = json_decode($jsonStr);
-        $id = $jsonObj->reservationId;
+    return $this->render('payment/index.html.twig',[
+        'reservationId' => $id,
+        'userMail' => $reservationUser->getEmail()
+        ]);
+}
 
-        // Trouve le cours basé sur le slug
-        $reservation = $reservationRepository->find($id);
-        // $cours = $em->getRepository(Cours::class)->findOneBy(['slug_cours' => $slug]);
+#[Route('/create-payment-intent', name: 'checkout')]
+public function checkout(ReservationRepository $reservationRepository, EntityManagerInterface $em, Request $request): Response
+{
+    $jsonStr = file_get_contents('php://input');
+    $jsonObj = json_decode($jsonStr);
+    $id = $jsonObj->reservationId;
 
-        if (!$reservation) {
-            throw $this->createNotFoundException('La reservation demandée n\'existe pas.');
-        }
+    // Trouve le cours basé sur le slug
+    $reservation = $reservationRepository->find($id);
+    // $cours = $em->getRepository(Cours::class)->findOneBy(['slug_cours' => $slug]);
 
-        $amount = $reservation->getCours()->getPrix() * 100;
-    
-        // Définir la clé secrète Stripe
-        $stripe = new StripeClient(STRIPE_SECRET_KEY);
-
-        try {
-            $paymentIntent = $stripe->paymentIntents->create([
-                'amount' => $amount,
-                'currency' => 'eur',
-                'payment_method_types' => ['card'],
-                'metadata' => [
-                    'reservationId' => $id,
-                ],
-            ]);
-
-            $output = [
-                'clientSecret' => $paymentIntent->client_secret,
-            ];
-    
-            return new JsonResponse($output);
-
-        }catch (Exception $e) {
-            http_response_code(500);
-            return new JsonResponse(['error' => $e->getMessage()]);
-        }
-        
+    if (!$reservation) {
+        throw $this->createNotFoundException('La reservation demandée n\'existe pas.');
     }
 
-    
-    #[Route('/payment-success', name: 'success_payment')]
-    public function paymentSuccess(): Response
-    {
-        // Ajouter email de confirmation ?
-        // un reçu ?
+    $amount = $reservation->getCours()->getPrix() * 100;
 
-        return $this->render('payment/success.html.twig');
+    // Définir la clé secrète Stripe
+    $stripe = new StripeClient(STRIPE_SECRET_KEY);
+
+    try {
+        $paymentIntent = $stripe->paymentIntents->create([
+            'amount' => $amount,
+            'currency' => 'eur',
+            'payment_method_types' => ['card'],
+            'metadata' => [
+                'reservationId' => $id,
+            ],
+        ]);
+
+        $output = [
+            'clientSecret' => $paymentIntent->client_secret,
+        ];
+
+        return new JsonResponse($output);
+
+    }catch (Exception $e) {
+        http_response_code(500);
+        return new JsonResponse(['error' => $e->getMessage()]);
     }
+    
+}
+
+
+#[Route('/payment-success', name: 'success_payment')]
+public function paymentSuccess(): Response
+{
+    // Ajouter email de confirmation ?
+    // un reçu ?
+
+    return $this->render('payment/success.html.twig');
+}
 
 }

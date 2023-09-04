@@ -7,109 +7,105 @@
 {% block body %}
 
 {% block bandeau %}
-    <div class="bandeau-info bis"></div>
+<div class="bandeau-info bis"></div>
 {% endblock %}
 
-
 {% block content %}
-    
-    <div class="container-margin-home">
-        <div class="container-showCours-home">
-            {% for cours in listeCours|slice(0, 3) %}
-                <div class="enfant-home enfant-cours-home pastel-red3">
-                    <h2>{{ cours.nomCours }}</h2> 
+
+<div class="container-margin-home">
+    <div class="container-showCours-home">
+        {% for cours in listeCours|slice(0, 3) %}
+            <div class="enfant-home enfant-cours-home pastel-red3">
+                <h2>{{ cours.nomCours }}</h2> 
+            <div class="img-dim"><img class="image-responsive" src="{{ cours.image }}" alt="Image du cours"></div>
+                <p>{{ cours.description | raw  }}</p> 
+                <p class="price">{{ cours.prix }}€</p>
+            <a class="details-link" href="{{ path('detailCours', {templateName: cours.slugCours}) }}#reservation-form">
+                <button class="buttonMore">
+                En savoir plus !
+                    <div class="arrow-wrapper">
+                        <div class="arrow"></div>
+                    </div>
+                </button>
+            </a>
+            </div>
+        {% endfor %}
+        
+        {% for cours in listeCours|slice(3, 3) %}
+            <div class="enfant-home enfant-cours-home pastel-red3">
+                <h2>{{ cours.nomCours }}</h2> 
                 <div class="img-dim"><img class="image-responsive" src="{{ cours.image }}" alt="Image du cours"></div>
-                    <p>{{ cours.description | raw  }}</p> 
-                    <p class="price">{{ cours.prix }}€</p>
+                <p>{{ cours.description | raw  }}</p> 
+                <p class="price">{{ cours.prix }}€</p>
                 <a class="details-link" href="{{ path('detailCours', {templateName: cours.slugCours}) }}#reservation-form">
-                    <button class="buttonMore">
-                    En savoir plus !
-                        <div class="arrow-wrapper">
-                            <div class="arrow"></div>
-                        </div>
-                    </button>
-                </a>
-                </div>
-            {% endfor %}
-            
-            {% for cours in listeCours|slice(3, 3) %}
-                <div class="enfant-home enfant-cours-home pastel-red3">
-                    <h2>{{ cours.nomCours }}</h2> 
-                    <div class="img-dim"><img class="image-responsive" src="{{ cours.image }}" alt="Image du cours"></div>
-                    <p>{{ cours.description | raw  }}</p> 
-                    <p class="price">{{ cours.prix }}€</p>
-                    <a class="details-link" href="{{ path('detailCours', {templateName: cours.slugCours}) }}#reservation-form">
-                    <button class="buttonMore">
-                    En savoir plus !
-                        <div class="arrow-wrapper">
-                            <div class="arrow"></div>
-                        </div>
-                    </button>
-                </a>
-                </div>
-            {% endfor %}
-    
-            {% for cours in listeCours|slice(6, 3) %}
-                <div class="enfant-home enfant-cours-home pastel-red3">
-                    <h2>{{ cours.nomCours }}</h2> 
-                    <div class="img-dim"><img class="image-responsive" src="{{ cours.image }}" alt="Image du cours"></div>
-                    <p>{{ cours.description | raw  }}</p> 
-                    <p class="price">{{ cours.prix }}€</p>
-                    <a class="details-link" href="{{ path('detailCours', {templateName: cours.slugCours}) }}#reservation-form">
-                    <button class="buttonMore">
-                    En savoir plus !
-                        <div class="arrow-wrapper">
-                            <div class="arrow"></div>
-                        </div>
-                    </button>
-                </a>
-                </div>
-            {% endfor %}
-        </div>
+                <button class="buttonMore">
+                En savoir plus !
+                    <div class="arrow-wrapper">
+                        <div class="arrow"></div>
+                    </div>
+                </button>
+            </a>
+            </div>
+        {% endfor %}
+
+        {% for cours in listeCours|slice(6, 3) %}
+            <div class="enfant-home enfant-cours-home pastel-red3">
+                <h2>{{ cours.nomCours }}</h2> 
+                <div class="img-dim"><img class="image-responsive" src="{{ cours.image }}" alt="Image du cours"></div>
+                <p>{{ cours.description | raw  }}</p> 
+                <p class="price">{{ cours.prix }}€</p>
+                <a class="details-link" href="{{ path('detailCours', {templateName: cours.slugCours}) }}#reservation-form">
+                <button class="buttonMore">
+                En savoir plus !
+                    <div class="arrow-wrapper">
+                        <div class="arrow"></div>
+                    </div>
+                </button>
+            </a>
+            </div>
+        {% endfor %}
     </div>
+</div>
 
 {% endblock %}
 
 {% block bandeauBonCadeau %}
-    <div class="bandeau-info cadeau"></div>
+<div class="bandeau-info cadeau"></div>
 {% endblock %}
 
 {% block bandeauRemerciement %}
-    <div class="bandeau-info-remerciements">
-        <h2 class="centered-heading">Merci pour vos remerciements</h2>
-        <div class="carousel">
+<div class="bandeau-info-remerciements">
+    <h2 class="centered-heading">Merci pour vos remerciements</h2>
+    <div class="carousel">
 
-            <div class="carousel-item ">
-                <h3>Caroline</h3>
-                <h2>Maman de 3 mois</h2>
-                <p>Merci pour ce moment de douceur. Merci également d'avoir pris le temps de m'écouter. ta visite m'a fait beaucoup de bien. Je te recontacte après l'accouchement et peut être même avant si j'en ressens le besoin.</p>
-            </div>
-            <div class="carousel-item ">
-                <h3>Julie</h3>
-                <h2>Maman de 3 mois</h2>
-                <p>Je voulais te remercier pour ce joli moment. Tu as été très douce et attentionnée. C'était très agréable.</p>
-            </div>
-            <div class="carousel-item ">
-                <h3>Clarisse</h3>
-                <h2>Maman de 3 mois</h2>
-                <p>Merci encore pour ta venue lors de ma grossesse, qui, j'en suis persuadée, a contribué à mettre beaucoup de douceur dans ma fin de grossesse et mon accouchement.</p>
-            </div>
-            <div class="carousel-item ">
-                <h3>Amélie</h3>
-                <h2>Maman de 3 mois</h2>
-                <p>Encore merci pour tout, tu as été d'une douceur en gentillesse incroyable, ca m'a beaucoup aidée.</p>
-            </div>
-            <div class="carousel-item ">
-                <h3>Lea</h3>
-                <h2>Maman de 3 mois</h2>
-                <p>Je recommande à toute les futures mamans, compétente, douce, pédagogue, rassurante ! Merci <3</p>
-            </div>
-          
+        <div class="carousel-item ">
+            <h3>Caroline</h3>
+            <h2>Maman de 3 mois</h2>
+            <p>Merci pour ce moment de douceur. Merci également d'avoir pris le temps de m'écouter. ta visite m'a fait beaucoup de bien. Je te recontacte après l'accouchement et peut être même avant si j'en ressens le besoin.</p>
         </div>
+        <div class="carousel-item ">
+            <h3>Julie</h3>
+            <h2>Maman de 3 mois</h2>
+            <p>Je voulais te remercier pour ce joli moment. Tu as été très douce et attentionnée. C'était très agréable.</p>
+        </div>
+        <div class="carousel-item ">
+            <h3>Clarisse</h3>
+            <h2>Maman de 3 mois</h2>
+            <p>Merci encore pour ta venue lors de ma grossesse, qui, j'en suis persuadée, a contribué à mettre beaucoup de douceur dans ma fin de grossesse et mon accouchement.</p>
+        </div>
+        <div class="carousel-item ">
+            <h3>Amélie</h3>
+            <h2>Maman de 3 mois</h2>
+            <p>Encore merci pour tout, tu as été d'une douceur en gentillesse incroyable, ca m'a beaucoup aidée.</p>
+        </div>
+        <div class="carousel-item ">
+            <h3>Lea</h3>
+            <h2>Maman de 3 mois</h2>
+            <p>Je recommande à toute les futures mamans, compétente, douce, pédagogue, rassurante ! Merci <3</p>
+        </div>
+        
     </div>
+</div>
 {% endblock %}
-
-
-
 
 {% endblock %}

@@ -10,22 +10,22 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 
 class ReservationCrudController extends AbstractCrudController
 {
-    public static function getEntityFqcn(): string
-    {
-        return Reservation::class;
-    }
+public static function getEntityFqcn(): string
+{
+    return Reservation::class;
+}
 
-    
-    public function configureFields(string $pageName): iterable
-    {
-        return [
-            // IdField::new('id'),
-            AssociationField::new('cours'),
-            AssociationField::new('user'),
-            DateTimeField::new('dt_cours'),
-            DateTimeField::new('dt_resa'),
-            TextField::new('payement_method'),
-        ];
-    }
-    
+
+public function configureFields(string $pageName): iterable
+{
+    return [
+        // IdField::new('id'),
+        AssociationField::new('cours'),
+        AssociationField::new('user'),
+        DateTimeField::new('dt_cours'),
+        DateTimeField::new('dt_resa'),
+        TextField::new('payement_method'),
+    ];
+}
+
 }

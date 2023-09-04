@@ -7,57 +7,56 @@
 {% block body %}
 
 {% block bandeau %}
-    <div class="bandeau-info"></div>
+<div class="bandeau-info"></div>
 {% endblock %}
 
-    <div class="form-container">
+<div class="form-container">
 
-        {% if app.user %}
-            <div class="mb-3">
-                Vous êtes connecté en tant que {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Se déconnecter</a>
-            </div>
+    {% if app.user %}
+        <div class="mb-3">
+            Vous êtes connecté en tant que {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Se déconnecter</a>
+        </div>
+    {% endif %}
+
+    <form method="post" class="register-form">
+
+        <div>
+            <h1 class="form-title">Se connecter</h1>
+        </div>
+
+        <label for="inputEmail" class="form-label">Email</label>
+        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-input" autocomplete="email" required autofocus>
+
+        {% if error and (error.getMessage() == 'Bad credentials.') %}
+            <div class="alert alert-danger email-error">Email incorrect</div>
+        {% endif %}
+        
+        <label for="inputPassword" class="form-label">Mot de passe</label>
+        <input type="password" name="password" id="inputPassword" class="form-input" autocomplete="current-password" required>
+
+        {% if error and (error.getMessage() == 'The presented password is invalid.') %}
+        <div class="alert alert-danger password-error">Mot de passe incorrect</div>
         {% endif %}
 
-        
-        <form method="post" class="register-form">
+        <input type="hidden" name="_csrf_token"
 
-            <div>
-                <h1 class="form-title">Se connecter</h1>
-            </div>
+            value="{{ csrf_token('authenticate') }}">
 
-            <label for="inputEmail" class="form-label">Email</label>
-            <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-input" autocomplete="email" required autofocus>
+        <!-- Uncomment the below section to add "Remember me" functionality. -->
+        <!--
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" name="_remember_me"> Se souvenir de moi
+            </label>
+        </div>
+        -->
 
-            {% if error and (error.getMessage() == 'Bad credentials.') %}
-                <div class="alert alert-danger email-error">Email incorrect</div>
-            {% endif %}
-            
-            <label for="inputPassword" class="form-label">Mot de passe</label>
-            <input type="password" name="password" id="inputPassword" class="form-input" autocomplete="current-password" required>
+        <button class="btn form-button" type="submit">
+            Se connecter
+        </button>
 
-            {% if error and (error.getMessage() == 'The presented password is invalid.') %}
-            <div class="alert alert-danger password-error">Mot de passe incorrect</div>
-            {% endif %}
-
-            <input type="hidden" name="_csrf_token"
-
-                value="{{ csrf_token('authenticate') }}">
-
-            <!-- Uncomment the below section to add "Remember me" functionality. -->
-            <!--
-            <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" name="_remember_me"> Se souvenir de moi
-                </label>
-            </div>
-            -->
-
-            <button class="btn form-button" type="submit">
-                Se connecter
-            </button>
-
-        </form>
-    </div>
+    </form>
+</div>
 
 
 {% endblock %}

@@ -12,30 +12,30 @@ use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 class RouteNotFoundSubscriber implements EventSubscriberInterface
 {
-    private $urlGenerator;
+private $urlGenerator;
 
-    public function __construct(UrlGeneratorInterface $urlGenerator)
-    {
-        $this->urlGenerator = $urlGenerator;
+public function __construct(UrlGeneratorInterface $urlGenerator)
+{
+    $this->urlGenerator = $urlGenerator;
+}
+
+public function onKernelException(ExceptionEvent $event)
+{
+    $exception = $event->getThrowable();
+
+    if ($exception instanceof NotFoundHttpException || $exception instanceof AccessDeniedHttpException) {
+        $redirectUrl = $this->urlGenerator->generate('app_home');
+
+        $response = new RedirectResponse($redirectUrl);
+        
+        $event->setResponse($response);
     }
+}
 
-    public function onKernelException(ExceptionEvent $event)
-    {
-        $exception = $event->getThrowable();
-
-        if ($exception instanceof NotFoundHttpException || $exception instanceof AccessDeniedHttpException) {
-            $redirectUrl = $this->urlGenerator->generate('app_home');
-
-            $response = new RedirectResponse($redirectUrl);
-            
-            $event->setResponse($response);
-        }
-    }
-
-    public static function getSubscribedEvents()
-    {
-        return [
-            KernelEvents::EXCEPTION => 'onKernelException',
-        ];
-    }
+public static function getSubscribedEvents()
+{
+    return [
+        KernelEvents::EXCEPTION => 'onKernelException',
+    ];
+}
 }

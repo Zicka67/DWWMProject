@@ -16,28 +16,28 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class UnavailableDateRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
-    {
-        parent::__construct($registry, UnavailableDate::class);
+public function __construct(ManagerRegistry $registry)
+{
+    parent::__construct($registry, UnavailableDate::class);
+}
+
+public function save(UnavailableDate $entity, bool $flush = false): void
+{
+    $this->getEntityManager()->persist($entity);
+
+    if ($flush) {
+        $this->getEntityManager()->flush();
     }
+}
 
-    public function save(UnavailableDate $entity, bool $flush = false): void
-    {
-        $this->getEntityManager()->persist($entity);
+public function remove(UnavailableDate $entity, bool $flush = false): void
+{
+    $this->getEntityManager()->remove($entity);
 
-        if ($flush) {
-            $this->getEntityManager()->flush();
-        }
+    if ($flush) {
+        $this->getEntityManager()->flush();
     }
-
-    public function remove(UnavailableDate $entity, bool $flush = false): void
-    {
-        $this->getEntityManager()->remove($entity);
-
-        if ($flush) {
-            $this->getEntityManager()->flush();
-        }
-    }
+}
 
 //    /**
 //     * @return UnavailableDate[] Returns an array of UnavailableDate objects

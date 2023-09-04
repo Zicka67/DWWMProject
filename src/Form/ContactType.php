@@ -11,29 +11,29 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class ContactType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options): void
-    {
-        $builder
-            ->add('pseudo', TextType::class)
-            ->add('email', EmailType::class)
-            ->add('sujet', TextType::class)
-            ->add('message', TextareaType::class)
-            ->add('honeypot', TextType::class, [
-                'mapped' => false,
-                'required' => false,
-                // Enlever le label
-                'label' => false,
-                'attr' => [
-                    'style' => 'display:none;',
-                ],
-            ])
-        ;
-    }
+public function buildForm(FormBuilderInterface $builder, array $options): void
+{
+    $builder
+        ->add('pseudo', TextType::class)
+        ->add('email', EmailType::class)
+        ->add('sujet', TextType::class)
+        ->add('message', TextareaType::class)
+        ->add('honeypot', TextType::class, [
+            'mapped' => false,
+            'required' => false,
+            // Enlever le label
+            'label' => false,
+            'attr' => [
+                'style' => 'display:none;',
+            ],
+        ])
+    ;
+}
 
-    public function configureOptions(OptionsResolver $resolver): void
-    {
-        $resolver->setDefaults([
-            // Configure your form options here
-        ]);
-    }
+public function configureOptions(OptionsResolver $resolver): void
+{
+    $resolver->setDefaults([
+        // Configure your form options here
+    ]);
+}
 }

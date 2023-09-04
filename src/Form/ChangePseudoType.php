@@ -11,23 +11,23 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class ChangePseudoType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options): void
-    {
-        $builder
-        ->add('pseudo', TextType::class, [
-            'label' => 'Nouveau pseudo',
-            'constraints' => [
-                new NotBlank([  
-                    'message' => 'Entrez un nouveau message',
-                ]),
-            ],
-        ]);
-    }
+public function buildForm(FormBuilderInterface $builder, array $options): void
+{
+    $builder
+    ->add('pseudo', TextType::class, [
+        'label' => 'Nouveau pseudo',
+        'constraints' => [
+            new NotBlank([  
+                'message' => 'Entrez un nouveau message',
+            ]),
+        ],
+    ]);
+}
 
-    public function configureOptions(OptionsResolver $resolver): void
-    {
-        $resolver->setDefaults([
-            'data_class' => User::class,
-        ]);
-    }
+public function configureOptions(OptionsResolver $resolver): void
+{
+    $resolver->setDefaults([
+        'data_class' => User::class,
+    ]);
+}
 }

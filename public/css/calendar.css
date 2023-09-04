@@ -1,284 +1,283 @@
 #calendar{
-    font-family: 'Barlow', sans-serif;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    margin: 5rem 0;
-    width: 20rem;
-    margin: auto;
+font-family: 'Barlow', sans-serif;
+margin: auto;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+font-size: 1.2rem;
+margin: 5rem 0;
+width: 20rem;
+margin: auto;
 }
 
 #calendar-title{
-    width: 100%;
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: normal;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    box-shadow: 0px 10px 9px -10px silver;
+width: 100%;
+text-align: center;
+font-size: 1.2rem;
+font-weight: normal;
+margin-bottom: 1rem;
+padding-bottom: 0.5rem;
+box-shadow: 0px 10px 9px -10px silver;
 }
 
 #calendar-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 22rem;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+width: 22rem;
 }
 
 #calendar #month-container{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 1rem;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+width: 100%;
+margin-bottom: 1rem;
 }
 
 #calendar #month-container #prev-month-calendar-selector{
-    margin-right: 2rem;
+margin-right: 2rem;
 }
 
 #calendar #month-container #next-month-calendar-selector{
-    margin-left: 2rem;
+margin-left: 2rem;
 }
 
 #calendar #month-container .month-selector{
-    cursor: pointer;
-    padding: 1rem;
+cursor: pointer;
+padding: 1rem;
 }
 
 #calendar table{
-    width: 100%;
+width: 100%;
 }
 
 #calendar table thead{
-    border-bottom: 1px solid silver;
+border-bottom: 1px solid silver;
 }
 
 #calendar table th{
-    padding-bottom: 1rem;
+padding-bottom: 1rem;
 }
 
 #calendar .calandar-unit{
-    padding: 0.7rem;
-    border-radius: 50%;
-    width: 1.5rem;
-    height: 1.5rem;
-    text-align: center;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
+padding: 0.7rem;
+border-radius: 50%;
+width: 1.5rem;
+height: 1.5rem;
+text-align: center;
+-webkit-border-radius: 50%;
+-moz-border-radius: 50%;
+-ms-border-radius: 50%;
+-o-border-radius: 50%;
 }
 
 #calendar .calandar-unit.unavailable{
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 #calendar .calandar-unit.unavailable::before{
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
-    -webkit-transform: translate(-50%, -50%) rotate(45deg);
-    -moz-transform: translate(-50%, -50%) rotate(45deg);
-    -ms-transform: translate(-50%, -50%) rotate(45deg);
-    -o-transform: translate(-50%, -50%) rotate(45deg);
-    width: 100%;
-    height: 1px;
-    background-color: red;
+content: "";
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%) rotate(45deg);
+-webkit-transform: translate(-50%, -50%) rotate(45deg);
+-moz-transform: translate(-50%, -50%) rotate(45deg);
+-ms-transform: translate(-50%, -50%) rotate(45deg);
+-o-transform: translate(-50%, -50%) rotate(45deg);
+width: 100%;
+height: 1px;
+background-color: red;
 }
 
 #calendar .calandar-unit:not(.unavailable):not(.mitigate):hover{
-    background-color: #6094ee;
-    cursor: pointer;
+background-color: #6094ee;
+cursor: pointer;
 }
 
 #calendar .calandar-unit.mitigate{
-    opacity: 0.5;
+opacity: 0.5;
 }
 
 #calendar .calandar-unit.selected{
-    background-color: #6094ee;
+background-color: #6094ee;
 }
 
 #calendar #slot-title{
-    font-size: 1.2rem;
-    font-weight: normal;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    /* margin-left: 2rem; */
-    padding: 1rem 0;
-    text-align: center;
-    border-top: 1px solid silver;
-    border-bottom: 1px solid silver;
+font-size: 1.2rem;
+font-weight: normal;
+margin-top: 1rem;
+margin-bottom: 1rem;
+/* margin-left: 2rem; */
+padding: 1rem 0;
+text-align: center;
+border-top: 1px solid silver;
+border-bottom: 1px solid silver;
 }
 
 #calendar #slot-list{
-    width: 22rem;
-    display: grid;
-    grid-template: repeat(7, 1fr) / repeat(3, 1fr);
-    grid-auto-flow: column;
+width: 22rem;
+display: grid;
+grid-template: repeat(7, 1fr) / repeat(3, 1fr);
+grid-auto-flow: column;
 }
 
 #calendar #slot-list .slot{
-    margin: 0.7rem 0.5rem;
-    padding: 0.5rem 1rem;
-    border-radius: 0.1rem;
-    -webkit-border-radius: 0.1rem;
-    -moz-border-radius: 0.1rem;
-    -ms-border-radius: 0.1rem;
-    -o-border-radius: 0.1rem;
-    box-shadow: 0px 0px 2px 0px;
-    text-align: center;
-    cursor: pointer;
+margin: 0.7rem 0.5rem;
+padding: 0.5rem 1rem;
+border-radius: 0.1rem;
+-webkit-border-radius: 0.1rem;
+-moz-border-radius: 0.1rem;
+-ms-border-radius: 0.1rem;
+-o-border-radius: 0.1rem;
+box-shadow: 0px 0px 2px 0px;
+text-align: center;
+cursor: pointer;
 }
 
 #calendar #slot-list .slot:hover, #calendar #slot-list .slot.selected{
-    background-color: #6094ee;
-    box-shadow: none;
+background-color: #6094ee;
+box-shadow: none;
 }
 
 #calendar #slot-list .slot.unavailable{
-    background-color: #b8b8b8;
-    box-shadow: none;
-    color: white;
-    cursor: auto;
+background-color: #b8b8b8;
+box-shadow: none;
+color: white;
+cursor: auto;
 }
 
 #calendar #calendar-submit-button{
-    padding: 0.8rem;
-    width: 200px;
-    margin: 0 auto;
-    border: none;
-    background-color: #6094ee;
-    color: white;
-    font-size: 1.1rem;
-    border-radius: 5px;
-    -webkit-border-radius: 0.1rem;
-    -moz-border-radius: 0.1rem;
-    -ms-border-radius: 0.1rem;
-    -o-border-radius: 0.1rem;
-    cursor: pointer;
-    margin-bottom: 2rem;
+padding: 0.8rem;
+width: 200px;
+margin: 0 auto;
+border: none;
+background-color: #6094ee;
+color: white;
+font-size: 1.1rem;
+border-radius: 5px;
+-webkit-border-radius: 0.1rem;
+-moz-border-radius: 0.1rem;
+-ms-border-radius: 0.1rem;
+-o-border-radius: 0.1rem;
+cursor: pointer;
+margin-bottom: 2rem;
 }
 
 #calendar #calendar-submit-button:not(:disabled):hover{
-    background-color: #006ac6;
+background-color: #006ac6;
 }
 
 #calendar #calendar-submit-button:disabled{
-    background-color: #b8b8b8;
-    cursor: auto;
+background-color: #b8b8b8;
+cursor: auto;
 }
 
 #payment-method-title {
-    font-size: 1.2rem;
-    width: 100%;
-    text-align: left;
-    margin-top: 2rem;
-    color: #333;
+font-size: 1.2rem;
+width: 100%;
+text-align: left;
+margin-top: 2rem;
+color: #333;
 }
 
 #payment-method-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin: 1rem 0;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+width: 100%;
+margin: 1rem 0;
 }
 
 #payment-method-container .payment-method {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin: 1rem;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+margin: 1rem;
 }
 
 #calendar-form {
-    align-content: center;
-    display: flex;
-    flex-direction: column;
+align-content: center;
+display: flex;
+flex-direction: column;
 
 }
 
 /* ************************* */
 .radio-button-container {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-  }
-  
-  .radio-button {
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-  }
-  
-  .radio {
-    position: absolute;
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  .radio-button__label {
-    display: inline-block;
-    padding-left: 30px;
-    margin-bottom: 10px;
-    position: relative;
-    font-size: 18px;
-    color: #333;
-    font-weight: 600;
-    cursor: pointer;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-  }
+display: flex;
+align-items: center;
+gap: 24px;
+}
 
-  .radio-button__input span{
-    margin-top: 1px;
-  }
-  
-  .radio-button__custom {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    border: 2px solid #555;
-    transition: all 0.3s ease;
-  }
-  
-  .radio-button__input:checked + .radio-button__label .radio-button__custom {
-    background-color: #6094ee;
-    border-color: transparent;
-    transform: scale(1);
-    box-shadow: 0 0 20px #4c8bf580;
-  }
-  
-  .radio-button__input:checked + .radio-button__label {
-    color: #4c8bf5;
-  }
-  
-  .radio-button__label:hover .radio-button__custom {
-    transform: scale(1.3);
-    border-color: #6094ee;
-    box-shadow: 0 0 20px #4c8bf580;
-  }
-  
-  
-  
-  
-  
-  
-  
+.radio-button {
+display: inline-block;
+position: relative;
+cursor: pointer;
+}
+
+.radio {
+position: absolute;
+opacity: 0;
+width: 0;
+height: 0;
+}
+
+.radio-button__label {
+display: inline-block;
+padding-left: 30px;
+margin-bottom: 10px;
+position: relative;
+font-size: 18px;
+color: #333;
+font-weight: 600;
+cursor: pointer;
+text-transform: uppercase;
+transition: all 0.3s ease;
+}
+
+.radio-button__input span{
+margin-top: 1px;
+}
+
+.radio-button__custom {
+position: absolute;
+top: 0;
+left: 0;
+width: 18px;
+height: 18px;
+border-radius: 50%;
+border: 2px solid #555;
+transition: all 0.3s ease;
+}
+
+.radio-button__input:checked + .radio-button__label .radio-button__custom {
+background-color: #6094ee;
+border-color: transparent;
+transform: scale(1);
+box-shadow: 0 0 20px #4c8bf580;
+}
+
+.radio-button__input:checked + .radio-button__label {
+color: #4c8bf5;
+}
+
+.radio-button__label:hover .radio-button__custom {
+transform: scale(1.3);
+border-color: #6094ee;
+box-shadow: 0 0 20px #4c8bf580;
+}
+
+
+
+
+
+

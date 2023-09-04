@@ -7,62 +7,62 @@
 {% block body %}
 
 {% block bandeau %}
-    <div class="bandeau-info"></div>
+<div class="bandeau-info"></div>
 {% endblock %}
 
 <div class="container-margin">
-    <div class="container-showCours">
-        {% for cours in listeCours|slice(0, 3) %}
-            <div class="enfant enfant-cours pastel-blue1">
-                <h2>{{ cours.nomCours }}</h2> 
-                <div class="img-dim"><img class="image-responsive" src="{{ cours.image }}" alt="Image du cours"></div>
-                <p>{{ cours.description | raw }}</p> 
-                <p class="price2">{{ cours.prix }}€</p>
-                <a class="details-link" href="{{ path('detailCours', {templateName: cours.slugCours}) }}#reservation-form">
-                    <button class="buttonMore">
-                    En savoir plus !
-                        <div class="arrow-wrapper">
-                            <div class="arrow"></div>
-                        </div>
-                    </button>
-                </a>
-            </div>
-        {% endfor %}
-        
-        {% for cours in listeCours|slice(3, 3) %}
-            <div class="enfant enfant-cours pastel-blue2">
-                <h2>{{ cours.nomCours }}</h2> 
-                <div class="img-dim"><img class="image-responsive" src="{{ cours.image }}" alt="Image du cours"></div>
-                <p>{{ cours.description | raw  }}</p>
-                <p class="price2">{{ cours.prix }}€</p>
-                <a class="details-link" href="{{ path('detailCours', {templateName: cours.slugCours}) }}#reservation-form">
-                    <button class="buttonMore">
-                    En savoir plus !
-                        <div class="arrow-wrapper">
-                            <div class="arrow"></div>
-                        </div>
-                    </button>
-                </a>
-            </div>
-        {% endfor %}
+<div class="container-showCours">
+    {% for cours in listeCours|slice(0, 3) %}
+        <div class="enfant enfant-cours pastel-blue1">
+            <h2>{{ cours.nomCours }}</h2> 
+            <div class="img-dim"><img class="image-responsive" src="{{ cours.image }}" alt="Image du cours"></div>
+            <p>{{ cours.description | raw }}</p> 
+            <p class="price2">{{ cours.prix }}€</p>
+            <a class="details-link" href="{{ path('detailCours', {templateName: cours.slugCours}) }}#reservation-form">
+                <button class="buttonMore">
+                En savoir plus !
+                    <div class="arrow-wrapper">
+                        <div class="arrow"></div>
+                    </div>
+                </button>
+            </a>
+        </div>
+    {% endfor %}
+    
+    {% for cours in listeCours|slice(3, 3) %}
+        <div class="enfant enfant-cours pastel-blue2">
+            <h2>{{ cours.nomCours }}</h2> 
+            <div class="img-dim"><img class="image-responsive" src="{{ cours.image }}" alt="Image du cours"></div>
+            <p>{{ cours.description | raw  }}</p>
+            <p class="price2">{{ cours.prix }}€</p>
+            <a class="details-link" href="{{ path('detailCours', {templateName: cours.slugCours}) }}#reservation-form">
+                <button class="buttonMore">
+                En savoir plus !
+                    <div class="arrow-wrapper">
+                        <div class="arrow"></div>
+                    </div>
+                </button>
+            </a>
+        </div>
+    {% endfor %}
 
-        {% for cours in listeCours|slice(6, 3) %}
-            <div class="enfant enfant-cours pastel-blue1">
-                <h2>{{ cours.nomCours }}</h2> 
-                <div class="img-dim"><img class="image-responsive" src="{{ cours.image }}" alt="Image du cours"></div>
-                <p>{{ cours.description | raw  }}</p> 
-                <p class="price2">{{ cours.prix }}€</p>
-                <a class="details-link" href="{{ path('detailCours', {templateName: cours.slugCours}) }}#reservation-form">
-                    <button class="buttonMore">
-                    En savoir plus !
-                        <div class="arrow-wrapper">
-                            <div class="arrow"></div>
-                        </div>
-                    </button>
-                </a>
-            </div>
-        {% endfor %}
-    </div>
+    {% for cours in listeCours|slice(6, 3) %}
+        <div class="enfant enfant-cours pastel-blue1">
+            <h2>{{ cours.nomCours }}</h2> 
+            <div class="img-dim"><img class="image-responsive" src="{{ cours.image }}" alt="Image du cours"></div>
+            <p>{{ cours.description | raw  }}</p> 
+            <p class="price2">{{ cours.prix }}€</p>
+            <a class="details-link" href="{{ path('detailCours', {templateName: cours.slugCours}) }}#reservation-form">
+                <button class="buttonMore">
+                En savoir plus !
+                    <div class="arrow-wrapper">
+                        <div class="arrow"></div>
+                    </div>
+                </button>
+            </a>
+        </div>
+    {% endfor %}
+</div>
 </div>
 
 {% endblock %}

@@ -11,24 +11,24 @@ use Symfony\Component\Form\Extension\Core\Type\EmailType;
 
 class ChangeEmailType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options): void
-    {
-        $builder
-        ->add('email', EmailType::class, [
-           'label' => 'Nouvel email',
-           'constraints' => [
-               new NotBlank([
-                   'message' => 'Entrez un nouvel email',
-               ]),
-           ],
-       ]);
+public function buildForm(FormBuilderInterface $builder, array $options): void
+{
+    $builder
+    ->add('email', EmailType::class, [
+        'label' => 'Nouvel email',
+        'constraints' => [
+            new NotBlank([
+                'message' => 'Entrez un nouvel email',
+            ]),
+        ],
+    ]);
 
-    }
+}
 
-    public function configureOptions(OptionsResolver $resolver): void
-    {
-        $resolver->setDefaults([
-            'data_class' => User::class,
-        ]);
-    }
+public function configureOptions(OptionsResolver $resolver): void
+{
+    $resolver->setDefaults([
+        'data_class' => User::class,
+    ]);
+}
 }

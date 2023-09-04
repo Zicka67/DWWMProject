@@ -1,264 +1,256 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <script src="/tarteaucitron/tarteaucitron.js"></script>
+<head>
+    <script src="/tarteaucitron/tarteaucitron.js"></script>
 
-        <script type="text/javascript">
-            tarteaucitron.init({
-            "privacyUrl": "", /* Privacy policy url */
-            "bodyPosition": "bottom", /* or top to bring it as first element for accessibility */
+    <script type="text/javascript">
+        tarteaucitron.init({
+        "privacyUrl": "", /* Privacy policy url */
+        "bodyPosition": "bottom", /* or top to bring it as first element for accessibility */
 
-            "hashtag": "#tarteaucitron", /* Open the panel with this hashtag */
-            "cookieName": "tarteaucitron", /* Cookie name */
-        
-            "orientation": "middle", /* Banner position (top - bottom) */
-        
-            "groupServices": false, /* Group services by category */
-            "showDetailsOnClick": true, /* Click to expand the description */
-            "serviceDefaultState": "wait", /* Default state (true - wait - false) */
-                            
-            "showAlertSmall": false, /* Show the small banner on bottom right */
-            "cookieslist": false, /* Show the cookie list */
-                            
-            "closePopup": false, /* Show a close X on the banner */
-
-            "showIcon": true, /* Show cookie icon to manage cookies */
-            //"iconSrc": "", /* Optionnal: URL or base64 encoded image */
-            "iconPosition": "BottomRight", /* BottomRight, BottomLeft, TopRight and TopLeft */
-
-            "adblocker": false, /* Show a Warning if an adblocker is detected */
-                            
-            "DenyAllCta" : true, /* Show the deny all button */
-            "AcceptAllCta" : true, /* Show the accept all button when highPrivacy on */
-            "highPrivacy": true, /* HIGHLY RECOMMANDED Disable auto consent */
-                            
-            "handleBrowserDNTRequest": false, /* If Do Not Track == 1, disallow all */
-
-            "removeCredit": false, /* Remove credit link */
-            "moreInfoLink": true, /* Show more info link */
-
-            "useExternalCss": false, /* If false, the tarteaucitron.css file will be loaded */
-            "useExternalJs": false, /* If false, the tarteaucitron.js file will be loaded */
-
-            //"cookieDomain": ".my-multisite-domaine.fr", /* Shared cookie for multisite */
-                            
-            "readmoreLink": "", /* Change the default readmore link */
-
-            "mandatory": true, /* Show a message about mandatory cookies */
-            "mandatoryCta": true /* Show the disabled accept button when mandatory on */
-            });
-
-            tarteaucitron.user.gtagUa = 'G-Q2N0D039VH';
-            tarteaucitron.user.gtagMore = function () { /* add here your optionnal gtag() */ };
-            (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
-
-        </script>
-
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{% block title %}Bonjour!{% endblock %}</title>
-        <link rel="icon" href="{{ asset('img/logo-croissant.png') }}">
-        {# stripe #}
-        <script src="https://js.stripe.com/v3/"></script>
-        {# CSS #}
-        <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/calendar.css') }}">
-        {# Fonts #}
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500;600;700&family=Knewave&family=La+Belle+Aurore&display=swap" rel="stylesheet">
-        {# Map #}
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="crossorigin="">
-        <link rel="stylesheet" href="{{ asset('css/map.css') }}">
-
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-        {% endblock %}
-       
-    </head>
-
-    <body class="{% block body_class %}{% endblock %}">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PP4ZK5V4"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-        <header>
-
-            <nav class="navbar{% if app.request.attributes.get('_route') == 'app_home' %} navbar-color {% endif %}">
-                <div class="navbar-container">
-                    <div class="navbar-logo">
-                        <a href="/">Douceur de lune </a>
-                            <img class="logo-site" src="{{ asset('img/logo-croissant.png') }}" alt=""> 
-                    </div>
-                    <ul class="navbar-menu">
-                        <li class="dropdown">
-                            <a href="#">Le Cocon</a>
-                            <ul class="dropdown-menu">
-                                                            {#nom du slug  cours/nom_du_slug #}
-                                <li><a class="enfant-portage" href="/cours/atelier-de-portage">Portage</a></li>
-                                <li><a class="enfant-allaitement" href="/cours/consultation-d-allaitement">Allaitement</a></li>
-                                <li><a class="enfant-rebozo" href="/cours/rituel-rebozo">Rituel Rebozo</a></li>
-                                <li><a class="enfant-cercle" href="/cours/cercle-mamans-bebes">Le cercle des mamans</a></li>
-                            </ul>
-                        </li>
+        "hashtag": "#tarteaucitron", /* Open the panel with this hashtag */
+        "cookieName": "tarteaucitron", /* Cookie name */
+    
+        "orientation": "middle", /* Banner position (top - bottom) */
+    
+        "groupServices": false, /* Group services by category */
+        "showDetailsOnClick": true, /* Click to expand the description */
+        "serviceDefaultState": "wait", /* Default state (true - wait - false) */
                         
+        "showAlertSmall": false, /* Show the small banner on bottom right */
+        "cookieslist": false, /* Show the cookie list */
+                        
+        "closePopup": false, /* Show a close X on the banner */
 
-                        <li><a href="/mon-parcours">Qui suis-je ?</a></li>
-                        <li><a href="/showCours">Les prestations</a></li>
-                        <li><a href="/contacts">Me contacter</a></li>
-                        {% if is_granted('ROLE_ADMIN') %}
-                            <li><a href="/admin" target="_blank">Admin</a></li>
-                        {% endif %}
-                        {% if not app.user %}
-                            <li class="mobile-link"><a href="/register">S'enregistrer</a></li>
-                        {% endif %}
-                        {% if app.user %}
-                        <li class="mobile-link"><a class="{{ app.user ? 'red' : 'green' }}" href="/logout">Se déconnecter</a></li>
-                        {% else %}
-                        <li class="mobile-link"><a class="{{ app.user ? 'red' : 'green' }}" href="/login">Se connecter</a></li>
-                        {% endif %}
-                    </ul>
-                    
-                    <div class="navbar-register">
-                        <ul>
-                            {% if not app.user %}
-                                <li><a href="/register">S'enregistrer</a></li>
-                            {% endif %}
-                            {% if app.user %}
-                            <li class="profil"><a href="/profil"><i class="fa-regular fa-user"></i>  Profil</a></li>
-                            <li class="register-ml">
-                            {# red doit changer la couleur du background du boutton #}
-                                <a href="/logout">
-                                    <button class="{{ app.user ? 'red' : 'green' }} Btn">
-                                        <div class="sign"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg></div>
-                                        <div class="text">Déconnexion</div>
-                                    </button>
-                                </a>
-                            </li>
-                            {% else %}
-                            <li class="register-ml">
-                            {# green doit changer la couleur du background du boutton #}
-                                <a href="/login">
-                                        <button class="{{ app.user ? 'red' : 'green' }} Btn">
-                                            <div class="sign"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg></div>
-                                            <div class="text">Connexion</div>
-                                        </button>
-                                </a>
-                            </li>
-                            {% endif %}
+        "showIcon": true, /* Show cookie icon to manage cookies */
+        //"iconSrc": "", /* Optionnal: URL or base64 encoded image */
+        "iconPosition": "BottomRight", /* BottomRight, BottomLeft, TopRight and TopLeft */
+
+        "adblocker": false, /* Show a Warning if an adblocker is detected */
+                        
+        "DenyAllCta" : true, /* Show the deny all button */
+        "AcceptAllCta" : true, /* Show the accept all button when highPrivacy on */
+        "highPrivacy": true, /* HIGHLY RECOMMANDED Disable auto consent */
+                        
+        "handleBrowserDNTRequest": false, /* If Do Not Track == 1, disallow all */
+
+        "removeCredit": false, /* Remove credit link */
+        "moreInfoLink": true, /* Show more info link */
+
+        "useExternalCss": false, /* If false, the tarteaucitron.css file will be loaded */
+        "useExternalJs": false, /* If false, the tarteaucitron.js file will be loaded */
+
+        //"cookieDomain": ".my-multisite-domaine.fr", /* Shared cookie for multisite */
+                        
+        "readmoreLink": "", /* Change the default readmore link */
+
+        "mandatory": true, /* Show a message about mandatory cookies */
+        "mandatoryCta": true /* Show the disabled accept button when mandatory on */
+        });
+
+        tarteaucitron.user.gtagUa = 'G-Q2N0D039VH';
+        tarteaucitron.user.gtagMore = function () { /* add here your optionnal gtag() */ };
+        (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+
+    </script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Bonjour!{% endblock %}</title>
+    <link rel="icon" href="{{ asset('img/logo-croissant.png') }}">
+    {# stripe #}
+    <script src="https://js.stripe.com/v3/"></script>
+    {# CSS #}
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/calendar.css') }}">
+    {# Fonts #}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500;600;700&family=Knewave&family=La+Belle+Aurore&display=swap" rel="stylesheet">
+    {# Map #}
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="crossorigin="">
+    <link rel="stylesheet" href="{{ asset('css/map.css') }}">
+
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    {% endblock %}
+    
+</head>
+
+<body class="{% block body_class %}{% endblock %}">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PP4ZK5V4"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <header>
+
+        <nav class="navbar{% if app.request.attributes.get('_route') == 'app_home' %} navbar-color {% endif %}">
+            <div class="navbar-container">
+                <div class="navbar-logo">
+                    <a href="/">Douceur de lune </a>
+                        <img class="logo-site" src="{{ asset('img/logo-croissant.png') }}" alt=""> 
+                </div>
+                <ul class="navbar-menu">
+                    <li class="dropdown">
+                        <a href="#">Le Cocon</a>
+                        <ul class="dropdown-menu">
+                                                        {#nom du slug  cours/nom_du_slug #}
+                            <li><a class="enfant-portage" href="/cours/atelier-de-portage">Portage</a></li>
+                            <li><a class="enfant-allaitement" href="/cours/consultation-d-allaitement">Allaitement</a></li>
+                            <li><a class="enfant-rebozo" href="/cours/rituel-rebozo">Rituel Rebozo</a></li>
+                            <li><a class="enfant-cercle" href="/cours/cercle-mamans-bebes">Le cercle des mamans</a></li>
                         </ul>
-                    </div>
+                    </li>
 
-                    <div class="navbar-toggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-            </nav>  
-
-        </header>
-            {% if app.request.attributes.get('_route') == 'app_home' %}
-            <div class="background-animation">
-
-
-        <div class="full-screen">
-
-            {% for message in app.flashes('success') %}
-                <div class="custom-alert custom-alert-success">
-                    {{ message }}
-                </div>
-            {% endfor %}
+                    <li><a href="/mon-parcours">Qui suis-je ?</a></li>
+                    <li><a href="/showCours">Les prestations</a></li>
+                    <li><a href="/contacts">Me contacter</a></li>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <li><a href="/admin" target="_blank">Admin</a></li>
+                    {% endif %}
+                    {% if not app.user %}
+                        <li class="mobile-link"><a href="/register">S'enregistrer</a></li>
+                    {% endif %}
+                {% if app.user %}
+                <li class="mobile-link"><a class="{{ app.user ? 'red' : 'green' }}" href="/logout">Se déconnecter</a></li>
+                {% else %}
+                <li class="mobile-link"><a class="{{ app.user ? 'red' : 'green' }}" href="/login">Se connecter</a></li>
+                {% endif %}
+            </ul>
             
+            <div class="navbar-register">
+                <ul>
+                    {% if not app.user %}
+                    <li><a href="/register">S'enregistrer</a></li>
+                    {% endif %}
+                    {% if app.user %}
+                    <li class="profil"><a href="/profil"><i class="fa-regular fa-user"></i>  Profil</a></li>
+                    <li class="register-ml">
+                        <a href="/logout">
+                            <button class="{{ app.user ? 'red' : 'green' }} Btn">
+                                <div class="sign"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg></div>
+                                <div class="text">Déconnexion</div>
+                            </button>
+                        </a>
+                    </li>
+                    {% else %}
+                    <li class="register-ml">
+                        <a href="/login">
+                            <button class="{{ app.user ? 'red' : 'green' }} Btn">
+                                <div class="sign"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg></div>
+                                <div class="text">Connexion</div>
+                            </button>
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
 
-            <div class="bg-image"></div>
+            <div class="navbar-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        </nav>  
 
-                <div class="overlay">
-                    <div class="text-container-bis">
-                        <img src="{{ asset('img/picmix.com_2359990.gif') }}" alt="">
-                    </div>
+    </header>
+        {% if app.request.attributes.get('_route') == 'app_home' %}
+        <div class="background-animation">
 
-                    <div class="image-container">
-                        <img src="{{ asset('img/LOGO6.png') }}" alt="" class="center-image">
-                    </div>
+    <div class="full-screen">
 
-                    <div class="text-container">
-                        <p>Enchanter &nbsp sa &nbsp parenta<img src="{{ asset('img/plante.webp') }}" alt="">ité</p>
-                    </div>
+        {% for message in app.flashes('success') %}
+            <div class="custom-alert custom-alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+        
+        <div class="bg-image"></div>
+
+            <div class="overlay">
+                <div class="text-container-bis">
+                    <img src="{{ asset('img/picmix.com_2359990.gif') }}" alt="">
+                </div>
+
+                <div class="image-container">
+                    <img src="{{ asset('img/LOGO6.png') }}" alt="" class="center-image">
+                </div>
+
+                <div class="text-container">
+                    <p>Enchanter &nbsp sa &nbsp parenta<img src="{{ asset('img/plante.webp') }}" alt="">ité</p>
                 </div>
             </div>
-            {% endif %}
-        
         </div>
-        
+        {% endif %}
+    
     </div>
     
+</div>
 
-    
-            {% block body %}
-            
-            {% endblock %}
+        {% block body %}
+        
+        {% endblock %}
 
-            {% if app.request.attributes.get('_route') != 'reservation_payment' %}
-        <footer>
+        {% if app.request.attributes.get('_route') != 'reservation_payment' %}
+    <footer>
 
-            <div class="footer">
-                <div class="image-footer">
-                    <img src="{{ asset('img/LOGO6-footer.png') }}" alt="">
-                    <div class="footer-text">
-                        <div class="text-center">
-                            <p> 
-                            Je me déplace pour les consultations à domicile: <br> <br>
-                            - Dans un rayon entre <span>1</span> et <span>10 km</span>  autour de Prades-le-Lez : <span>5€</span> <br>
-                            - Dans un rayon entre <span>10</span> et <span>20 km</span> autour de Prades-le-Lez : <span>10€</span> <br>
-                            (sur place, le jour de la consultations.)
-                            </p>
-                        </div>
-                        <div class="text-right" data-aos="fade-left" data-aos-duration="2000">
-                            <p><span>CONTACT</span></p> <br>
-                                06 06 06 06 06 <br>
-                               <a href="mailto:douceurdelune@gmail.com?subject=Ici votre sujet !&body=Ici votre contenu :">mail@douceurdelune.com</a><br>
-                            <br>
-                           <div><a href="/mentionsLegales">Mentions légales</a></div> 
-                           <div><a href="/politiqueDeConf">Politique de confidentialité</a></div> <br>
-                        </div>
-                        <div class="text-left" data-aos="fade-right" data-aos-duration="2000">
-                            <p> <span>LIEU</span><br><br>
-                                ADRESSE: <br>                              
-                                CODE POSTAL: <br><br>                             
-                                Photos : Moi, Pexels, Freepik<br>
-                                Retouches : Midjourney, PhotoShop <br>
-                            </p>  
-                        </div>                                                     
+        <div class="footer">
+            <div class="image-footer">
+                <img src="{{ asset('img/LOGO6-footer.png') }}" alt="">
+                <div class="footer-text">
+                    <div class="text-center">
+                        <p> 
+                        Je me déplace pour les consultations à domicile: <br> <br>
+                        - Dans un rayon entre <span>1</span> et <span>10 km</span>  autour de Prades-le-Lez : <span>5€</span> <br>
+                        - Dans un rayon entre <span>10</span> et <span>20 km</span> autour de Prades-le-Lez : <span>10€</span> <br>
+                        (sur place, le jour de la consultations.)
+                        </p>
                     </div>
+                    <div class="text-right" data-aos="fade-left" data-aos-duration="2000">
+                        <p><span>CONTACT</span></p> <br>
+                            06 06 06 06 06 <br>
+                            <a href="mailto:douceurdelune@gmail.com?subject=Ici votre sujet !&body=Ici votre contenu :">mail@douceurdelune.com</a><br>
+                        <br>
+                        <div><a href="/mentionsLegales">Mentions légales</a></div> 
+                        <div><a href="/politiqueDeConf">Politique de confidentialité</a></div> <br>
+                    </div>
+                    <div class="text-left" data-aos="fade-right" data-aos-duration="2000">
+                        <p> <span>LIEU</span><br><br>
+                            ADRESSE: <br>                              
+                            CODE POSTAL: <br><br>                             
+                            Photos : Moi, Pexels, Freepik<br>
+                            Retouches : Midjourney, PhotoShop <br>
+                        </p>  
+                    </div>                                                     
                 </div>
             </div>
+        </div>
 
-        </footer>
-            {% endif %}
-        
-     
-        {% block javascripts %}
-        {# {{ encore_entry_script_tags('app') }} #}
-        <script  src="{{ asset('js/tarteAuCitron.js') }}"></script>
-
-        {# Pour uniquement charger le script sur home #}
-        {% if app.request.attributes.get('_route') == 'app_home' %}
-        <script src="{{ asset('js/imgMouvement.js') }}"></script>
+    </footer>
         {% endif %}
-        <script src="{{ asset('js/script.js') }}"></script>  
+    
+    {% block javascripts %}
+    {# {{ encore_entry_script_tags('app') }} #}
+    <script  src="{{ asset('js/tarteAuCitron.js') }}"></script>
 
-        {# AOS #}
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-        <script>
-            AOS.init({
-                once: true,
-            });
-        </script>
+    {# Pour uniquement charger le script sur home #}
+    {% if app.request.attributes.get('_route') == 'app_home' %}
+    <script src="{{ asset('js/imgMouvement.js') }}"></script>
+    {% endif %}
+    <script src="{{ asset('js/script.js') }}"></script>  
 
-        {% endblock %}
-    </body>
+    {# AOS #}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+        });
+    </script>
+
+    {% endblock %}
+</body>
 </html>

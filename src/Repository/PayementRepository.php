@@ -16,28 +16,28 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class PayementRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
-    {
-        parent::__construct($registry, Payement::class);
+public function __construct(ManagerRegistry $registry)
+{
+    parent::__construct($registry, Payement::class);
+}
+
+public function save(Payement $entity, bool $flush = false): void
+{
+    $this->getEntityManager()->persist($entity);
+
+    if ($flush) {
+        $this->getEntityManager()->flush();
     }
+}
 
-    public function save(Payement $entity, bool $flush = false): void
-    {
-        $this->getEntityManager()->persist($entity);
+public function remove(Payement $entity, bool $flush = false): void
+{
+    $this->getEntityManager()->remove($entity);
 
-        if ($flush) {
-            $this->getEntityManager()->flush();
-        }
+    if ($flush) {
+        $this->getEntityManager()->flush();
     }
-
-    public function remove(Payement $entity, bool $flush = false): void
-    {
-        $this->getEntityManager()->remove($entity);
-
-        if ($flush) {
-            $this->getEntityManager()->flush();
-        }
-    }
+}
 
 //    /**
 //     * @return Payement[] Returns an array of Payement objects

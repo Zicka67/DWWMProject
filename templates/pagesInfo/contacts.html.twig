@@ -7,57 +7,57 @@
 {% block body %}
 
 {% block bandeau %}
-    <div class="bandeau-info">
-        <h1 class="bandeau-title">Contactez-moi</h1>
-    </div>
+<div class="bandeau-info">
+    <h1 class="bandeau-title">Contactez-moi</h1>
+</div>
 {% endblock %}
 
 <div class="contact-header">
-    <h1 class="contact-title">Vous souhaitez participer à un atelier, offrir un bon cadeau ou avoir des renseignements ?</h1>
+<h1 class="contact-title">Vous souhaitez participer à un atelier, offrir un bon cadeau ou avoir des renseignements ?</h1>
 </div>
 
 <div class="map-form-container">
 
-    <div class="form-contact-container" data-aos="fade-right" data-aos-duration="2000">
-    
-        {{ form_start(contact_form, {'attr': {'class': 'form-contact'}}) }}
+<div class="form-contact-container" data-aos="fade-right" data-aos-duration="2000">
 
-            <div>
-                {{ form_label(contact_form.pseudo) }}
-                {{ form_widget(contact_form.pseudo, {'attr': {'class': 'form-control'}}) }}
-            </div>
-            <div>
-                {{ form_label(contact_form.email) }}
-                {{ form_widget(contact_form.email, {'attr': {'class': 'form-control'}}) }}
-            </div>
-            <div>
-                {{ form_label(contact_form.sujet) }}
-                {{ form_widget(contact_form.sujet, {'attr': {'class': 'form-control'}}) }}
-            </div>
-            <div>
-                {{ form_label(contact_form.message) }}
-                {{ form_widget(contact_form.message, {'attr': {'class': 'form-control', 'rows': '5'}}) }}
-            </div>
+    {{ form_start(contact_form, {'attr': {'class': 'form-contact'}}) }}
 
-            <button type="submit" class="bt" id="bt"><span class="msg" id="msg"></span>Envoyer</button>
+        <div>
+            {{ form_label(contact_form.pseudo) }}
+            {{ form_widget(contact_form.pseudo, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div>
+            {{ form_label(contact_form.email) }}
+            {{ form_widget(contact_form.email, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div>
+            {{ form_label(contact_form.sujet) }}
+            {{ form_widget(contact_form.sujet, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div>
+            {{ form_label(contact_form.message) }}
+            {{ form_widget(contact_form.message, {'attr': {'class': 'form-control', 'rows': '5'}}) }}
+        </div>
 
-        {{ form_end(contact_form) }}
+        <button type="submit" class="bt" id="bt"><span class="msg" id="msg"></span>Envoyer</button>
 
-    </div>
-    
-    <div id="map" data-aos="fade-left" data-aos-duration="2000"></div>
+    {{ form_end(contact_form) }}
+
+</div>
+
+<div id="map" data-aos="fade-left" data-aos-duration="2000"></div>
 
 </div>
 
 {% endblock %}
 
 {% block javascripts %}
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="crossorigin=""></script>
-    <script src="{{ asset('js/map.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        AOS.init({
-            once: true,
-        });
-    </script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="crossorigin=""></script>
+<script src="{{ asset('js/map.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init({
+        once: true,
+    });
+</script>
 {% endblock %}

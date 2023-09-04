@@ -17,43 +17,43 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 
 class DashboardController extends AbstractDashboardController
 {
-    public function __construct(
-        private AdminUrlGenerator $adminUrlGenerator
-    ) {
-        
-    }
+public function __construct(
+    private AdminUrlGenerator $adminUrlGenerator
+) {
     
-    #[Route('/admin', name: 'admin')]
-    public function index(): Response
-    {
-        // return parent::index();
-        $url = $this->adminUrlGenerator
-            ->setController(CoursCrudController::class)
-            ->generateUrl();
+}
 
-        return $this->redirect($url);
-    }
+#[Route('/admin', name: 'admin')]
+public function index(): Response
+{
+    // return parent::index();
+    $url = $this->adminUrlGenerator
+        ->setController(CoursCrudController::class)
+        ->generateUrl();
 
-    public function configureDashboard(): Dashboard
-    {
-        return Dashboard::new()
-            ->setTitle('LittleCocon');
-    }
+    return $this->redirect($url);
+}
 
-    public function configureMenuItems(): iterable
-    {
-        yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
+public function configureDashboard(): Dashboard
+{
+    return Dashboard::new()
+        ->setTitle('LittleCocon');
+}
 
-        yield MenuItem::linkToCrud('Cours', 'fas fa-solid fa-arrow-right', Cours::class); 
+public function configureMenuItems(): iterable
+{
+    yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
 
-        yield MenuItem::linkToCrud('Payement', 'fas fa-solid fa-arrow-right', Payement::class);
-        
-        yield MenuItem::linkToCrud('Reservation', 'fas fa-solid fa-arrow-right', Reservation::class);
+    yield MenuItem::linkToCrud('Cours', 'fas fa-solid fa-arrow-right', Cours::class); 
 
-        yield MenuItem::linkToCrud('User', 'fas fa-solid fa-arrow-right', User::class);
+    yield MenuItem::linkToCrud('Payement', 'fas fa-solid fa-arrow-right', Payement::class);
+    
+    yield MenuItem::linkToCrud('Reservation', 'fas fa-solid fa-arrow-right', Reservation::class);
 
-        yield MenuItem::linkToCrud('UnavailableDate', 'fas fa-solid fa-arrow-right', UnavailableDate::class);
+    yield MenuItem::linkToCrud('User', 'fas fa-solid fa-arrow-right', User::class);
 
-        // yield MenuItem::linkToCrud('', 'fas fa-solid fa-arrow-right', ::class);
-    }
+    yield MenuItem::linkToCrud('UnavailableDate', 'fas fa-solid fa-arrow-right', UnavailableDate::class);
+
+    // yield MenuItem::linkToCrud('', 'fas fa-solid fa-arrow-right', ::class);
+}
 }

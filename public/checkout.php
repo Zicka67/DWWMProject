@@ -3,8 +3,6 @@
 use Stripe\Stripe;
 use Stripe\Checkout\Session;
 
-
-
 require_once '../vendor/autoload.php';
 require_once '../secrets.php';
 
@@ -20,7 +18,6 @@ $checkout_session = $stripe->checkout->sessions->create([
   ]],
   'mode' => 'payment',
   'success_url' => $YOUR_DOMAIN . '/payment/success',
-  // 'cancel_url' => $YOUR_DOMAIN . '/cancel.html',
 ]);
 
 header("HTTP/1.1 303 See Other");
