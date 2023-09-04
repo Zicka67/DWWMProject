@@ -65,17 +65,17 @@
         <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
         <link rel="stylesheet" href="{{ asset('css/calendar.css') }}">
         {# Fonts #}
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500;600;700&family=Knewave&family=La+Belle+Aurore&display=swap" rel="stylesheet">
         {# Map #}
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="crossorigin=""/>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="crossorigin="">
         <link rel="stylesheet" href="{{ asset('css/map.css') }}">
 
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
         {% endblock %}
        
     </head>
@@ -123,32 +123,35 @@
                     </ul>
                     
                     <div class="navbar-register">
-                        {% if not app.user %}
-                            <li><a href="/register">S'enregistrer</a></li>
-                        {% endif %}
-                        {% if app.user %}
-                        <li class="profil"><a href="/profil"><i class="fa-regular fa-user"></i>  Profil</a></li>
-                        <li class="register-ml">
-                          {# red doit changer la couleur du background du boutton #}
-                            <a href="/logout">
-                                <button class="{{ app.user ? 'red' : 'green' }} Btn">
-                                    <div class="sign"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg></div>
-                                    <div class="text">Déconnexion</div>
-                                </button>
-                            </a>
-                        </li>
-                        {% else %}
-                        <li class="register-ml">
-                        {# green doit changer la couleur du background du boutton #}
-                        <a href="/login">
-                                <button class="{{ app.user ? 'red' : 'green' }} Btn">
-                                    <div class="sign"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg></div>
-                                    <div class="text">Connexion</div>
-                                </button>
-                            </a>
-                        </li>
-                        {% endif %}
+                        <ul>
+                            {% if not app.user %}
+                                <li><a href="/register">S'enregistrer</a></li>
+                            {% endif %}
+                            {% if app.user %}
+                            <li class="profil"><a href="/profil"><i class="fa-regular fa-user"></i>  Profil</a></li>
+                            <li class="register-ml">
+                            {# red doit changer la couleur du background du boutton #}
+                                <a href="/logout">
+                                    <button class="{{ app.user ? 'red' : 'green' }} Btn">
+                                        <div class="sign"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg></div>
+                                        <div class="text">Déconnexion</div>
+                                    </button>
+                                </a>
+                            </li>
+                            {% else %}
+                            <li class="register-ml">
+                            {# green doit changer la couleur du background du boutton #}
+                                <a href="/login">
+                                        <button class="{{ app.user ? 'red' : 'green' }} Btn">
+                                            <div class="sign"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg></div>
+                                            <div class="text">Connexion</div>
+                                        </button>
+                                </a>
+                            </li>
+                            {% endif %}
+                        </ul>
                     </div>
+
                     <div class="navbar-toggle">
                         <span></span>
                         <span></span>
@@ -157,8 +160,9 @@
                 </div>
             </nav>  
 
+        </header>
             {% if app.request.attributes.get('_route') == 'app_home' %}
-    <div class="background-animation">
+            <div class="background-animation">
 
 
         <div class="full-screen">
@@ -172,28 +176,27 @@
 
             <div class="bg-image"></div>
 
-            <div class="overlay">
-                <div class="text-container-bis">
-                    <img src="{{ asset('img/picmix.com_2359990.gif') }}" alt="">
-                </div>
+                <div class="overlay">
+                    <div class="text-container-bis">
+                        <img src="{{ asset('img/picmix.com_2359990.gif') }}" alt="">
+                    </div>
 
-                <div class="image-container">
-                    <img src="{{ asset('img/LOGO6.png') }}" alt="" class="center-image">
-                </div>
+                    <div class="image-container">
+                        <img src="{{ asset('img/LOGO6.png') }}" alt="" class="center-image">
+                    </div>
 
-                <div class="text-container">
-                    <p>Enchanter &nbsp sa &nbsp parenta<img src="{{ asset('img/plante.webp') }}" alt="">ité</p>
+                    <div class="text-container">
+                        <p>Enchanter &nbsp sa &nbsp parenta<img src="{{ asset('img/plante.webp') }}" alt="">ité</p>
+                    </div>
                 </div>
             </div>
+            {% endif %}
+        
         </div>
-{% endif %}
-        </header>
+        
+    </div>
+    
 
-        {# {% if app.request.get('_route') != 'app_home' %}
-            <div class="bandeau">
-        {% block bandeau %}{% endblock %}
-            </div>
-        {% endif %}  #}
     
             {% block body %}
             
@@ -207,6 +210,7 @@
                     <img src="{{ asset('img/LOGO6-footer.png') }}" alt="">
                     <div class="footer-text">
                         <div class="text-center">
+                            <p> 
                             Je me déplace pour les consultations à domicile: <br> <br>
                             - Dans un rayon entre <span>1</span> et <span>10 km</span>  autour de Prades-le-Lez : <span>5€</span> <br>
                             - Dans un rayon entre <span>10</span> et <span>20 km</span> autour de Prades-le-Lez : <span>10€</span> <br>
@@ -214,10 +218,10 @@
                             </p>
                         </div>
                         <div class="text-right" data-aos="fade-left" data-aos-duration="2000">
-                            <p><span>CONTACT</span><br><br>
+                            <p><span>CONTACT</span></p> <br>
                                 06 06 06 06 06 <br>
-                               <a href="mailto:douceurdelune@gmail.com?subject=Ici votre sujet !&body=Ici votre contenu :">mail@douceurdelune.com</a>
-                            </p> <br>
+                               <a href="mailto:douceurdelune@gmail.com?subject=Ici votre sujet !&body=Ici votre contenu :">mail@douceurdelune.com</a><br>
+                            <br>
                            <div><a href="/mentionsLegales">Mentions légales</a></div> 
                            <div><a href="/politiqueDeConf">Politique de confidentialité</a></div> <br>
                         </div>
@@ -239,7 +243,7 @@
      
         {% block javascripts %}
         {# {{ encore_entry_script_tags('app') }} #}
-        <script  src="{{ asset('js/tarteAuCitron.js') }}" > </script>
+        <script  src="{{ asset('js/tarteAuCitron.js') }}"></script>
 
         {# Pour uniquement charger le script sur home #}
         {% if app.request.attributes.get('_route') == 'app_home' %}
