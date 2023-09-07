@@ -144,19 +144,19 @@ background-color: var(--lightPink-color);
 }
 
 body.page-color-allaitement{
-background-color: var(--lightPink-color);
+background-color: #ffe7fe;
 }
 
 body.page-color-portage{
-background-color: #f0fdff;
+background-color: #e8fcff;
 }
 
 body.page-color-rebozo{
-background-color: #fff6e8;
+background-color: #fff5e5;
 }
 
 body.page-color-cercle{
-background-color: #ffecea;
+background-color: #ffe8e6;
 }
 
 body.page-color{
@@ -190,18 +190,56 @@ color: #a33131;
 
 .enfant-portage {
 color: #29565f;
+width: 100%;
+margin-left: -14px;
+transition: 0.3s;
+}
+
+.enfant-portage:hover {
+    transition: 0.3s;
+    background: rgba(58, 204, 237, 0.3);
+    backdrop-filter: blur(5px); 
+    border-radius: 5px;
 }
 
 .enfant-allaitement {
 color: #86428b;
+width: 100%;
+margin-left: -14px;
+}
+
+.enfant-allaitement:hover {
+    transition: 0.3s;
+    background: #fabaff;
+    backdrop-filter: blur(5px); 
+    border-radius: 5px;
 }
 
 .enfant-rebozo {
 color: #c27b2a;
+/* background-color: #2fc934; */
+width: 100%;
+margin-left: -14px;
+}
+
+.enfant-rebozo:hover {
+    transition: 0.3s;
+    background: #fed6a9;
+    backdrop-filter: blur(5px); 
+    border-radius: 5px;
 }
 
 .enfant-cercle {
 color: #892424;
+width: 100%;
+margin-left: -14px;
+}
+
+.enfant-cercle:hover {
+    transition: 0.3s;
+    background: #fba3a3;
+    backdrop-filter: blur(5px); 
+    border-radius: 5px;
 }
 
 /* ************************* ERREURS *************************** */
@@ -499,12 +537,12 @@ position: absolute;
 background-color: transparent;
 -webkit-backdrop-filter: blur(12px);
 backdrop-filter: blur(12px);
-min-width: 160px;
+width: 280px;
 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 z-index: 1;
-margin-top: 0;
-left: -70px;
+left: -10px;
 border-radius: 5px;
+padding-bottom: 15px;
 }
 
 .arrow-down {
@@ -521,7 +559,7 @@ margin-top: 0.5vw;
 }
 
 .dropdown-menu li a {
-padding: 15px 12px 12px 38px;
+padding: 15px 12px 12px 18px;
 text-decoration: none;
 display: block;
 }
@@ -733,6 +771,7 @@ margin-bottom: 20px;
 
 .enfant {
 width: 48%; 
+border-radius: 5px;
 margin: 10px 10px 0 0;
 overflow-wrap: break-word;
 }
@@ -766,6 +805,7 @@ width: 100%;
 height: 100%;
 object-fit: cover;
 object-position: center;
+border-radius: 5px;
 }
 
 /* ****************** FORM STYLES LOGIN/SUB ***************** */
@@ -782,6 +822,7 @@ font-size: 1.5rem;
 .terms {
 font-size: 1.2rem;
 font-family: 'Barlow', sans-serif;
+text-decoration-line: underline;
 }
 
 .form-container {
@@ -859,6 +900,7 @@ margin: 80px auto;
 min-width: 100%;
 height: auto;
 margin-right: 20px;
+border-radius: 5px;
 }
 
 .text-parcours-container h1{
@@ -1096,6 +1138,7 @@ text-align: justify;
 width: 48%; 
 margin: 10px 10px 0 0;
 overflow-wrap: break-word;
+border-radius: 5px;
 }
 
 .enfant-home p {

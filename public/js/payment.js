@@ -19,6 +19,11 @@ document
 // Ensuite, elle initialise les elements de Stripe et crée un élément de paiement qu'elle monte dans l'élément HTML #payment-element.
 
 // AJAX
+// La fonction initialize() :
+
+// Elle fait une requête POST à l'endpoint /create-payment-intent du serveur pour récupérer le clientSecret du PaymentIntent créé.
+// Elle initialise les éléments Stripe avec ce clientSecret.
+// Elle crée un élément de paiement (paymentElement) avec certaines options (comme désactiver Google Pay et Apple Pay, et préremplir l'e-mail de l'utilisateur). Cet élément est alors monté dans le DOM à l'endroit identifié par #payment-element
 async function initialize() {
                               // API
 const { clientSecret } = await fetch("/create-payment-intent", {
@@ -52,6 +57,10 @@ paymentElement.mount("#payment-element");
 }
 
 // La fonction handleSubmit() est appelée lorsque le formulaire de paiement est soumis. Elle fait appel à stripe.confirmPayment() pour confirmer le paiement avec Stripe. Si le paiement échoue, un message d'erreur est affiché. Sinon, l'utilisateur est redirigé vers la page de succès de paiement.
+// Cette fonction est appelée lorsque l'utilisateur soumet le formulaire de paiement.
+// Elle fait appel à stripe.confirmPayment() pour confirmer le paiement avec Stripe.
+// Si le paiement est confirmé avec succès, l'utilisateur sera redirigé vers l'URL que spécifiée dans return_url (ici c'est http://localhost:8000/payment-success).
+// Si une erreur se produit (comme une erreur de carte ou une erreur de validation), un message d'erreur est affiché.
 async function handleSubmit(e) {
 e.preventDefault();
 setLoading(true);

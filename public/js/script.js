@@ -45,6 +45,8 @@ if (!event.target.closest('.navbar-toggle')) {
 }
 });
 
+// ***************************
+
 // MESSAGES
 document.addEventListener("DOMContentLoaded", function() {
   setTimeout(function() {
@@ -53,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }, 3000); 
 });
 
+// ***************************
 
 // CAROUSEL 
 // Select all carousel items
@@ -67,7 +70,7 @@ carouselItems[i].classList.add('active');
 carouselItems[i].classList.add(getClassByIndex(i)); // Add color class
 }
 
-// Change active items every 5 seconds
+// Change active items
 setInterval(function() {
 // Remove 'active' and color class from the oldest item
 var oldItem = carouselItems[index % carouselItems.length];

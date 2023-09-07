@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-require_once '../vendor/autoload.php';
+// require_once '../vendor/autoload.php';
 require_once '../stripe/secret.php';
 
 use Stripe\Stripe;

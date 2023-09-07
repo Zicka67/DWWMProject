@@ -1,0 +1,73 @@
+<header>
+
+    <nav class="navbar{% if app.request.attributes.get('_route') == 'app_home' %} navbar-color {% endif %}">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="/">Douceur de lune </a>
+                    <img class="logo-site" src="{{ asset('img/logo-croissant.png') }}" alt="Logo du site, un croissant de lune doré"> 
+            </div>
+            <ul class="navbar-menu">
+                <li class="dropdown">
+                    <img class="arrow-down" src="{{ asset('img/expand_more_FILL0_wght400_GRAD0_opsz24.png') }}" alt="Flèche vers le bas">
+                    <a href="#" class="align"> Le Cocon</a>
+                    <ul class="dropdown-menu">
+                                                    {#nom du slug  cours/nom_du_slug #}
+                        <li><a class="enfant-portage" href="/cours/atelier-de-portage">Portage</a></li>
+                        <li><a class="enfant-allaitement" href="/cours/consultation-d-allaitement">Allaitement</a></li>
+                        <li><a class="enfant-rebozo" href="/cours/rituel-rebozo">Rituel Rebozo</a></li>
+                        <li><a class="enfant-cercle" href="/cours/cercle-mamans-bebes">Cercle des mamans</a></li>
+                    </ul>
+                </li>
+                <li><a href="/mon-parcours">Qui suis-je ?</a></li>
+                <li><a href="/showCours">Les prestations</a></li>
+                <li><a href="/contacts">Me contacter</a></li>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <li><a href="/admin" target="_blank">Admin</a></li>
+                {% endif %}
+                {% if not app.user %}
+                    <li class="mobile-link"><a href="/register">S'enregistrer</a></li>
+                {% endif %}
+            {% if app.user %}
+            <li class="mobile-link"><a class="{{ app.user ? 'red' : 'green' }}" href="/logout">Se déconnecter</a></li>
+            {% else %}
+            <li class="mobile-link"><a class="{{ app.user ? 'red' : 'green' }}" href="/login">Se connecter</a></li>
+            {% endif %}
+        </ul>
+        
+        <div class="navbar-register">
+            <ul>
+                {% if not app.user %}
+                <li><a href="/register">S'enregistrer</a></li>
+                {% endif %}
+                {% if app.user %}
+                <li class="profil"><a href="/profil"><i class="fa-regular fa-user"></i>  Profil</a></li>
+                <li class="register-ml">
+                    <a href="/logout">
+                        <button class="{{ app.user ? 'red' : 'green' }} Btn">
+                            <div class="sign"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg></div>
+                            <div class="text">Déconnexion</div>
+                        </button>
+                    </a>
+                </li>
+                {% else %}
+                <li class="register-ml">
+                    <a href="/login">
+                        <button class="{{ app.user ? 'red' : 'green' }} Btn">
+                            <div class="sign"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg></div>
+                            <div class="text">Connexion</div>
+                        </button>
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+
+        <div class="navbar-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    </nav>  
+
+</header>

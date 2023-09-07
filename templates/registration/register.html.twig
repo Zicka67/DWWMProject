@@ -33,7 +33,7 @@
         <div class="checkbox mb-3">
             {{ form_widget(registrationForm.agreeTerms, { 'attr': {'class': 'form-checkbox'} }) }}
             <label class="terms">
-                J'accepte les termes et conditions
+                <a href="{{ path('politiqueDeConf') }}" target="_blank">  J'accepte les termes et conditions
             </label>
         </div>
 
