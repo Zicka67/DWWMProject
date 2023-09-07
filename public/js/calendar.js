@@ -24,8 +24,7 @@ startTime.setMinutes(startTime.getMinutes() + 30);
 }
 
 
-
-
+// ***** CHANGE COLORS BUTTONS *****
 
 function setPaymentButtonColor(paymentMethodContainer, courseName) {
     const spanChild = paymentMethodContainer.querySelector('.radio-button__custom');
@@ -56,11 +55,7 @@ function setPaymentButtonColor(paymentMethodContainer, courseName) {
             break;
     }
 }
-
-
-
-
-
+// *******************
 
 
 // Appel de la fonction pour générer le calendrier
@@ -110,7 +105,7 @@ calendar.innerHTML = `
     <div id='payment-method-container'>
 
         <div class='payment-method radio-button'>
-            <input type="radio" name="payment-method" id="payment-sur-place" class="radio radio-button__input" value="payment-sur-place" checked>
+            <input type="radio" name="payment-method" id="payment-sur-place" class="radio radio-button__input" value="payment-sur-place">
                 <label for='payment-sur-place' class="radio-button__label"> 
                     <span class="radio-button__custom"></span>
                     <p class="p-test">Sur place</p>
@@ -118,7 +113,7 @@ calendar.innerHTML = `
         </div>
 
         <div class='payment-method radio-button'>
-            <input type="radio" name="payment-method" id="payment-online" class="radio radio-button__input" value="payment-online">
+            <input type="radio" name="payment-method" id="payment-online" class="radio radio-button__input" value="payment-online" checked>
                 <label for='payment-online' class="radio-button__label"> 
                     <span class="radio-button__custom"></span>
                     <p class="p-test">En ligne</p>
@@ -129,19 +124,11 @@ calendar.innerHTML = `
     <button type="submit" id="calendar-submit-button" disabled>Réserver</button>
 </form>`;
 
-
-
-
 // Appel de la fonction pour afficher le contenu du calendrier
 displayCalendarContent();
 
 
-// **********
-// function clearAllClasses() {
-//     paymentMethodElements.forEach(elem => {
-//         elem.classList.remove("blue2", "orange2", "purple2", "red2"); 
-//     });
-// }
+// ***** CLEAR ALL CLASSES *****
 
 function clearAllClasses() {
     const customButtons = document.querySelectorAll('.radio-button__custom');
@@ -161,7 +148,7 @@ function clearAllClasses() {
     });
 }
 
-
+// *****
 
 
 const paymentMethodElements = document.querySelectorAll('.radio-button__label');
@@ -171,7 +158,7 @@ paymentMethodElements.forEach(element => {
         setPaymentButtonColor(element, courseName);
     });
 });
-// ************
+// *****
 
 
 
@@ -213,7 +200,7 @@ return monthNames[monthIndex];
 // requête AJAX pour récupérer les jours non disponibles à partir du serveur
 function displayCalendarContent(){
 
-    // formater la date
+// formater la date
 const actualDateParam = formatDate(actualDate);
 
 // Créer une requête XMLHttpRequest
@@ -230,6 +217,30 @@ request.onreadystatechange = function() {
         // Analyser la réponse JSON pour obtenir les jours non disponibles
         var unavailableDays = JSON.parse(request.responseText);
         console.log(unavailableDays);
+
+
+        // ***** Change for hover .calandar-unit.selected colors *****
+        var calendarElement = document.getElementById("calendar"); // Récupére l'élément #calendar
+
+            // Reset des classes précédentes pour éviter des conflits
+            calendarElement.className = '';
+
+            switch(courseName) {
+                case "atelier-de-portage":
+                    calendarElement.classList.add("atelier-de-portage");
+                    break;
+                case "consultation-d-allaitement":
+                    calendarElement.classList.add("consultation-d-allaitement");
+                    break;
+                case "rituel-rebozo":
+                     calendarElement.classList.add("rituel-rebozo");
+                    break;
+                case "cercle-mamans-bebes":
+                    calendarElement.classList.add("cercle-mamans-bebes");
+                    break;
+            }
+            // ******
+
 
         //Définir le premier jour à afficher dans le calendrier
         startDate = new Date(actualDate);
