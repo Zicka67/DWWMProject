@@ -69,8 +69,25 @@ color: var(--red-color);
 color: var(--green-color);
 }
 
+
 .blue {
 color: #65c8dc;
+}
+
+.blue2 {
+    background-color: #0a3c46;
+}
+
+.orange2 {
+    background-color: #f07808;
+}
+
+.purple2 {
+    background-color: rgb(219, 94, 250);
+}
+
+.red2 {
+    background-color: rgb(252, 62, 62);
 }
 
 .purple {
@@ -188,19 +205,73 @@ font-weight: bold;
 color: #a33131;
 }
 
-.enfant-portage {
-color: #29565f;
-width: 100%;
-margin-left: -14px;
-transition: 0.3s;
+/* ***** NAV title ***** */
+.nav-portage {
+    color: #54abbb;
+    width: 100%;
+    margin-left: -17px;
+    transition: 0.3s;
 }
 
-.enfant-portage:hover {
+.nav-portage:hover {
     transition: 0.3s;
-    background: rgba(58, 204, 237, 0.3);
+    background: #b4d5df;
     backdrop-filter: blur(5px); 
     border-radius: 5px;
 }
+
+.nav-allaitement {
+    color: #86428b;
+    width: 100%;
+    margin-left: -17px;
+    transition: 0.3s;
+}
+
+.nav-allaitement:hover {
+    transition: 0.3s;
+    background: #fabaff;
+    backdrop-filter: blur(5px); 
+    border-radius: 5px;
+}
+
+.nav-rebozo {
+    color: #c27b2a;
+    width: 100%;
+    margin-left: -17px;
+    transition: 0.3s;
+}
+
+.nav-rebozo:hover {
+    transition: 0.3s;
+    background: #fed6a9;
+    backdrop-filter: blur(5px); 
+    border-radius: 5px;
+}
+
+.nav-circle {
+    color: #b14c4c;
+    width: 100%;
+    margin-left: -17px;
+    transition: 0.3s;
+}
+
+.nav-circle:hover {
+    transition: 0.3s;
+    background: #ffc6c6;
+    backdrop-filter: blur(5px); 
+    border-radius: 5px;
+}
+
+
+/* *************** */
+
+.enfant-portage {
+color: #2c7380;
+width: 100%;
+margin-left: -14px;
+transition: 0.3s;
+} 
+
 
 .enfant-allaitement {
 color: #86428b;
@@ -208,26 +279,13 @@ width: 100%;
 margin-left: -14px;
 }
 
-.enfant-allaitement:hover {
-    transition: 0.3s;
-    background: #fabaff;
-    backdrop-filter: blur(5px); 
-    border-radius: 5px;
-}
 
 .enfant-rebozo {
 color: #c27b2a;
-/* background-color: #2fc934; */
 width: 100%;
 margin-left: -14px;
 }
 
-.enfant-rebozo:hover {
-    transition: 0.3s;
-    background: #fed6a9;
-    backdrop-filter: blur(5px); 
-    border-radius: 5px;
-}
 
 .enfant-cercle {
 color: #892424;
@@ -235,12 +293,6 @@ width: 100%;
 margin-left: -14px;
 }
 
-.enfant-cercle:hover {
-    transition: 0.3s;
-    background: #fba3a3;
-    backdrop-filter: blur(5px); 
-    border-radius: 5px;
-}
 
 /* ************************* ERREURS *************************** */
 .custom-alert {
@@ -537,7 +589,7 @@ position: absolute;
 background-color: transparent;
 -webkit-backdrop-filter: blur(12px);
 backdrop-filter: blur(12px);
-width: 280px;
+width: 255px;
 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 z-index: 1;
 left: -10px;
@@ -559,7 +611,7 @@ margin-top: 0.5vw;
 }
 
 .dropdown-menu li a {
-padding: 15px 12px 12px 18px;
+padding: 15px 15px 15px 15px;
 text-decoration: none;
 display: block;
 }

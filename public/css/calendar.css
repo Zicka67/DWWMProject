@@ -260,7 +260,7 @@ transition: all 0.3s ease;
 }
 
 .radio-button__input:checked + .radio-button__label .radio-button__custom {
-background-color: #6094ee;
+/* background-color: #6094ee; */
 border-color: transparent;
 transform: scale(1);
 box-shadow: 0 0 20px #4c8bf580;
