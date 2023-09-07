@@ -97,7 +97,7 @@ background-color: red;
 }
 
 #calendar .calandar-unit:not(.unavailable):not(.mitigate):hover{
-background-color: #6094ee;
+/* background-color: #6094ee; */
 cursor: pointer;
 }
 
@@ -105,9 +105,9 @@ cursor: pointer;
 opacity: 0.5;
 }
 
-#calendar .calandar-unit.selected{
+/* #calendar .calandar-unit.selected{
 background-color: #6094ee;
-}
+} */
 
 #calendar #slot-title{
 font-size: 1.2rem;
@@ -130,94 +130,108 @@ border-bottom: 1px solid silver;
 #calendar.atelier-de-portage .calandar-unit.selected,
 #calendar.atelier-de-portage #slot-list .slot:hover,
 #calendar.atelier-de-portage #slot-list .slot.selected {
-    background-color: #2c7380; 
+    background-color: #6dc1cf; 
 }
 
 #calendar.consultation-d-allaitement .calandar-unit:not(.unavailable):not(.mitigate):hover,
 #calendar.consultation-d-allaitement .calandar-unit.selected,
 #calendar.consultation-d-allaitement #slot-list .slot:hover,
 #calendar.consultation-d-allaitement #slot-list .slot.selected {
-    background-color: #86428b; 
+    background-color: #b684cc; 
 }
 
 #calendar.rituel-rebozo .calandar-unit:not(.unavailable):not(.mitigate):hover,
 #calendar.rituel-rebozo .calandar-unit.selected,
 #calendar.rituel-rebozo #slot-list .slot:hover,
 #calendar.rituel-rebozo #slot-list .slot.selected {
-    background-color: #c27b2a; 
+    background-color: #c5863d; 
 }
 
 #calendar.cercle-mamans-bebes .calandar-unit:not(.unavailable):not(.mitigate):hover,
 #calendar.cercle-mamans-bebes .calandar-unit.selected, 
 #calendar.cercle-mamans-bebes #slot-list .slot:hover,
 #calendar.cercle-mamans-bebes #slot-list .slot.selected {
-    background-color: #892424; 
+    background-color: #d36b5e; 
 }
 
 
 /* ***** CHANGER COLOR BOUTONS PAYER ***** */
 
 /* Pour atelier-de-portage */
-#calendar.atelier-de-portage #calendar-submit-button,
 #calendar.atelier-de-portage #calendar-submit-button {
-    background-color: #2c7380; 
-   
+    background-color: #6dc1cf; 
+    transition: 0.3s;
+}
+
+#calendar.atelier-de-portage #calendar-submit-button:hover {
+    background-color: #0b3e47; 
+    transition: 0.3s;
 }
 
 /* Pour consultation-d-allaitement */
-#calendar.consultation-d-allaitement #calendar-submit-button,
-#calendar.atelier-de-portage #calendar-submit-button {
-    background-color: #86428b; 
-   
+#calendar.consultation-d-allaitement #calendar-submit-button {
+    background-color: #b684cc; 
+}
+
+#calendar.consultation-d-allaitement #calendar-submit-button:hover {
+    background-color: #49114d; 
+    transition: 0.3s;
 }
 
 /* Pour rituel-rebozo */
-#calendar.rituel-rebozo #calendar-submit-button,
-#calendar.rituel-rebozo #calendar-submit-button {
-    background-color: #c27b2a; 
-    
+#calendar.rituel-rebozo #calendar-submit-button
+ {
+    background-color: #c5863d; 
+}
+
+#calendar.rituel-rebozo #calendar-submit-button:hover {
+    background-color: #442707; 
+    transition: 0.3s;
 }
 
 /* Pour cercle-mamans-bebes */
-#calendar.cercle-mamans-bebes #calendar-submit-button,
 #calendar.cercle-mamans-bebes #calendar-submit-button {
-    background-color: #892424; 
-  
+    background-color: #d36b5e; 
+}
+
+#calendar.cercle-mamans-bebes #calendar-submit-button:hover {
+    background-color: #410707; 
+    transition: 0.3s;
 }
 
 
 /* ***** COLOR RADIO BOUTONS ***** */
 
 .blue2 .radio-button__custom {
-    background-color: #2c7380;  
+    background-color: #6dc1cf;  
 }
 
 .blue2 .p-test {
-    color: #2c7380;  
+    color: #6dc1cf;  
 }
 
 .orange2 .radio-button__custom{
-    background-color: #c27b2a;
+    background-color: #c5863d;
 }
 
 .orange2 .p-test {
-    color: #c27b2a;  
+    color: #c5863d;  
 }
 
 .purple2 .radio-button__custom{
-    background-color: #86428b;
+    background-color: #b684cc;
 }
 
 .purple2 .p-test {
-    color: #86428b;  
+    color: #b684cc;  
 }
 
 .red2 .radio-button__custom{
-    background-color: #892424;
+    background-color: #d36b5e;
 }
 
 .red2 .p-test {
-    color: #892424;  
+    color: #d36b5e;  
 }
 
 
@@ -272,9 +286,10 @@ cursor: pointer;
 margin-bottom: 2rem;
 }
 
+/* 
 #calendar #calendar-submit-button:not(:disabled):hover{
 background-color: #006ac6;
-}
+} */
 
 #calendar #calendar-submit-button:disabled{
 background-color: #b8b8b8;

@@ -101,7 +101,7 @@ background-color: #e6ccf1;
 } 
 
 .pastel-purple3 {
-background-color: #f6e7f9;
+background-color: #f6e1fc;
 }
 
 .pastel-blue1 {
@@ -194,7 +194,7 @@ color: #a33131;
     color: #1ca7c0;
     width: 100%;
     margin-left: -17px;
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
 .nav-portage:hover {
@@ -208,7 +208,7 @@ color: #a33131;
     color: #86428b;
     width: 100%;
     margin-left: -17px;
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
 .nav-allaitement:hover {
@@ -222,7 +222,7 @@ color: #a33131;
     color: #c27b2a;
     width: 100%;
     margin-left: -17px;
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
 .nav-rebozo:hover {
@@ -233,15 +233,15 @@ color: #a33131;
 }
 
 .nav-circle {
-    color: #b14c4c;
+    color: #b63c3c;
     width: 100%;
     margin-left: -17px;
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
 .nav-circle:hover {
     transition: 0.3s;
-    background: #ffc6c6;
+    background: #f7aeae;
     backdrop-filter: blur(5px); 
     border-radius: 5px;
 }
@@ -252,29 +252,28 @@ color: #a33131;
 .enfant-portage {
 color: #2c7380;
 width: 100%;
-margin-left: -14px;
-transition: 0.3s;
+/* margin-left: -14px; */
 } 
 
 
 .enfant-allaitement {
 color: #86428b;
 width: 100%;
-margin-left: -14px;
+/* margin-left: -14px; */
 }
 
 
 .enfant-rebozo {
 color: #c27b2a;
 width: 100%;
-margin-left: -14px;
+/* margin-left: -14px; */
 }
 
 
 .enfant-cercle {
 color: #892424;
 width: 100%;
-margin-left: -14px;
+/* margin-left: -14px; */
 }
 
 
@@ -571,8 +570,8 @@ display: inline-block;
 display: none;
 position: absolute;
 background-color: transparent;
--webkit-backdrop-filter: blur(12px);
-backdrop-filter: blur(12px);
+-webkit-backdrop-filter: blur(10px);
+backdrop-filter: blur(10px);
 width: 255px;
 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 z-index: 1;
@@ -813,6 +812,12 @@ overflow-wrap: break-word;
 overflow: hidden;
 }
 
+.enfant li {
+    font-weight: 500;
+    font-size: 18px;
+    /* line-height: 22px; */
+}
+
 .enfant-cours .price2{
 font-weight: 400;
 font-size: 1.4rem;
@@ -825,7 +830,7 @@ margin-bottom: 10px;
 padding: 2.5vh 2vw 0 2vw;
 font-family: 'Barlow', sans-serif;
 color: var(--text-color);
-font-weight: 400;
+font-weight: 500;
 font-size: 18px;
 line-height: 22px;
 }
