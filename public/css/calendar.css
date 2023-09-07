@@ -14,11 +14,24 @@ margin: auto;
 #calendar-title{
 width: 100%;
 text-align: center;
-font-size: 1.2rem;
-font-weight: normal;
+font-size: 1.5rem;
+font-weight: 500;
 margin-bottom: 1rem;
 padding-bottom: 0.5rem;
 box-shadow: 0px 10px 9px -10px silver;
+font-family: 'Barlow', sans-serif;
+color: #1d1d1d;
+}
+
+.calandar-unit {
+    font-weight: 500;
+    font-family: 'Barlow', sans-serif;
+}
+
+#current-month {
+    font-weight: 500;
+    font-family: 'Barlow', sans-serif;
+    color: #333;
 }
 
 #calendar-container{
@@ -235,8 +248,6 @@ border-bottom: 1px solid silver;
 }
 
 
-
-
 #calendar #slot-list{
 width: 22rem;
 display: grid;
@@ -255,6 +266,11 @@ border-radius: 0.1rem;
 box-shadow: 0px 0px 2px 0px;
 text-align: center;
 cursor: pointer;
+}
+
+.slot {
+    font-weight: 500;
+    font-family: 'Barlow', sans-serif
 }
 
 #calendar #slot-list .slot:hover, #calendar #slot-list .slot.selected{
@@ -298,10 +314,11 @@ cursor: auto;
 
 #payment-method-title {
 font-size: 1.2rem;
+font-weight: 500;
 width: 100%;
 text-align: left;
 margin-top: 2rem;
-color: #333;
+color: #1d1d1d;
 }
 
 #payment-method-container {
