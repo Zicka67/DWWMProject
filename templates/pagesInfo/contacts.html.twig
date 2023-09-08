@@ -20,23 +20,29 @@
 
 <div class="form-contact-container" data-aos="fade-right" data-aos-duration="2000">
 
-    {{ form_start(contact_form, {'attr': {'class': 'form-contact'}}) }}
+    {{ form_start(contact_form, {'attr': {'class': 'form-contact'}}) }}{{ form_errors(contact_form) }}
 
         <div>
             {{ form_label(contact_form.pseudo) }}
             {{ form_widget(contact_form.pseudo, {'attr': {'class': 'form-control'}}) }}
+            <div class="error-test">{{ form_errors(contact_form.pseudo) }}</div> 
+
         </div>
         <div>
             {{ form_label(contact_form.email) }}
             {{ form_widget(contact_form.email, {'attr': {'class': 'form-control'}}) }}
+
+            <div class="error-test">{{ form_errors(contact_form.email) }}</div> 
         </div>
         <div>
             {{ form_label(contact_form.sujet) }}
             {{ form_widget(contact_form.sujet, {'attr': {'class': 'form-control'}}) }}
+            <div class="error-test">{{ form_errors(contact_form.sujet) }}</div> 
         </div>
         <div>
             {{ form_label(contact_form.message) }}
             {{ form_widget(contact_form.message, {'attr': {'class': 'form-control', 'rows': '5'}}) }}
+            <div class="error-test">{{ form_errors(contact_form.message) }}</div> 
         </div>
 
         <button type="submit" class="bt" id="bt"><span class="msg" id="msg"></span>Envoyer</button>

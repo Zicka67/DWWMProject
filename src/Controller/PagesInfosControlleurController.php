@@ -82,6 +82,7 @@ public function contact(Request $request, MailerInterface $mailer)
 
             return $this->redirectToRoute('contacts');
         }
+        
     }
 
     return $this->render('pagesInfo/contacts.html.twig', [

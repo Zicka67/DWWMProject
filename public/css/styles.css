@@ -432,7 +432,7 @@ backdrop-filter: blur(5px);
 /* background: rgb(255,196,184); */
 /* background: linear-gradient(90deg, rgba(255,196,184,0.9933705904236695) 0%, rgba(162,185,255,0.5) 100%); */
 /* background: rgba(255, 255, 255, 0.3); */
-background: rgba(255, 255, 255, 0.3);
+background: rgba(255, 255, 255, 0.8);
 backdrop-filter: blur(5px); 
 -webkit-backdrop-filter: blur(5px); 
 }
@@ -1540,6 +1540,25 @@ z-index: 2;
 .custom-button:hover {
 background-color: var(--darkPink-color);
 }
+
+
+/* ***********ERROR************ */
+
+.error-test {
+    margin-left: 8px;
+    color: red;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 500;
+    padding-bottom: -20px !important;
+    margin-bottom: 0px !important;
+}
+
+.form-contact-container label {
+    margin-bottom: 0px !important;
+    padding-bottom: 5px !important;
+}
+
+
 
 /* ************* MEDIA QUERIES ****************** */
 

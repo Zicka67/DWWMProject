@@ -2,8 +2,10 @@
 
 namespace App\Controller;
 
-// require_once '../vendor/autoload.php';
-// require_once '../secrets.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/../../stripe/secret.php';
+
+
 
 use Exception;
 use App\Entity\Cours;
