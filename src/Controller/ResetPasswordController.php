@@ -137,7 +137,6 @@ private function processSendingPasswordResetEmail(string $emailFormData, MailerI
         'email' => $emailFormData,
     ]);
 
-    // Do not reveal whether a user account was found or not.
     if (!$user) {
         return $this->redirectToRoute('app_check_email');
     }

@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 // require_once '../vendor/autoload.php';
-require_once 'stripe/secret.php';
+// require_once '../secrets.php';
 
 use Exception;
 use App\Entity\Cours;

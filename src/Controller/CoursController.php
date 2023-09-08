@@ -38,7 +38,7 @@ public function index(CoursRepository $coursRepository): Response
 #[Route('/days_unavailable/{name}', name: 'days_unavailable')]
 public function days_unavailable(string $name, Request $request, EntityManagerInterface $em): Response{
 
-    //Recuperer / convertit / formate
+    //Recupere / convertit / formate
     $date = date_format(date_create($request->request->get('date')), "m");
                                                                 
     $course = $em->getRepository("App\Entity\Cours")->findOneBy(['slug_cours' => $name]);
