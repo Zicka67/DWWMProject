@@ -31,7 +31,6 @@
         <div>
             {{ form_label(contact_form.email) }}
             {{ form_widget(contact_form.email, {'attr': {'class': 'form-control'}}) }}
-
             <div class="error-test">{{ form_errors(contact_form.email) }}</div> 
         </div>
         <div>
@@ -45,7 +44,7 @@
             <div class="error-test">{{ form_errors(contact_form.message) }}</div> 
         </div>
 
-        <button type="submit" class="bt" id="bt"><span class="msg" id="msg"></span>Envoyer</button>
+        <button type="submit" class="bt" id="bt"><span class="msg" id="msg"></span><p class="envoyer">Envoyer</p> </button>
 
     {{ form_end(contact_form) }}
 

@@ -14,26 +14,36 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Validator\Constraints\Regex;
 
 class RegistrationFormType extends AbstractType
 {
 public function buildForm(FormBuilderInterface $builder, array $options): void
 {
     $builder
-        ->add('pseudo', TextType::class, [
-            'constraints' => [
-                new Length([
-                    'min' => 2,
-                    'max' => 30,
-                    'minMessage' => 'Your username should be at least {{ limit }} characters',
-                    'maxMessage' => 'Your username should not exceed {{ limit }} characters',
-                ]),
-                new NotBlank(['message' => 'Entrez un Pseudo']),
-            ],
-        ])
+    ->add('pseudo', TextType::class, [
+        'constraints' => [
+            new Length([
+                'min' => 5,
+                'max' => 25,
+                'minMessage' => 'Votre pseudo doit contenir au moins {{ limit }} caractères',
+                'maxMessage' => 'Votre pseudo ne doit pas contenir plus de {{ limit }} caractères',
+            ]),
+            new NotBlank(['message' => 'Entrez un Pseudo']),
+            new Regex([
+                'pattern' => '/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{5,25}$/',
+                'message' => 'Votre pseudo doit contenir au moins une majuscule, une minuscule et un chiffre.',
+            ]),
+        ],
+    ])
         ->add('email', EmailType::class, [
             'constraints' => [
                 new Email(['message' => 'Entrez une adresse valide !']),
+                new NotBlank(['message' => 'Entrez une adresse mail']),
+                new Regex([
+                    'pattern' => '/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
+                    'message' => 'Veuillez entrer une adresse mail valide',
+                ]),
             ],
         ])
         ->add('agreeTerms', CheckboxType::class, [
@@ -54,10 +64,14 @@ public function buildForm(FormBuilderInterface $builder, array $options): void
                     'message' => 'Veuillez entrer un mot de passe',
                 ]),
                 new Length([
-                    'min' => 6,
-                    'minMessage' => 'Your password should be at least {{ limit }} characters',
+                    'min' => 14,
+                    'minMessage' => 'Votre mot de passe doit contenir au moins {{ limit }} caractères.',
                     // max length allowed by Symfony for security reasons
-                    'max' => 4096,
+                    'max' => 50,
+                ]),
+                new Regex([
+                    'pattern' => '/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{14,}$/',
+                    'message' => 'Votre mot de passe doit contenir au moins une lettre majuscule, une lettre minuscule, et un chiffre.',
                 ]),
             ],
         ])
