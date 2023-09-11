@@ -1,5 +1,7 @@
 {% extends 'base.html.twig' %}
 
+{% block body_class %}page-color{% endblock %}
+
 {% block title %}Paiement réussi{% endblock %}
 
 {% block body %}
@@ -8,6 +10,16 @@
 <div class="bandeau-info"></div>
 {% endblock %}
 
-<h1>Paiement réussi</h1>
-<p>Votre paiement a été effectué avec succès !</p>
+<div class="form-success-container">
+
+<h1>Paiement réussi !</h1>
+<div id="lottie-container" style="width: 100%; height: 400px;"></div>
+
+{# <p>Votre paiement a été effectué avec succès !</p> #}
+<p>Vous allez être redirigé(e)</p>
+
+</div>
+
+<script src="{{ asset('js/script.js') }}"></script> 
+
 {% endblock %}
