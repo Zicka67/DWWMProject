@@ -15,6 +15,7 @@
     {# CSS #}
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <link rel="stylesheet" href="{{ asset('css/calendar.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/payment.css') }}">
     {# Fonts #}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,6 +24,9 @@
     {# Map #}
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="crossorigin="">
     <link rel="stylesheet" href="{{ asset('css/map.css') }}">
+    {# CheckMark #}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.3/lottie.min.js"></script>
+
 
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
@@ -101,8 +105,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     {# Pour uniquement charger le script sur home #}
     {% if app.request.attributes.get('_route') == 'app_home' %}
     <script src="{{ asset('js/imgMouvement.js') }}"></script>
+    <script src="{{ asset('js/carousel.js') }}"></script>
     {% endif %}
-    <script src="{{ asset('js/script.js') }}"></script>  
+    <script type="text/javascript" src="{{ asset('js/script.js') }}"></script> 
+    {% if app.request.attributes.get('_route') == 'success_payment' %}
+    <script type="text/javascript" src="{{ asset('js/checkmark.js') }}"></script>
+    {% endif %} 
+
 
     {# AOS #}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
