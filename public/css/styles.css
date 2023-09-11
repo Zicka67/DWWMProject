@@ -1250,8 +1250,8 @@ margin-bottom: 20px;
 /* ************* BUTONS ****************** */
 
 .edit-button {
-width: 40px;
-height: 40px;
+width: 50px;
+height: 50px;
 border-radius: 50%;
 background-color: var(--darkPink-color);
 border: none;
@@ -1268,7 +1268,7 @@ text-decoration: none;
 }
 
 .edit-svgIcon {
-width: 17px;
+width: 20px;
 transition-duration: 0.3s;
 }
 
@@ -1742,13 +1742,14 @@ font-size: 0.8rem;
 font-weight: 500;
 }
 
-.edit-button {
-width: 38px;
-height: 38px;
-}
+/* .edit-button {
+width: 80%;
+height: 80%;
+} */
 
 .edit-svgIcon {
-width: 16px;
+width: 30px;
+height: 30px;
 }
 
 .edit-button:hover {
@@ -1884,14 +1885,15 @@ justify-content: center;
 min-width: 80%;
 }
 
-.edit-button {
-width: 35px;
-height: 35px;
-}
+/* .edit-button {
+width: 70%;
+height: 70%;
+} */
 
 .edit-svgIcon {
-width: 15px;
-}
+    width: 25px;
+    height: 25px;
+    }
 
 .edit-button:hover {
 width: 110px;
@@ -1947,14 +1949,14 @@ font-size: 2.5rem;
 
 @media (max-width: 600px) {
 
-.edit-button {
-width: 32px;
-height: 32px;
-}
+/* .edit-button {
+width: 50%;
+height: 50%;
+} */
 
-.edit-svgIcon {
+/* .edit-svgIcon {
 width: 14px;
-}
+} */
 
 .edit-button:hover {
 width: 105px;
@@ -2077,14 +2079,14 @@ left: -35px;
 width: 75px;
 }
 
-.edit-button {
+/* .edit-button {
 width: 30px;
 height: 30px;
-}
+} */
 
-.edit-svgIcon {
+/* .edit-svgIcon {
 width: 13px;
-}
+} */
 
 .edit-button:hover {
 width: 100px;
@@ -2137,14 +2139,14 @@ height: 350px;
 
 @media (max-width: 400px) {
 
-.edit-button {
+/* .edit-button {
 width: 28px;
 height: 28px;
-}
+} */
 
-.edit-svgIcon {
+/* .edit-svgIcon {
 width: 11px;
-}
+} */
 
 .edit-button:hover {
 width: 85px;
