@@ -1,6 +1,7 @@
 // This is your test publishable API key.
 const stripe = Stripe("pk_test_51NAwNZJWIv9Iz53oUTcDu6QGU8c29nvuRPQ0jLe4WNom3WJmqPBi4FTYmVfEq32lGuLGZQtc4voWr1iSbipNP5ce00ZSG7OWON");
 
+
 // Ces lignes récupèrent des valeurs d'identifiant de réservation et de courriel d'utilisateur à partir d'éléments HTML sur la page.
 const reservationId = document.getElementById('reservationId').getAttribute('value');
 const userMail = document.getElementById('userMail').getAttribute('value');
@@ -14,9 +15,6 @@ checkStatus();
 document
 .querySelector("#payment-form")
 .addEventListener("submit", handleSubmit);
-
-// La fonction initialize() fait un appel AJAX à l'endpoint /create-payment-intent pour obtenir un clientSecret à utiliser dans la transaction de paiement. 
-// Ensuite, elle initialise les elements de Stripe et crée un élément de paiement qu'elle monte dans l'élément HTML #payment-element.
 
 // AJAX
 // La fonction initialize() :
