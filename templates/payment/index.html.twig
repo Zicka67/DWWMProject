@@ -1,5 +1,7 @@
 {% extends 'base.html.twig' %}
 
+{% block body_class %}page-color{% endblock %}
+
 {% block title %}Payer la réservation{% endblock %}
 
 {% block stylesheets %}
@@ -10,6 +12,10 @@
 
 {% block body %}
 
+{% block bandeau %}
+<div class="bandeau-info"></div>
+{% endblock %}
+
 <form id="payment-form">
   {# <div id="link-authentication-element"></div> #}
   <input type="hidden" id="reservationId" value="{{ reservationId }}">
@@ -17,7 +23,7 @@
   <div id="payment-element">
     <!--Stripe.js injects the Payment Element-->
   </div>
-
+   {# <div> </div> #}
   <button id="submit">
     <div class="spinner hidden" id="spinner"></div>
     <span id="button-text">Payer</span>
