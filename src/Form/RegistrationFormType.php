@@ -16,6 +16,8 @@ use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Validator\Constraints\Regex;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 class RegistrationFormType extends AbstractType
 {
 public function buildForm(FormBuilderInterface $builder, array $options): void
@@ -31,8 +33,7 @@ public function buildForm(FormBuilderInterface $builder, array $options): void
             ]),
             new NotBlank(['message' => 'Entrez un Pseudo']),
             new Regex([
-                'pattern' => '/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{5,25}$/',
-                'message' => 'Votre pseudo doit contenir au moins une majuscule, une minuscule et un chiffre.',
+                'pattern' => '/^[a-zA-Z0-9\s.,?!\'-]{5,30}$/',
             ]),
         ],
     ])

@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\Length;
 
 
 
@@ -31,8 +32,7 @@ class ContactType extends AbstractType
                         'maxMessage' => 'Votre pseudo ne doit pas dépasser {{ limit }} caractères.'
                     ]),
                     new Regex([
-                        'pattern' => '/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{5,30}$/',
-                        'message' => 'Votre pseudo doit contenir au moins une majuscule, une minuscule et un chiffre.',
+                        'pattern' => '/^[a-zA-Z0-9\s.,?!\'-]{5,30}$/',
                     ]),
                 ]
             ])

@@ -10,6 +10,8 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Validator\Constraints\Regex;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 class ChangeEmailType extends AbstractType
 {
 public function buildForm(FormBuilderInterface $builder, array $options): void
