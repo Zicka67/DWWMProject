@@ -1,0 +1,73 @@
+nelmio_security:
+    csp:
+        report:
+            report-uri: '/csp/report'
+        enforce:
+            default-src: 
+                - "'self"
+                - "http://localhost:8000"
+                - https://region1.google-analytics.com
+            script-src: 
+                - "'self'"
+                - "https://js.stripe.com"
+                - "https://cdnjs.cloudflare.com"
+                - "https://www.googletagmanager.com"
+                - "https://unpkg.com"
+                - "https://region1.google-analytics.com"
+                - "'unsafe-inline'" # 
+            style-src: 
+                - "'self'"
+                - "https://cdnjs.cloudflare.com"
+                - "https://fonts.googleapis.com"
+                - "'unsafe-inline'" # 
+                - "https://unpkg.com"
+                - "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png"
+                - "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png"
+            img-src: 
+                - "'self'"  
+                - "https://cdnjs.cloudflare.com"
+                - "https://a.tile.openstreetmap.org"
+                - "https://b.tile.openstreetmap.org"
+                - "https://c.tile.openstreetmap.org"
+                - "https://unpkg.com"
+                - "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png"
+                - "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png"
+                - "https://region1.google-analytics.com"
+                - "https://booking.myrezapp.com"
+                - "https://vicpic.fr"
+                - "https://www.regardauteur.com"
+                - "data:"
+            font-src: 
+                - "'self'"
+                - "https://fonts.gstatic.com"
+                - "https://cdnjs.cloudflare.com"
+            frame-src: 
+                - "'self'"
+                - "https://www.googletagmanager.com"
+                - "https://js.stripe.com"
+            object-src: ["'none'"]
+
+    clickjacking:
+        paths:
+            '^/': 'DENY' # Bloque l'encadrement du site sur d'autres sites.
+
+    # disables content type sniffing for script resources
+    content_type:
+        nosniff: true
+
+    # forces Microsoft's XSS-Protection with
+    # its block mode
+    xss_protection:
+        enabled: true
+        mode_block: true
+
+    # Send a full URL in the `Referer` header when performing a same-origin request,
+    # only send the origin of the document to secure destination (HTTPS->HTTPS),
+    # and send no header to a less secure destination (HTTPS->HTTP).
+    # If `strict-origin-when-cross-origin` is not supported, use `no-referrer` policy,
+    # no referrer information is sent along with requests.
+    referrer_policy:
+        enabled: true
+        policies:
+            - 'no-referrer'
+            - 'strict-origin-when-cross-origin'
