@@ -18,18 +18,20 @@
     <div class="container-mt-p">
         <h1 class="margin-tb">Réinitialisez votre mot de passe</h1>
         {{ form_start(resetForm) }}
-        <div class="margin-tb">
+        <div class="margin-tb first-password">
             {# {{ form_row(resetForm.plainPassword) }} #}
             {{ form_label(resetForm.plainPassword.first) }}
-            {{ form_errors(resetForm.plainPassword.first) }}
+            {# {{ form_errors(resetForm.plainPassword.first) }} #}
             {{ form_widget(resetForm.plainPassword.first) }}
+            <div class="error-test">{{ form_errors(resetForm.plainPassword.first) }}</div> 
         </div>
-        <div class="margin-tb">
+        <div class="margin-tb second-password">
             {{ form_label(resetForm.plainPassword.second) }}
-            {{ form_errors(resetForm.plainPassword.second) }}
+            {# {{ form_errors(resetForm.plainPassword.second) }} #}
             {{ form_widget(resetForm.plainPassword.second) }}
+            <div class="error-test">{{ form_errors(resetForm.plainPassword.second) }}</div> 
         </div>
-        <button class="margin-tb">Réinitialisez votre mot de passe</button>
+        <button class="margin-tb bt2">Changer mon mot de passe</button>
         {{ form_end(resetForm) }}
     </div>      
 </div>

@@ -23,14 +23,23 @@
 
         <h1 class="margin-tb change-profil">Modifier le profil :</h1>
             
-            <p class="margin-tb change-profil">Changer l'email</p>
+            {# <p class="margin-tb change-profil">Changer l'email</p> #}
 
             {{ form_start(changeEmailForm) }}
+
+            <div>
+                {# {{ form_label(changeEmailForm) }} #}
+                {{ form_widget(changeEmailForm, {
+                    'attr': {'class': 'form-control'}
+                    }) 
+                }}
+                <div class="error-test">{{ form_errors(changeEmailForm) }}</div> 
+            </div>
                         
-            {{ form_row(changeEmailForm.email, {
+            {# {{ form_row(changeEmailForm.email, {
                 'label': 'Nouvel Email : ',
                 'attr': {'class': 'form-control'}
-                }) }}
+                }) }} #}
                         
                 <button type="submit" class="custom-button margin-tb button-change-profil" onclick="return confirm('Êtes-vous sûr de vouloir modifier votre email ?')">Modifier l'email</button>
                 {{ form_end(changeEmailForm) }}

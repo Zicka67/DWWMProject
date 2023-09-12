@@ -27,11 +27,15 @@
             <p class="margin-tb change-profil">Changer le pseudo</p>
 
             {{ form_start(changePseudoForm) }}
-                        
-            {{ form_row(changePseudoForm.pseudo, {
-                'label': 'Nouveau pseudo : ',
-                'attr': {'class': 'form-control'}
-            }) }}
+
+            <div>
+                {{ form_label(changePseudoForm.pseudo) }}
+                {{ form_widget(changePseudoForm.pseudo, {
+                    'attr': {'class': 'form-control'}
+                    }) 
+                }}
+                <div class="error-test">{{ form_errors(changePseudoForm.pseudo) }}</div> 
+            </div>
         
             <button type="submit" class="custom-button margin-tb button-change-profil" onclick="return confirm('Êtes-vous sûr de vouloir modifier le pseudo ?')">Modifier le pseudo</button>
             {{ form_end(changePseudoForm) }}

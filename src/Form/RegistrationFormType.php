@@ -64,13 +64,14 @@ public function buildForm(FormBuilderInterface $builder, array $options): void
                     'message' => 'Veuillez entrer un mot de passe',
                 ]),
                 new Length([
-                    'min' => 14,
+                    'min' => 12,
                     'minMessage' => 'Votre mot de passe doit contenir au moins {{ limit }} caractères.',
                     // max length allowed by Symfony for security reasons
                     'max' => 50,
+                    'maxMessage' => 'Votre pseudo ne doit pas dépasser {{ limit }} caractères.'
                 ]),
                 new Regex([
-                    'pattern' => '/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{14,}$/',
+                    'pattern' => '/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{12,}$/',
                     'message' => 'Votre mot de passe doit contenir au moins une lettre majuscule, une lettre minuscule, et un chiffre.',
                 ]),
             ],
