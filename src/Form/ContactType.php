@@ -31,7 +31,7 @@ class ContactType extends AbstractType
                         'maxMessage' => 'Votre pseudo ne doit pas dépasser {{ limit }} caractères.'
                     ]),
                     new Regex([
-                        'pattern' => '/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{5,25}$/',
+                        'pattern' => '/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{5,30}$/',
                         'message' => 'Votre pseudo doit contenir au moins une majuscule, une minuscule et un chiffre.',
                     ]),
                 ]
