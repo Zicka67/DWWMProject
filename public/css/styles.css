@@ -928,9 +928,15 @@ border: 1px solid #ccc;
 border-radius: 5px;
 }
 
+.eye {
+    width: 20px;
+    height: auto;
+}
+
 .form-button {
 cursor: pointer;
-background-color: rgb(250, 174, 157);
+/* background-color: rgb(250, 174, 157); */
+background-color: var(--midPink-color);
 color: var(--tertiary-color);
 border: none;
 border-radius: 5px;
@@ -943,7 +949,7 @@ font-family: 'Barlow', sans-serif;
 }
 
 .form-button:hover {
-background-color: #444;
+background-color: var(--darkPink-color);
 }
 
 /* ****************** PARCOURS ****************** */

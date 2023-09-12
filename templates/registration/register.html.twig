@@ -29,8 +29,9 @@
         {{ form_widget(registrationForm.email, { 'attr': {'id': 'email', 'class': 'form-input'} }) }}
         <div class="error-test">{{ form_errors(registrationForm.email) }}</div> 
         {#password #}
-        <label for="password" class="form-label">Mot de passe</label>
+        <label id="passwordd" for="password" class="form-label">Mot de passe</label>
         {{ form_widget(registrationForm.plainPassword, { 'attr': {'id': 'password', 'class': 'form-input'} }) }}
+        {# <button id="eyeicon" type="button">👁️</button> #}
         <div class="error-test">{{ form_errors(registrationForm.plainPassword) }}</div> 
         {#checkbox #}
         <div class="checkbox mb-3">
@@ -45,6 +46,25 @@
         {{ form_end(registrationForm) }}
     </form>
 </div>  
+
+{# {% block javascripts %}
+<script>
+
+let eyeicon = document.getElementById("eyeicon");
+let password = document.getElementById("passwordd");
+
+
+eyeicon.onclick = function(){
+    if(password.type == "passwordd"){
+        password.type = "text";
+    }else {
+        password.type = "passwordd";
+    }
+}
+
+
+</script>
+{% endblock %} #}
 
 
 
