@@ -6,7 +6,7 @@ nelmio_security:
             default-src: 
                 - "'self"
                 - "http://localhost:8000"
-                - https://region1.google-analytics.com
+                - "https://region1.google-analytics.com"
             script-src: 
                 - "'self'"
                 - "https://js.stripe.com"
@@ -21,8 +21,8 @@ nelmio_security:
                 - "https://fonts.googleapis.com"
                 - "'unsafe-inline'" # 
                 - "https://unpkg.com"
-                - "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png"
-                - "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png"
+                # - "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png"
+                # - "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png"
             img-src: 
                 - "'self'"  
                 - "https://cdnjs.cloudflare.com"
@@ -30,12 +30,9 @@ nelmio_security:
                 - "https://b.tile.openstreetmap.org"
                 - "https://c.tile.openstreetmap.org"
                 - "https://unpkg.com"
-                - "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png"
-                - "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png"
+                # - "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png"
+                # - "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png"
                 - "https://region1.google-analytics.com"
-                - "https://booking.myrezapp.com"
-                - "https://vicpic.fr"
-                - "https://www.regardauteur.com"
                 - "data:"
             font-src: 
                 - "'self'"
