@@ -5,7 +5,7 @@ if (window.location.pathname === '/') {
     const fullScreen = document.querySelector('.full-screen');
     const bgImages = Array.from(fullScreen.querySelectorAll('.bg-image'));
     let position = 0;
-    let speed = 0.4;
+    let speed = 0.3;
     const imageWidth = bgImages[0].offsetWidth;
 
     function moveBackground() {
@@ -31,6 +31,6 @@ if (window.location.pathname === '/') {
 
     setInterval(function() {
         position = 0;
-    }, 70000);
+    }, 43000);
 }
 });
