@@ -40,19 +40,28 @@ public function days_unavailable(string $name, Request $request, EntityManagerIn
 
     //Recupere / convertit / formate
     $date = date_format(date_create($request->request->get('date')), "m");
-                                                                
+                      
+    // Récupère l'entité du cours en fonction du slug fourni dans l'URL
     $course = $em->getRepository("App\Entity\Cours")->findOneBy(['slug_cours' => $name]);
 
     //DQL pour select les jours des dates non dispo pour le mois courant(soit pour le cours courant soit tous)
     $unavailabilities = $em->createQuery(
+        // Sélectionne et formate la date depuis l'entité UnavailableDate (aliasée en ud) DATE_FORMAT pour formater.
         "SELECT DATE_FORMAT(ud.date, '%d') as unvalableDay 
+        -- On cible l'entité aliasé en ud
         FROM App\Entity\UnavailableDate ud 
+        -- DATE_FORMAT pour filtrer par mois
         WHERE DATE_FORMAT(ud.date, '%m') = :date 
+        -- Vérifie si la date non disponible ud concerne tous les cours ou juste un cours spécifique
         AND (ud.all_courses = true OR ud.course = :idCourse) 
+        -- Filtre pour ne récupérer que les dates où all_day est vrai.
         AND ud.all_day = true"
         )
+    //on filtre :date pour récupérer le mois
     ->setParameter(":date", $date)
+    //on filtre :idCourse pour récupérer l'id du cours
     ->setParameter(":idCourse", $course->getId())
+    // on execute
     ->getResult();
 
     $formatedSlot = [];
@@ -62,7 +71,6 @@ public function days_unavailable(string $name, Request $request, EntityManagerIn
     }
 
     return new JsonResponse($formatedSlot);
-
 }
 // *****
 //  Cette fonction est similaire à la précédente, mais au lieu de récupérer les jours indisponibles,
@@ -157,10 +165,14 @@ public function save_reservation(Security $security, Request $request, EntityMan
 
     $reservation = new Reservation;
 
+    
     // On définit les attributs de la réservation
     $reservation->setCours($course);
+    //user récupéré avec getUser
     $reservation->setUser($user);
+    //date actuelle de la resa (aujorud'hui)
     $reservation->setDtResa(new DateTime());
+    //date du cours selectionné avec les slotDate et slotTime plus haut (jour + heure)
     $reservation->setDtCours(new DateTime($date." ".$time));
     $reservation->setPayementMethod($request->request->get('payment-method'));
 
