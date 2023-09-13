@@ -25,14 +25,14 @@ private ?string $description = null;
 #[ORM\Column]
 private ?float $prix = null;
 
-#[ORM\Column(length: 255)]
-private ?string $image = null;
-
 #[ORM\OneToMany(mappedBy: 'cours', targetEntity: Reservation::class)]
 private Collection $reservations;
 
 #[ORM\Column(length: 255)]
 private ?string $slug_cours = null;
+
+#[ORM\Column(length: 255)]
+private ?string $imageName = null;
 
 public function __construct()
 {
@@ -76,18 +76,6 @@ public function getPrix(): ?float
 public function setPrix(float $prix): self
 {
     $this->prix = $prix;
-
-    return $this;
-}
-
-public function getImage(): ?string
-{
-    return $this->image;
-}
-
-public function setImage(string $image): self
-{
-    $this->image = $image;
 
     return $this;
 }
@@ -142,6 +130,18 @@ public function setSlugCours(string $slug_cours): self
 public function __toString(): string
 {
     return $this->getNomCours();
+}
+
+public function getImageName(): ?string
+{
+    return $this->imageName;
+}
+
+public function setImageName(string $imageName): self
+{
+    $this->imageName = $imageName;
+
+    return $this;
 }
 
 }

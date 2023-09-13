@@ -17,7 +17,7 @@
         {% for cours in listeCours|slice(0, 3) %}
             <div class="enfant-home enfant-cours-home pastel-red3">
                 <h2>{{ cours.nomCours }}</h2> 
-            <div class="img-dim"><img class="image-responsive" src="{{ cours.image }}" alt="Image des cours proposés sur Douceur De Lune"></div>
+            <div class="img-dim"><img class="image-responsive" src="{{ asset('imgVich/' ~ cours.imageName) }}" alt="Image des cours proposés sur Douceur De Lune"></div>
                 <p>{{ cours.description | raw  }}</p> 
                 <p class="price">{{ cours.prix }}€</p>
             <a class="details-link" href="{{ path('detailCours', {templateName: cours.slugCours}) }}#reservation-form">
@@ -34,7 +34,7 @@
         {% for cours in listeCours|slice(3, 3) %}
             <div class="enfant-home enfant-cours-home pastel-red3">
                 <h2>{{ cours.nomCours }}</h2> 
-                <div class="img-dim"><img class="image-responsive" src="{{ cours.image }}" alt="Image des cours proposés sur Douceur De Lune"></div>
+                <div class="img-dim"><img class="image-responsive" src="{{ asset('imgVich/' ~ cours.imageName) }}" alt="Image des cours proposés sur Douceur De Lune"></div>
                 <p>{{ cours.description | raw  }}</p> 
                 <p class="price">{{ cours.prix }}€</p>
                 <a class="details-link" href="{{ path('detailCours', {templateName: cours.slugCours}) }}#reservation-form">
@@ -51,7 +51,7 @@
         {% for cours in listeCours|slice(6, 3) %}
             <div class="enfant-home enfant-cours-home pastel-red3">
                 <h2>{{ cours.nomCours }}</h2> 
-                <div class="img-dim"><img class="image-responsive" src="{{ cours.image }}" alt="Image des cours proposés sur Douceur De Lune"></div>
+                <div class="img-dim"><img class="image-responsive" src="{{ asset('imgVich/' ~ cours.imageName) }}" alt="Image des cours proposés sur Douceur De Lune"></div>
                 <p>{{ cours.description | raw  }}</p> 
                 <p class="price">{{ cours.prix }}€</p>
                 <a class="details-link" href="{{ path('detailCours', {templateName: cours.slugCours}) }}#reservation-form">
