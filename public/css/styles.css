@@ -342,7 +342,7 @@ top: 0;
 bottom: 0;
 width: 200%;  
 height: 100%;
-background: url('../img/background.webp') repeat-x;
+background: url('../img/first_enhanced_background.webp') repeat-x;
 background-size: cover;  
 animation: slide 80s linear infinite;  
 /* filter: saturate(140%) contrast(100%) hue-rotate(10deg); */
@@ -621,7 +621,7 @@ background-color: #f18787;
 }
 
 .bandeau-info {
-height: 300px;
+height: 400px;
 width: 100%;
 background-image: url('../img/f76197_19da170fd28646b197f0c6fa3612fb81~mv2.webp');
 margin-bottom: 20px;
@@ -637,11 +637,12 @@ align-items: center;
 
 .bandeau-info.bis {
 margin-top: 0;
+margin-bottom: -20px;
 }
 
 /* ************** CAROUSEL ****************** */
 .bandeau-info-remerciements {
-height: 400px;
+height: 00px;
 width: 100%;
 background-color: #e5d1da;
 overflow: hidden;
@@ -1510,9 +1511,9 @@ width: 70%;
 transition-duration: .3s;
 }
 /* button click effect*/
-.Btn:active {
+/* .Btn:active { */
 /* transform: translate(2px ,2px); */
-}
+/* } */
 
 /* ************* BOUTTON VALIDATION PROFIL ****************** */
 
@@ -1575,7 +1576,70 @@ background-color: var(--darkPink-color);
     padding-bottom: 5px !important;
 }
 
+/* *********************** VIDEO *************************** */
 
+
+
+
+
+
+
+/* --- */
+
+.main-section-video-text {
+    display: flex;
+    width: 100%;
+    height: 535px;
+}
+
+.main-section-video-text2 {
+    display: flex;
+    width: 100%;
+    height: 535px;
+}
+
+#section-text {
+    background-color: rgb(218, 244, 245);
+    background-image: url('../img/image-video-enceinte.webp');
+    background-repeat: repeat-x;
+    background-attachment: fixed; 
+    background-size: cover; 
+    background-position: center center;
+    height: 800px; 
+}
+
+
+#section-video {
+    background-color: #bd8423;
+}
+
+#section-video, #section-text {
+    width: 50%;
+    height: 100%;
+    padding: 0; /* Supprimez le padding */
+    margin: 0; /* Supprimez la marge */
+}
+
+#section-video > div {
+    width: 100%;
+    height: 100%;
+    padding: 0; /* Supprimez le padding */
+    margin: 0; /* Supprimez la marge */
+}
+
+#section-video .video-grossesse video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Fait en sorte que la vidéo couvre entièrement la section */
+    border: none; /* Supprimez la bordure, si elle existe */
+}
+
+#section-video .video-allaitement video{
+    width: 108%;
+    height: 100%;
+    object-fit: cover; /* Fait en sorte que la vidéo couvre entièrement la section */
+    border: none; /* Supprimez la bordure, si elle existe */
+}
 
 /* ************* MEDIA QUERIES ****************** */
 
