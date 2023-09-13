@@ -19,7 +19,7 @@ class CoursController extends AbstractController
 public function index(CoursRepository $coursRepository): Response
 {
     $cours = $coursRepository->findAll();
-
+    // dump($cours); die;
     return $this->render('pagesInfo/showCours.html.twig', [
         'listeCours' => $cours,
     ]);

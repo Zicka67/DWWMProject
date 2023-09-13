@@ -273,12 +273,19 @@ cursor: pointer;
     font-family: 'Barlow', sans-serif
 }
 
-#calendar #slot-list .slot:hover, #calendar #slot-list .slot.selected{
+/* #calendar #slot-list .slot:hover, #calendar #slot-list .slot.selected{
 background-color: #6094ee;
 box-shadow: none;
-}
+} */
 
 #calendar #slot-list .slot.unavailable{
+background-color: #b8b8b8;
+        box-shadow: none;
+color: white;
+cursor: auto;
+}
+
+#calendar #slot-list .slot.unavailable:hover{
 background-color: #b8b8b8;
 box-shadow: none;
 color: white;
