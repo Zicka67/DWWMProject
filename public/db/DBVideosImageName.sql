@@ -15,33 +15,33 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
--- Listage de la structure de la base pour littlecocon25
-CREATE DATABASE IF NOT EXISTS `littlecocon25` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `littlecocon25`;
+-- Listage de la structure de la base pour littlecocon2
+CREATE DATABASE IF NOT EXISTS `littlecocon2` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `littlecocon2`;
 
--- Listage de la structure de table littlecocon25. cours
+-- Listage de la structure de table littlecocon2. cours
 CREATE TABLE IF NOT EXISTS `cours` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nom_cours` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `prix` double NOT NULL,
-  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `slug_cours` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Listage des données de la table littlecocon25.cours : ~8 rows (environ)
-INSERT INTO `cours` (`id`, `nom_cours`, `description`, `prix`, `image`, `slug_cours`) VALUES
-	(1, 'Atelier de portage ', 'Je me déplace à votre domicile pour vous faire découvrir les principes du portage physiologique ainsi que les points importants pour un portage en toute sécurité. Je possède des poupons et un grand nombre de moyens de portage différents, vous pourrez essayer ceux qui vous parlent le plus pour trouver le VOTRE et vous l\'approprier. Je vous accompagne de manière personnalisée et approfondie tout au long de votre découverte ou perfectionnement au portage. Vous n\'avez pas besoin de posséder un moyen de portage, si vous en avez un, nous verrons comment l\'utiliser au mieux !  Je prends tout le temps dont vous avez besoin et réponds à toutes vos questions. L\'atelier peut avoir lieu pendant la grossesse à partir de 7 mois (c\'est l\'idéal) ou une fois que bébé est né. Si bébé est là, l\'atelier suivra son rythme et vous pourrez utiliser des poupons si bébé a besoin d\'une pause.', 65, 'https://booking.myrezapp.com/uploads/services/medias/13761-74609-0-63.jpg?1193135940', 'atelier-de-portage'),
-	(2, 'Consultation d\'allaitement', 'Entretien prénatal ou consultation allaitement, je suis présente tout au long de votre aventure lactée jusqu\'au sevrage et/ou à la diversification.  En tant que professionnelle de santé et de l\'allaitement, je vous accompagne pour vous préparer à accueillir votre bébé. Que vous souhaitiez allaiter, que vous préfériez le biberon ou que vous hésitiez encore, je suis là pour vous donner un maximum d\'informations. Ainsi, vous pourrez vivre sereinement votre décision et pallier à tous les petits tracas éventuels du début de vie.', 55, 'https://booking.myrezapp.com/uploads/services/medias/13761-61140-1-5.jpg', 'consultation-d-allaitement'),
-	(3, 'Rituel Rebozo', 'Le Rituel dure environ 2h. Il est composé de plusieurs temps : échange et discussion, massage, sudation, resserrage des 7 points du corps. Une tisane est proposé tout au long du Rituel afin de réchauffer et détendre le corps plus en profondeur.  Quand vivre le Rituel ? Dès que vous le souhaitez ou en ressentez le besoin. Les rituels peuvent se vivre dès l\'accouchement passé. Il s\'agit de finir cette grossesse, de fermer la porte qui a permis l\'arrivée de ce nouvel être. Le corps et l\'esprit s\'ouvrent à une autre vie. Celle d\'une mère et d\'une femme...  Les contre-indications : Fièvre, phlébite, problèmes cardio-vasculaires, ostéoporose, entorse ou inflammation articulaire, problèmes de peau, trouble de la coagulation, varices, diabète, début de grossesse ou grossesse à risque... En cas de doute, n\'hésitez pas à me contacter !', 140, 'https://booking.myrezapp.com/uploads/services/medias/13761-99740-0-31.jpg', 'rituel-rebozo'),
-	(5, 'Cercle mamans-bébés', 'Parce que devenir maman ce n\'est pas tous les jours rose ni facile, on peut se sentir seule et désemparée. Arriver à prendre soin de soi et ne pas s\'oublier n\'est pas évident avec une petite boule de bébé qui dépend de nous. Les cercles vous permettent de : - Sortir de votre quotidien - Partager avec d\'autres mamans - D\'évacuer ce qui doit l\'être - Penser à vous - Passer un moment fort avec votre bébé,...  Une bulle dans laquelle je vous propose plein d\'outils pour votre vie de maman, pour faire éclore votre confiance en vous en tant que femme et mère. Au fil de ces 4 rencontres, nous abordons différents thèmes selon vos envies et besoins : - Pleurs, sommeil de bébé - Développement psycho-moteur, éveil et motricité - Alimentation (de bébé et maman) - Couple, famille, reprise du travail - Maternage, post-partum Vous allez vivre un moment magique ! 🤩🥰  Vous pouvez vous offrir ce moment ou l\'offrir à une maman que vous aimez. Plus que du matériel et des conseils hasardeux, les nouveaux parents ont besoin de soutien. 🙏🙏  Le tarif est valable pour le cycle de 4 cercles (soit 20€/rencontre).', 80, 'https://booking.myrezapp.com/uploads/services/medias/13761-70612-0-69.jpg', 'cercle-mamans-bebes'),
-	(6, 'dzz', 'dzdz', 5, 'https://127.0.0.1:8000/img/mignon-petit-enfant-dans-parc-ete.jpg', 'test'),
-	(7, 'Le Serrage du bassin', 'Issu du Rituel Rebozo, voici un soin à effectuer le plus tôt possible après la naissance et autant de fois que nécessaire ! Le soin se compose d\'un temps d\'accueil et d\'écoute accompagné d\'une tisane du post-partum. Il est suivi de bercements tantôt dynamique et réchauffant, tantôt lent et relaxant pour permettre le relâchement du corps et de l\'esprit ! Vient ensuite le moment du serrage du bassin avec le Rebozo. Vous êtes confortablement installée, le serrage reste en place le temps qu\'il faut pour que vous puissiez fermer cette porte et en laisser une autre s\'ouvrir...  Un beau moment, symbolique et libérateur, juste pour vous après bébé !', 60, 'https://booking.myrezapp.com/uploads/services/medias/13761-29728-0-13.jpg?1903332170', 'le-serrage-du-bassin'),
-	(8, 'Atelier de portage collectif', 'Venez découvrir les principes du portage physiologique ainsi que les points importants pour un portage en toute sécurité. Vous pourrez essayer différents moyens de portage pour trouver le VOTRE et vous l\'approprier. Je vous accompagne tout au long de votre découverte ou perfectionnement au portage. Vous n\'avez pas besoin de posséder un moyen de portage, si vous en avez un, n\'hésitez pas à le ramener !  L\'atelier est prévu pour 2 à 4 parents (ou couple), à partir de 6 mois de grossesse, avec ou sans bébé (poupons à disposition si bébé n\'est pas encore là ou a besoin de repos).', 30, 'https://booking.myrezapp.com/uploads/services/medias/13761-94620-0-39.jpg?1554030166', 'atelier-de-portage-collectif'),
-	(10, 'Carte cadeau 50€', 'Vous cherchez un cadeau vraiment utile pour une jeune ou future Maman ?  Offrez un peu de Little Cocon. Le bon d\'une valeur de 50€ s\'utilise pour tous les accompagnements : allaitement, portage, Rebozo, cercles,...  Vous pouvez régler le bon ici. Choisissez n\'importe quelle date sur le planning, cela n\'a pas d\'importance ! Après le règlement, je vous envoie le bon cadeau par mail. La (future) Maman n\'aura plus qu\'à m\'appeler le jour où elle est prête et je verrai avec elle pour la date et les détails du soin choisi.', 50, 'https://vicpic.fr/wp-content/uploads/2020/11/Posts-Insta-24.jpg', 'carte-cadeau-50');
+-- Listage des données de la table littlecocon2.cours : ~8 rows (environ)
+INSERT INTO `cours` (`id`, `nom_cours`, `description`, `prix`, `slug_cours`, `image_name`) VALUES
+	(1, 'Atelier de portage découverte', 'Je me déplace à votre domicile pour vous faire découvrir les principes du portage physiologique ainsi que les points importants \r\npour un portage en toute sécurité. \r\n<br> <br>\r\nJe possède des poupons et un grand nombre de moyens de portage différents, \r\nvous pourrez essayer ceux qui vous parlent le plus pour trouver le <span> VOTRE </span> et vous l\'approprier. \r\n<br> <br>\r\nJe vous accompagne de manière personnalisée et approfondie tout au long de votre découverte ou perfectionnement au portage. \r\nVous n\'avez pas besoin de posséder un moyen de portage, si vous en avez un, nous verrons comment l\'utiliser au mieux ! \r\n<br><br> \r\nJe prends tout le temps dont vous avez besoin et réponds à toutes vos questions. L\'atelier peut avoir lieu pendant la grossesse \r\nà partir de 7 mois (c\'est l\'idéal) ou une fois que bébé est né. Si bébé est là, l\'atelier suivra son rythme et vous pourrez \r\nutiliser des poupons si bébé a besoin d\'une pause ☺️.', 65, 'atelier-de-portage', 'precieux-petit-garcon-nouveau-ne-ayant-sommeil-profond-jour-poitrine-mere-echarpe-bebe-bleu-maman-embrasse-tete-bebe-se-sent-detendue-ravie-concept-famille_176420-12242.avif'),
+	(2, 'Consultation d\'allaitement', 'Entretien prénatal ou consultation allaitement, je suis présente tout au long de votre aventure lactée jusqu\'au sevrage et/ou à \r\nla diversification.  \r\n<br><br>\r\nEn tant que professionnelle de santé et de l\'allaitement, je vous accompagne pour vous préparer à accueillir votre bébé. \r\nQue vous souhaitiez allaiter, que vous préfériez le biberon ou que vous hésitiez encore, je suis là pour vous donner un maximum d\'informations.\r\n<br><br>\r\nAinsi, vous pourrez vivre sereinement votre décision et pallier à tous les petits tracas éventuels du début de vie.', 55, 'consultation-d-allaitement', 'front-view-mother-with-cute-newborn_23-2150276276.avif'),
+	(3, 'Rituel Rebozo', 'Le Rituel dure environ 2h. Il est composé en plusieurs étapes : échange et discussion, massage, sudation, resserrage des 7 points du corps. \r\nUne tisane est proposé tout au long du Rituel afin de réchauffer et détendre le corps plus en profondeur. \r\n<br><br>\r\n <span>Quand vivre le Rituel ?</span> \r\n <br>Dès que vous le souhaitez ou en ressentez le besoin. Les rituels peuvent se vivre dès l\'accouchement passé. \r\n Il s\'agit de finir cette grossesse, de fermer la porte qui a permis l\'arrivée de ce nouvel être. Le corps et l\'esprit s\'ouvrent à \r\n une autre vie. Celle d\'une mère et d\'une femme...  \r\n <br><br>\r\n <span>Les contre-indications :</span> Fièvre, phlébite, problèmes cardio-vasculaires, ostéoporose,\r\n entorse ou inflammation articulaire, problèmes de peau, trouble de la coagulation, varices, diabète, début de grossesse ou grossesse à \r\n risque... En cas de doute, n\'hésitez pas à me contacter !', 140, 'rituel-rebozo', 'Soin+rituel+Rebozo+Vannes+20.jpg'),
+	(5, 'Cercle mamans-bébés', 'Parce que devenir maman ce n\'est pas tous les jours rose ni facile, on peut se sentir seule et désemparée.\r\n Arriver à prendre soin de soi et ne pas s\'oublier n\'est pas évident avec une petite boule de bébé qui dépend de nous.<br>\r\n  <span> Les cercles vous permettent de : </span> <br>\r\n  - Sortir de votre quotidien <br>\r\n  - Partager avec d\'autres mamans <br>\r\n  - D\'évacuer ce qui doit l\'être <br>\r\n  - Penser à vous <br>\r\n  - Passer un moment fort avec votre bébé,... <br>\r\n   Une bulle dans laquelle je vous propose plein d\'outils pour votre vie de maman, pour faire éclore votre confiance en vous en tant \r\n   que femme et mère.\r\n   <br><br> <span> Au fil de ces 4 rencontres, nous abordons différents thèmes selon vos envies et besoins : </span> <br>\r\n   - Pleurs, sommeil de bébé <br>\r\n   - Développement psycho-moteur, éveil et motricité<br>\r\n    - Alimentation (de bébé et maman) <br>\r\n    - Couple, famille, reprise du travail<br> \r\n    - Maternage, post-partum \r\n    <br><br>Vous allez vivre un moment magique ! 🤩🥰  <br>\r\n    <br><br>\r\n    Vous pouvez vous offrir ce moment ou l\'offrir à une maman que vous aimez. Plus que du matériel et des conseils hasardeux, \r\n    les nouveaux parents ont besoin de soutien. 🙏🙏  Le tarif est valable pour le cycle de 4 cercles (soit 20€/rencontre).', 80, 'cercle-mamans-bebes', 'ADMR cercle de mamans.png'),
+	(7, 'Le Serrage du bassin', 'Issu du Rituel Rebozo, voici un soin à effectuer le plus tôt possible après la naissance et autant de fois que nécessaire ! \r\n<br>\r\nLe soin se compose d\'un temps d\'accueil et d\'écoute accompagné d\'une tisane du post-partum. \r\nIl est suivi de bercements tantôt dynamique et réchauffant 🔥, tantôt lent et relaxant 😇 pour permettre le relâchement du corps et de l\'esprit ! \r\n<br>\r\nVient ensuite le moment du serrage du bassin avec le Rebozo. Vous êtes confortablement installée, le serrage reste en place le temps \r\nqu\'il faut pour que vous puissiez fermer cette porte et en laisser une autre s\'ouvrir...  \r\n\r\n<br><br>\r\nUn beau moment, symbolique et libérateur, juste pour vous après bébé !', 60, 'rituel-rebozo', '13761-29728-0-13.jpg'),
+	(8, 'Atelier de portage collectif', 'Venez découvrir les principes du portage physiologique ainsi que les points importants pour un portage en toute sécurité. \r\n<br>\r\nVous pourrez essayer différents moyens de portage pour trouver le <span> VOTRE </span> et vous l\'approprier. \r\nJe vous accompagne tout au long de votre découverte ou perfectionnement au portage. \r\n<br><br>\r\nVous n\'avez pas besoin de posséder un moyen de portage, si vous en avez un, n\'hésitez pas à le ramener ! \r\n\r\n<br><br>\r\n L\'atelier est prévu pour 2 à 4 parents (ou couple), à partir de 6 mois de grossesse, avec ou sans bébé (poupons à disposition si \r\n bébé n\'est pas encore là ou a besoin de repos).', 30, 'atelier-de-portage', '13761-94620-0-39.jpg'),
+	(10, 'Carte cadeau 50€', 'Vous cherchez un cadeau vraiment utile pour une jeune ou future Maman ?  Offrez un peu de Douceur de lune. Le bon d\'une valeur de 50€ s\'utilise pour tous les accompagnements : allaitement, portage, Rebozo, cercles,...  Vous pouvez régler le bon ici. Choisissez n\'importe quelle date sur le planning, cela n\'a pas d\'importance ! Après le règlement, je vous envoie le bon cadeau par mail. La (future) Maman n\'aura plus qu\'à m\'appeler le jour où elle est prête et je verrai avec elle pour la date et les détails du soin choisi.', 50, 'carte-cadeau-50', 'Posts-Insta-24.webp'),
+	(12, 'Test', 'Test test', 12, 'test-cours', '5ead98d47d0e6ad5f6f0d4f154024c94.jpg');
 
--- Listage de la structure de table littlecocon25. doctrine_migration_versions
+-- Listage de la structure de table littlecocon2. doctrine_migration_versions
 CREATE TABLE IF NOT EXISTS `doctrine_migration_versions` (
   `version` varchar(191) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `executed_at` datetime DEFAULT NULL,
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `doctrine_migration_versions` (
   PRIMARY KEY (`version`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
--- Listage des données de la table littlecocon25.doctrine_migration_versions : ~8 rows (environ)
+-- Listage des données de la table littlecocon2.doctrine_migration_versions : ~8 rows (environ)
 INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_time`) VALUES
 	('DoctrineMigrations\\Version20230601135349', '2023-06-01 13:55:02', 368),
 	('DoctrineMigrations\\Version20230601142945', '2023-06-01 14:31:10', 29),
@@ -60,7 +60,7 @@ INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_
 	('DoctrineMigrations\\Version20230613123321', '2023-06-13 12:35:07', 99),
 	('DoctrineMigrations\\Version20230613173002', '2023-06-13 17:30:09', 94);
 
--- Listage de la structure de table littlecocon25. messenger_messages
+-- Listage de la structure de table littlecocon2. messenger_messages
 CREATE TABLE IF NOT EXISTS `messenger_messages` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `body` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -75,9 +75,9 @@ CREATE TABLE IF NOT EXISTS `messenger_messages` (
   KEY `IDX_75EA56E016BA31DB` (`delivered_at`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Listage des données de la table littlecocon25.messenger_messages : ~0 rows (environ)
+-- Listage des données de la table littlecocon2.messenger_messages : ~0 rows (environ)
 
--- Listage de la structure de table littlecocon25. payement
+-- Listage de la structure de table littlecocon2. payement
 CREATE TABLE IF NOT EXISTS `payement` (
   `id` int NOT NULL AUTO_INCREMENT,
   `reservation_id` int NOT NULL,
@@ -88,9 +88,9 @@ CREATE TABLE IF NOT EXISTS `payement` (
   CONSTRAINT `FK_B20A7885B83297E7` FOREIGN KEY (`reservation_id`) REFERENCES `reservation` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Listage des données de la table littlecocon25.payement : ~0 rows (environ)
+-- Listage des données de la table littlecocon2.payement : ~0 rows (environ)
 
--- Listage de la structure de table littlecocon25. reservation
+-- Listage de la structure de table littlecocon2. reservation
 CREATE TABLE IF NOT EXISTS `reservation` (
   `id` int NOT NULL AUTO_INCREMENT,
   `cours_id` int NOT NULL,
@@ -103,25 +103,38 @@ CREATE TABLE IF NOT EXISTS `reservation` (
   KEY `IDX_42C84955A76ED395` (`user_id`),
   CONSTRAINT `FK_42C849557ECF78B0` FOREIGN KEY (`cours_id`) REFERENCES `cours` (`id`),
   CONSTRAINT `FK_42C84955A76ED395` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Listage des données de la table littlecocon25.reservation : ~11 rows (environ)
+-- Listage des données de la table littlecocon2.reservation : ~23 rows (environ)
 INSERT INTO `reservation` (`id`, `cours_id`, `user_id`, `dt_resa`, `dt_cours`, `payement_method`) VALUES
-	(1, 2, 1, '2023-06-13 16:04:50', '2023-06-15 11:30:00', 'sur place'),
-	(2, 1, 1, '2023-06-13 16:06:52', '2023-06-15 11:30:00', 'sur place'),
-	(3, 1, 1, '2023-06-13 23:07:02', '2023-06-17 12:00:00', 'sur place'),
-	(4, 3, 1, '2023-06-13 23:07:41', '2023-06-30 18:00:00', 'sur place'),
-	(5, 3, 1, '2023-06-14 07:59:37', '2023-06-26 13:00:00', 'sur place'),
-	(6, 5, 1, '2023-06-14 13:11:21', '2023-06-09 12:00:00', 'sur place'),
-	(7, 2, 1, '2023-07-09 14:40:50', '2023-07-14 15:00:00', 'sur place'),
-	(9, 1, 1, '2023-07-09 15:18:12', '2023-07-10 18:00:00', 'payment-online'),
-	(10, 1, 1, '2023-07-09 15:19:17', '2023-07-20 15:00:00', 'payment-online'),
-	(11, 1, 1, '2023-07-09 15:19:47', '2023-07-20 16:00:00', 'payment-on-site'),
-	(12, 3, 1, '2023-07-09 15:20:16', '2023-07-20 16:00:00', 'payment-online'),
-	(13, 1, 1, '2023-08-24 20:04:21', '2023-08-25 18:00:00', 'payment-online'),
-	(16, 2, 1, '2023-09-13 22:33:45', '2023-09-08 15:00:00', 'payment-online');
+	(8, 5, 1, '2023-06-15 15:52:05', '2023-06-24 15:00:00', 'sur place'),
+	(38, 5, 1, '2023-08-01 07:50:25', '2023-08-10 14:00:00', 'payment-sur-place'),
+	(39, 2, 1, '2023-08-01 07:55:11', '2023-08-24 13:00:00', 'payment-online'),
+	(46, 1, 1, '2023-08-03 08:27:30', '2023-08-28 15:30:00', 'payment-online'),
+	(47, 1, 1, '2023-08-03 08:29:21', '2023-08-23 13:00:00', 'payment-online'),
+	(48, 1, 1, '2023-08-09 19:44:42', '2023-08-24 15:00:00', 'payment-online'),
+	(50, 3, 1, '2023-08-22 07:57:34', '2023-08-23 17:00:00', 'payment-online'),
+	(51, 3, 1, '2023-08-22 08:10:06', '2023-08-24 15:00:00', 'payment-online'),
+	(52, 1, 1, '2023-08-23 07:13:24', '2023-08-31 15:00:00', 'payment-online'),
+	(53, 1, 1, '2023-08-23 07:14:22', '2023-08-30 16:00:00', 'payment-sur-place'),
+	(54, 1, 1, '2023-08-23 07:29:30', '2023-08-31 16:00:00', 'payment-online'),
+	(55, 1, 1, '2023-08-24 13:11:16', '2023-08-23 15:00:00', 'payment-online'),
+	(56, 3, 1, '2023-08-24 13:42:13', '2023-08-25 15:00:00', 'payment-online'),
+	(57, 3, 1, '2023-09-13 10:19:36', '2023-09-30 17:00:00', 'payment-online'),
+	(58, 2, 1, '2023-09-13 11:30:34', '2023-09-30 17:00:00', 'payment-online'),
+	(59, 1, 1, '2023-09-13 12:59:00', '2023-09-24 15:00:00', 'payment-online'),
+	(60, 1, 1, '2023-09-13 21:58:59', '2023-09-15 16:00:00', 'payment-online'),
+	(61, 1, 1, '2023-09-13 21:59:27', '2023-09-21 12:00:00', 'payment-online'),
+	(62, 1, 1, '2023-09-13 22:00:42', '2023-09-30 15:00:00', 'payment-online'),
+	(63, 5, 1, '2023-09-13 22:01:30', '2023-09-22 09:00:00', 'payment-online'),
+	(64, 2, 1, '2023-09-13 22:12:48', '2023-09-29 17:30:00', 'payment-online'),
+	(65, 1, 1, '2023-09-13 22:13:14', '2023-09-30 16:00:00', 'payment-online'),
+	(66, 1, 1, '2023-09-13 22:14:42', '2023-09-15 15:00:00', 'payment-online'),
+	(67, 1, 1, '2023-09-13 22:18:20', '2023-09-23 12:00:00', 'payment-online'),
+	(68, 2, 1, '2023-09-13 22:23:47', '2023-09-09 11:30:00', 'payment-online'),
+	(69, 1, 1, '2023-09-14 10:41:40', '2023-09-23 15:30:00', 'payment-online');
 
--- Listage de la structure de table littlecocon25. reset_password_request
+-- Listage de la structure de table littlecocon2. reset_password_request
 CREATE TABLE IF NOT EXISTS `reset_password_request` (
   `id` int NOT NULL AUTO_INCREMENT,
   `user_id` int NOT NULL,
@@ -134,9 +147,9 @@ CREATE TABLE IF NOT EXISTS `reset_password_request` (
   CONSTRAINT `FK_7CE748AA76ED395` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Listage des données de la table littlecocon25.reset_password_request : ~1 rows (environ)
+-- Listage des données de la table littlecocon2.reset_password_request : ~0 rows (environ)
 
--- Listage de la structure de table littlecocon25. unavailable_date
+-- Listage de la structure de table littlecocon2. unavailable_date
 CREATE TABLE IF NOT EXISTS `unavailable_date` (
   `id` int NOT NULL AUTO_INCREMENT,
   `course_id` int DEFAULT NULL,
@@ -147,18 +160,15 @@ CREATE TABLE IF NOT EXISTS `unavailable_date` (
   PRIMARY KEY (`id`),
   KEY `IDX_42DFE3CB591CC992` (`course_id`),
   CONSTRAINT `FK_42DFE3CB591CC992` FOREIGN KEY (`course_id`) REFERENCES `cours` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Listage des données de la table littlecocon25.unavailable_date : ~5 rows (environ)
+-- Listage des données de la table littlecocon2.unavailable_date : ~4 rows (environ)
 INSERT INTO `unavailable_date` (`id`, `course_id`, `all_courses`, `date`, `all_day`, `slot`) VALUES
-	(1, 2, 1, '2023-06-14', 1, NULL),
-	(2, 1, 1, '2023-07-09', 1, NULL),
-	(3, NULL, 1, '2023-06-21', 1, NULL),
-	(4, NULL, 1, '2023-06-28', 1, NULL),
-	(6, NULL, 1, '2023-05-31', 1, NULL),
-	(7, 3, 0, '2023-06-30', 0, '09:00:00');
+	(24, NULL, 1, '2023-08-20', 1, NULL),
+	(26, 2, 1, '2023-08-22', 0, '10:00:00'),
+	(27, 5, 1, '2023-09-29', 0, '17:00:00');
 
--- Listage de la structure de table littlecocon25. user
+-- Listage de la structure de table littlecocon2. user
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int NOT NULL AUTO_INCREMENT,
   `email` varchar(180) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -168,15 +178,13 @@ CREATE TABLE IF NOT EXISTS `user` (
   `pseudo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UNIQ_8D93D649E7927C74` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Listage des données de la table littlecocon25.user : ~5 rows (environ)
+-- Listage des données de la table littlecocon2.user : ~3 rows (environ)
 INSERT INTO `user` (`id`, `email`, `roles`, `password`, `is_verified`, `pseudo`) VALUES
-	(1, 'littlecocon@gmail.com', '["ROLE_ADMIN"]', '$2y$13$cJqpk4OXyyneMBFKk7RZ3esA1MZlH8ySzTU6tRosncwk7jO0pBs3m', 1, 'Guillaume'),
+	(1, 'littlecocon@gmail.com', '["ROLE_ADMIN"]', '$2y$13$A5UfZHtJ8Qc1VZ57mU3X2.4iCkHJ3Z3Ef.yZ9eQG7P5tQy6DH6f3.', 1, 'Zicka'),
 	(2, 'user@gmail.com', '["ROLE_USER"]', '$2y$13$JRK332Byb4uvsK/EafzlGuxSbtOtyQv1vGn7wLqsQa4FGVILKADYS', 1, 'User'),
-	(3, 'test@outlook.fr', '["ROLE_USER"]', '$2y$13$HCXVF5Za9N.ZigXhREPPRe1gtPKSkVg9o6cD0leOw2lv7CddDgMJC', 1, 'test'),
-	(4, 'doe@gmail.com', '["ROLE_USER"]', '$2y$13$OUSJRe3tTu6UocH/QZoxkO/DWj3FxR8AL84mRZwminAe0mb5DHqze', 0, 'john'),
-	(5, 'testfinal@gmail.fr', '["ROLE_USER"]', '$2y$13$dohf32/7lEYT7.rswxiwEOlApTSovlphqzBnR0xydAO0MjkoI1VfO', 1, 'testfinal');
+	(9, 'Zicka@zicka.com', '["ROLE_USER"]', '$2y$13$6g7P7giqXLOgcHSRers8geIPXFq/72lDLm/RX4jmaE0WtQiMobYWC', 0, 'Zicka67');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
