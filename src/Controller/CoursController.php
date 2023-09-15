@@ -164,7 +164,6 @@ public function save_reservation(Security $security, Request $request, EntityMan
     $time = $request->request->get('slotTime');
 
     $reservation = new Reservation;
-
     
     // On définit les attributs de la réservation
     $reservation->setCours($course);

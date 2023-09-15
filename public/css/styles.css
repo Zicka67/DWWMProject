@@ -642,7 +642,7 @@ margin-bottom: -20px;
 
 /* ************** CAROUSEL ****************** */
 .bandeau-info-remerciements {
-height: 00px;
+height: 350px;
 width: 100%;
 background-color: #e5d1da;
 overflow: hidden;
@@ -709,10 +709,6 @@ color: #4682b4;
 color: #6d9aa3; 
 }
 
-.bandeau-info.cadeau {
-margin-bottom: 0;
-}
-
 .bandeau-portage {
 height: 400px;
 width: 100%;
@@ -759,6 +755,137 @@ background-attachment: fixed;
 overflow: hidden;
 background-position: center 40%;
 }
+
+/* ************** CADEAU ****************** */
+
+.bandeau-info-cadeau {
+    height: 600px;
+    width: 100%;
+    margin-bottom: 0px;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+    background-position: bottom;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../img/portrait-jeune-famille.jpg');
+    }
+
+.carte-cadeau {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    width: 450px;
+    height: 450px;
+    /* background-color: white; */
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 10px;
+}
+
+.carte-cadeau p {
+    display: flex;
+    text-align: justify;
+    justify-content: center;
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.1rem;
+    color: var(--title-color);
+    padding: 20px 20px;
+    font-weight: 500;
+    line-height: 23px;
+}
+
+.carte-cadeau h3 {
+    display: flex;
+    text-align: justify;
+    justify-content: center;
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.5rem;
+    color: var(--title-color);
+    padding: 20px 20px;
+    font-weight: 600;
+}
+
+.carte-cadeau h2 {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-family: 'Knewave', cursive;
+    font-size: 2.5rem;
+    color: var(--darkPink-color);
+    font-weight: 600;
+}
+
+.buttonMore-cadeau {
+    --primary-color: #645bff;
+    --secondary-color: #fff;
+    --hover-color: #111;
+    --arrow-width: 10px;
+    --arrow-stroke: 2px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 20px;
+    color: var(--lightPink-color);
+    padding: 1em 1.8em;
+    background: var(--darkPink-color);
+    display: flex;
+    transition: 0.2s background;
+    align-items: center;
+    gap: 0.6em;
+    font-weight: bold;
+    font-size: 1rem;
+    z-index: 1;
+    margin-top: 320px;
+    }
+
+    .details-link {
+        z-index: 1;
+    }
+    
+    .buttonMore-cadeau .arrow-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    
+    .buttonMore-cadeau .arrow {
+    margin-top: 1px;
+    width: var(--arrow-width);
+    background: var(--darkPink-color);
+    height: var(--arrow-stroke);
+    position: relative;
+    transition: 0.2s;
+    }
+    
+    .buttonMore-cadeau .arrow::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    border: solid var(--lightPink-color);
+    border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+    display: inline-block;
+    top: -3px;
+    right: 3px;
+    transition: 0.2s;
+    padding: 3px;
+    transform: rotate(-45deg);
+    }
+    
+    .buttonMore-cadeau:hover {
+    background-color: var(--darkPink-color);
+    cursor: pointer;
+    }
+    
+    .buttonMore-cadeau:hover .arrow {
+    background: var(--lightPink-color);
+    }
+    
+    .buttonMore-cadeau:hover .arrow:before {
+    right: 0;
+    }
 
 /* ************** PAGES INFOS ****************** */
 .container-margin {
@@ -1578,68 +1705,170 @@ background-color: var(--darkPink-color);
 
 /* *********************** VIDEO *************************** */
 
-
-
-
-
-
-
-/* --- */
-
 .main-section-video-text {
     display: flex;
+    /* flex-direction: column; */
     width: 100%;
-    height: 535px;
+    height: auto;
 }
 
 .main-section-video-text2 {
     display: flex;
     width: 100%;
-    height: 535px;
+    height: auto;
+}
+
+.section-blue {
+    filter: hue-rotate(180deg);
 }
 
 #section-text {
-    background-color: rgb(218, 244, 245);
+    /* background-color: rgb(218, 244, 245); */
     background-image: url('../img/image-video-enceinte.webp');
     background-repeat: repeat-x;
     background-attachment: fixed; 
     background-size: cover; 
     background-position: center center;
     height: 800px; 
+    flex-wrap: wrap;
 }
 
+#section-text p{
+    padding: 20px 20px;
+    font-family: 'Barlow', sans-serif;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 20px;
+}
 
-#section-video {
-    background-color: #bd8423;
+#section-text h2 {
+    padding: 20px 20px;
+    color: rgb(249, 155, 148);
+    font-weight: 400;
+    font-size: 1.5rem;
+    font-family: 'Knewave', cursive;
+}
+
+#section-text .section-text-h2 {
+    padding: 40px 0 0 20px
 }
 
 #section-video, #section-text {
     width: 50%;
-    height: 100%;
-    padding: 0; /* Supprimez le padding */
-    margin: 0; /* Supprimez la marge */
+    height: auto;
+    padding: 0;
+    margin: 0; 
+
 }
 
-#section-video > div {
-    width: 100%;
-    height: 100%;
-    padding: 0; /* Supprimez le padding */
-    margin: 0; /* Supprimez la marge */
+#section-video .video-grossesse video{
+    /* position: absolute;
+    top: 50%;
+    left: 50%;   */
+    /* transform: translate(-50%, -50%);   */
+    /* min-width: 100%;  */
+    /* min-height: 100%;  */
+    width: 110%;
+    height: 120%;
+    /* object-fit: cover;  */
+    border: none; 
+    margin-left: -10%;
+    margin-top: 20px;
 }
 
-#section-video .video-grossesse video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Fait en sorte que la vidéo couvre entièrement la section */
-    border: none; /* Supprimez la bordure, si elle existe */
-}
+/* .video-grossesse {
+    position: relative; 
+    overflow: hidden; 
+} */
 
 #section-video .video-allaitement video{
-    width: 108%;
+    /* position: absolute;
+    top: 50%;
+    left: 50%;  */
+    /* transform: translate(-50%, -50%);   */
+    /* min-width: 100%;  */
+    /* min-height: 100%;  */
+    width: 100%;
     height: 100%;
-    object-fit: cover; /* Fait en sorte que la vidéo couvre entièrement la section */
-    border: none; /* Supprimez la bordure, si elle existe */
+    /* object-fit: cover;  */
+    border: none; 
 }
+
+/* ************** BANDEAU PRESENTATION **************** */
+
+.bandeau-info-presentation {
+    height: 550px;
+    background-color: #ffffff;
+    position: relative;
+}
+
+.carte-presentation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    width: 1000px;
+    height: 500px;
+    /* background-color: white; */
+    background-color: rgba(255, 255, 255, 0.85);
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  */
+    /* border-radius: 10px; */
+    z-index: 5;
+    display: flex;
+
+}
+
+.image-parcours-container-card {
+    /* display: flex; */
+    /* height: auto; */
+    margin-top: 100px;
+}
+
+.image-parcours-container-card img{
+    border-radius: 5px;
+}
+
+
+
+
+
+/* *************************************************** */
+
+
+@media (max-width: 768px) {
+    .main-section-video-text, .main-section-video-text2 {
+        flex-direction: column;
+    }
+
+    #section-video, #section-text {
+        width: 100%;
+        height: auto; 
+        min-height: 50vh;
+    }
+
+    #section-video .video-grossesse video, #section-video .video-allaitement video {
+        width: 100%;
+        height: auto;
+    }
+
+    #section-text p, #section-text h2 {
+        font-size: 0.9rem; 
+        line-height: 1.4; 
+        padding: 15px 15px; 
+    }
+}
+
+
+@media (max-width: 480px) {
+    #section-text p, #section-text h2 {
+        font-size: 0.8rem;
+    }
+}
+
+
+
+
 
 /* ************* MEDIA QUERIES ****************** */
 

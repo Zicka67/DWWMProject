@@ -18,7 +18,7 @@
             <div class="img-dim"><img class="image-responsive" src="{{ asset('imgVich/' ~ cours.imageName) }}" alt="Images des cours proposés chez Douceur de lune"></div>
             <p>{{ cours.description | raw }}</p> 
             <p class="price2">{{ cours.prix }}€</p>
-            <a class="details-link" href="{{ path('detailCours', {templateName: cours.slugCours}) }}#reservation-form">
+            <a class="details-link" href="{{ path('detailCours', {templateName: cours.slugCours}) }}">
                 <button class="buttonMore">
                 En savoir plus !
                     <div class="arrow-wrapper">
@@ -35,7 +35,7 @@
             <div class="img-dim"><img class="image-responsive" src="{{ asset('imgVich/' ~ cours.imageName) }}" alt="Images des cours proposés chez Douceur de lune"></div>
             <p>{{ cours.description | raw  }}</p>
             <p class="price2">{{ cours.prix }}€</p>
-            <a class="details-link" href="{{ path('detailCours', {templateName: cours.slugCours}) }}#reservation-form">
+            <a class="details-link" href="{{ path('detailCours', {templateName: cours.slugCours}) }}">
                 <button class="buttonMore">
                 En savoir plus !
                     <div class="arrow-wrapper">
@@ -52,7 +52,7 @@
             <div class="img-dim"><img class="image-responsive" src="{{ asset('imgVich/' ~ cours.imageName) }}" alt="Images des cours proposés chez Douceur de lune"></div>
             <p>{{ cours.description | raw  }}</p> 
             <p class="price2">{{ cours.prix }}€</p>
-            <a class="details-link" href="{{ path('detailCours', {templateName: cours.slugCours}) }}#reservation-form">
+            <a class="details-link" href="{{ path('detailCours', {templateName: cours.slugCours}) }}">
                 <button class="buttonMore">
                 En savoir plus !
                     <div class="arrow-wrapper">
