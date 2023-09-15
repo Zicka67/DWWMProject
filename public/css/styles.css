@@ -805,7 +805,7 @@ background-position: center 40%;
     font-family: 'Barlow', sans-serif;
     font-size: 1.5rem;
     color: var(--title-color);
-    padding: 20px 20px;
+    padding: 20px 0px;
     font-weight: 600;
 }
 
@@ -814,7 +814,7 @@ background-position: center 40%;
     text-align: center;
     justify-content: center;
     font-family: 'Knewave', cursive;
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: var(--darkPink-color);
     font-weight: 600;
 }
@@ -838,8 +838,11 @@ background-position: center 40%;
     font-weight: bold;
     font-size: 1rem;
     z-index: 1;
-    margin-top: 320px;
-    }
+    position: absolute;
+    bottom: 100px;  /* pour augmenter le bouton ou descnedre */
+    left: 50%;
+    transform: translateX(-50%);  
+}
 
     .details-link {
         z-index: 1;
@@ -1797,26 +1800,25 @@ background-color: var(--darkPink-color);
 
 /* ************** BANDEAU PRESENTATION **************** */
 
+
+
 .bandeau-info-presentation {
-    height: 550px;
+    height: auto;
     background-color: #ffffff;
     position: relative;
+    padding: 0 5%;
 }
 
 .carte-presentation {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); 
-    width: 1000px;
-    height: 500px;
-    /* background-color: white; */
+    position: relative; /* Changez la position en relative pour un comportement plus flexible */
+    width: 90%; /* Prenez 80% de la largeur disponible */
+    max-width: 1000px; /* Pour s'assurer qu'il ne dépasse pas 1000px même sur les grands écrans */
+    height: auto; /* Ajustez la hauteur en fonction du contenu */
+    margin: 0 auto; /* Centrer horizontalement */
     background-color: rgba(255, 255, 255, 0.85);
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  */
-    /* border-radius: 10px; */
-    z-index: 5;
     display: flex;
-
+    align-items: center;
+    justify-content: center;
 }
 
 .image-parcours-container-card {
@@ -1827,9 +1829,38 @@ background-color: var(--darkPink-color);
 
 .image-parcours-container-card img{
     border-radius: 5px;
+    margin-bottom: 80px;
 }
 
+.text-presentation {
+    padding: 20px 20px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 23px;
+    font-family: 'Barlow', sans-serif;
+    color: var(--text-color);
+    font-weight: 500;
+}
 
+.text-presentation.diplome {
+    color: red;
+}
+
+.text-presentation-container {
+    margin-top: 20px;
+}
+
+.text-presentation-title {
+    font-family: 'Knewave', cursive;
+    display: flex;
+    font-size: 3rem;
+    color: var(--darkPink-color);
+    margin-bottom: 30px;
+}
+
+.text-presentation-container p {
+  
+}
 
 
 
