@@ -100,6 +100,9 @@ public function course_unavailability(string $name, Request $request, EntityMana
         WHERE ud.date = :date 
         AND (ud.all_courses = true OR ud.course = :idCourse)"
         )
+
+    // La requête qui récupère les dates non disponibles utilise des paramètres nommés :date et :idCourse. 
+    // Ces paramètres sont bindés à l'aide de la méthode setParameter(), ce qui prévient les injections SQL.
     ->setParameter(":date", $date)
     ->setParameter(":idCourse", $course->getId())
     ->getResult();

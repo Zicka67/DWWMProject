@@ -23,41 +23,6 @@ timeSlots.push(startTime_hours+":"+startTime_minutes);
 startTime.setMinutes(startTime.getMinutes() + 30);
 }
 
-
-// ***** CHANGE COLORS BUTTONS *****
-
-function setPaymentButtonColor(paymentMethodContainer, courseName) {
-    const spanChild = paymentMethodContainer.querySelector('.radio-button__custom');
-    const pTestElement = paymentMethodContainer.querySelector('.p-test'); 
-
-    switch(courseName) {
-        case "atelier-de-portage":
-            spanChild.classList.add("blue2");
-            paymentMethodContainer.classList.add("blue2");
-            pTestElement.classList.add("blue2");
-            break;
-        case "consultation-d-allaitement":
-            spanChild.classList.add("purple2");
-            paymentMethodContainer.classList.add("purple2");
-            pTestElement.classList.add("purple2");
-            break;
-        case "rituel-rebozo":
-            spanChild.classList.add("orange2");
-            paymentMethodContainer.classList.add("orange2");
-            pTestElement.classList.add("orange2");
-            break;
-        case "cercle-mamans-bebes":
-            spanChild.classList.add("red2");
-            paymentMethodContainer.classList.add("red2");
-            pTestElement.classList.add("red2");
-            break;
-        default:
-            break;
-    }
-}
-// *******************
-
-
 // Appel de la fonction pour générer le calendrier
 generateCalendar();
 
@@ -127,28 +92,6 @@ calendar.innerHTML = `
 // Appel de la fonction pour afficher le contenu du calendrier
 displayCalendarContent();
 
-
-// ***** CLEAR ALL CLASSES *****
-
-function clearAllClasses() {
-    const customButtons = document.querySelectorAll('.radio-button__custom');
-    const labels = document.querySelectorAll('.radio-button__label');
-    const pTestElements = document.querySelectorAll('.p-test');
-    
-    customButtons.forEach(elem => {
-        elem.classList.remove("blue2", "orange2", "purple2", "red2"); 
-    });
-
-    labels.forEach(elem => {
-        elem.classList.remove("blue2", "orange2", "purple2", "red2"); 
-    });
-
-    pTestElements.forEach(elem => {
-        elem.classList.remove("blue2", "orange2", "purple2", "red2");
-    });
-}
-
-// *****
 
 const paymentMethodElements = document.querySelectorAll('.radio-button__label');
 paymentMethodElements.forEach(element => {
@@ -471,6 +414,61 @@ var month = ("0" + (date.getMonth() + 1)).slice(-2);
 var day = ("0" + date.getDate()).slice(-2);
 return year + "-" + month + "-" + day;
 }
+
+// ***** CHANGE COLORS BUTTONS *****
+
+function setPaymentButtonColor(paymentMethodContainer, courseName) {
+    const spanChild = paymentMethodContainer.querySelector('.radio-button__custom');
+    const pTestElement = paymentMethodContainer.querySelector('.p-test'); 
+
+    switch(courseName) {
+        case "atelier-de-portage":
+            spanChild.classList.add("blue2");
+            paymentMethodContainer.classList.add("blue2");
+            pTestElement.classList.add("blue2");
+            break;
+        case "consultation-d-allaitement":
+            spanChild.classList.add("purple2");
+            paymentMethodContainer.classList.add("purple2");
+            pTestElement.classList.add("purple2");
+            break;
+        case "rituel-rebozo":
+            spanChild.classList.add("orange2");
+            paymentMethodContainer.classList.add("orange2");
+            pTestElement.classList.add("orange2");
+            break;
+        case "cercle-mamans-bebes":
+            spanChild.classList.add("red2");
+            paymentMethodContainer.classList.add("red2");
+            pTestElement.classList.add("red2");
+            break;
+        default:
+            break;
+    }
+}
+// *******************
+
+// ***** CLEAR ALL CLASSES *****
+
+function clearAllClasses() {
+    const customButtons = document.querySelectorAll('.radio-button__custom');
+    const labels = document.querySelectorAll('.radio-button__label');
+    const pTestElements = document.querySelectorAll('.p-test');
+    
+    customButtons.forEach(elem => {
+        elem.classList.remove("blue2", "orange2", "purple2", "red2"); 
+    });
+
+    labels.forEach(elem => {
+        elem.classList.remove("blue2", "orange2", "purple2", "red2"); 
+    });
+
+    pTestElements.forEach(elem => {
+        elem.classList.remove("blue2", "orange2", "purple2", "red2");
+    });
+}
+
+// *****
 
 
 

@@ -39,90 +39,7 @@
 
 </section>
 
-
 {% endblock %}
-
-{# <section class="main-section-video-text2">
-
-        <section id="section-text" class="section-blue">
-                <div class="">
-                    <h2 class="">
-                        Bienvenue au cours de portage : Tisser un lien fort et sécurisant<br><br>
-                    </h2>
-                    <p class="section-text">
-                        Le portage est une tradition ancestrale, un art qui a traversé les âges et les cultures, permettant aux parents de garder leurs bébés près d'eux tout en continuant leurs activités quotidiennes. Que vous attendiez l'arrivée de votre petit bout de chou ou que vous soyez déjà dans la merveilleuse aventure de la parentalité, le portage est une expérience à découvrir.
-                        <br><br>
-                        Mais comme toute pratique, le portage peut soulever des questions : Quel type d'écharpe ou de porte-bébé choisir ? Comment s'assurer que mon bébé est bien positionné et en sécurité ? Comment porter mon bébé sans me fatiguer le dos ? Ce cours est là pour répondre à toutes ces interrogations. Je suis ici pour vous guider, vous rassurer et vous transmettre les techniques et astuces du portage.
-                        <br><br>
-                        Alors, chers parents, que vous soyez en attente de votre merveille ou que vous l'ayez déjà dans vos bras, je vous invite à me rejoindre. Laissez-me vous accompagner dans cette danse du portage, où chaque pas renforce le lien d'amour et de confiance entre vous et votre bébé dans le ventre, on peut également porter la vie dans son coeur et dans sa tête. Qu’il s’agisse de l’autre parent, que ce soit un papa ou une maman ;ou qu’il s’agisse d’une adoption, les liens se tissent en dehors du giron maternel, dans l’attente, dans l’imaginaire, dans l’espoir et dans l’amour.
-                    </p>
-                </div>
-        </section>
-
-        <section id="section-video" class="">
-                    <div class="video-allaitement">
-                        <video src="../img/allaitement.mp4" autoplay loop></video>
-                    </div>
-        </section>
-
-</section> #}
-
-
-{# <div class="container-margin-home">
-    <div class="container-showCours-home">
-        {% for cours in listeCours|slice(0, 3) %}
-            <div class="enfant-home enfant-cours-home pastel-red3">
-                <h2>{{ cours.nomCours }}</h2> 
-            <div class="img-dim"><img class="image-responsive" src="{{ asset('imgVich/' ~ cours.imageName) }}" alt="Image des cours proposés sur Douceur De Lune"></div>
-                <p>{{ cours.description | raw  }}</p> 
-                <p class="price">{{ cours.prix }}€</p>
-            <a class="details-link" href="{{ path('detailCours', {templateName: cours.slugCours}) }}#reservation-form">
-                <button class="buttonMore">
-                En savoir plus !
-                    <div class="arrow-wrapper">
-                        <div class="arrow"></div>
-                    </div>
-                </button>
-            </a>
-            </div>
-        {% endfor %}
-        
-        {% for cours in listeCours|slice(3, 3) %}
-            <div class="enfant-home enfant-cours-home pastel-red3">
-                <h2>{{ cours.nomCours }}</h2> 
-                <div class="img-dim"><img class="image-responsive" src="{{ asset('imgVich/' ~ cours.imageName) }}" alt="Image des cours proposés sur Douceur De Lune"></div>
-                <p>{{ cours.description | raw  }}</p> 
-                <p class="price">{{ cours.prix }}€</p>
-                <a class="details-link" href="{{ path('detailCours', {templateName: cours.slugCours}) }}#reservation-form">
-                <button class="buttonMore">
-                En savoir plus !
-                    <div class="arrow-wrapper">
-                        <div class="arrow"></div>
-                    </div>
-                </button>
-            </a>
-            </div>
-        {% endfor %}
-
-        {% for cours in listeCours|slice(6, 3) %}
-            <div class="enfant-home enfant-cours-home pastel-red3">
-                <h2>{{ cours.nomCours }}</h2> 
-                <div class="img-dim"><img class="image-responsive" src="{{ asset('imgVich/' ~ cours.imageName) }}" alt="Image des cours proposés sur Douceur De Lune"></div>
-                <p>{{ cours.description | raw  }}</p> 
-                <p class="price">{{ cours.prix }}€</p>
-                <a class="details-link" href="{{ path('detailCours', {templateName: cours.slugCours}) }}#reservation-form">
-                <button class="buttonMore">
-                En savoir plus !
-                    <div class="arrow-wrapper">
-                        <div class="arrow"></div>
-                    </div>
-                </button>
-            </a>
-            </div>
-        {% endfor %}
-    </div>
-</div> #}
-
 
 {% block bandeauPresentation %}
 
@@ -155,7 +72,7 @@
 {% block bandeauBonCadeau %}
     <div class="bandeau-info-cadeau cadeau">
         <div class="carte-cadeau">
-            <h3> le bon cadeau </h3>
+            <h3> Le bon cadeau </h3>
             <h2> A offir !</h2>
             <p >Vous souhaitez offrir une consultation d'allaitement, un atelier portage 
              en écharpe pour bébé ou une séance de bien être Rebozo à l'un de vos proches.
