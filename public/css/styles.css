@@ -560,7 +560,7 @@ display: inline-block;
 .dropdown-menu {
     display: none;
     position: absolute;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
     /* backdrop-filter: blur(6px); */
     width: 294px;
     z-index: 1;
@@ -831,9 +831,10 @@ background-position: center 40%;
     font-size: 1rem;
     z-index: 1;
     position: absolute;
-    bottom: 100px;  /* pour augmenter le bouton ou descnedre */
+    bottom: 100px;
     left: 50%;
     transform: translateX(-50%);  
+    color: white;
 }
 
     .details-link {
@@ -844,22 +845,24 @@ background-position: center 40%;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: white;
     }
     
     .buttonMore-cadeau .arrow {
     margin-top: 1px;
     width: var(--arrow-width);
-    background: var(--darkPink-color);
+    background: var(--tertiary-color);
     height: var(--arrow-stroke);
     position: relative;
     transition: 0.2s;
+    color: white !important;
     }
     
     .buttonMore-cadeau .arrow::before {
     content: "";
     box-sizing: border-box;
     position: absolute;
-    border: solid var(--lightPink-color);
+    border: solid var(--tertiary-color);
     border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
     display: inline-block;
     top: -3px;
@@ -875,7 +878,7 @@ background-position: center 40%;
     }
     
     .buttonMore-cadeau:hover .arrow {
-    background: var(--lightPink-color);
+    background: var(--tertiary-color);
     }
     
     .buttonMore-cadeau:hover .arrow:before {
