@@ -69,23 +69,29 @@ document.addEventListener("DOMContentLoaded", function() {
 //     }
 // }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     
 
+
+// Dropdown behavior for "Cocon"
+const dropdown = document.querySelector('.dropdown');
+const dropdownMenu = document.querySelector('.dropdown-menu.dropdown-list');
+let isDropdownActive = false;
+
+dropdown.addEventListener('click', function(event) {
+    event.stopPropagation();
+    if (isDropdownActive) {
+        dropdownMenu.style.display = 'none';
+        isDropdownActive = false;
+    } else {
+        dropdownMenu.style.display = 'block';
+        isDropdownActive = true;
+    }
+});
+
+// Ensure that the dropdown closes when clicking outside
+document.addEventListener('click', function(event) {
+    if (!event.target.closest('.dropdown')) {
+        dropdownMenu.style.display = 'none';
+        isDropdownActive = false;
+    }
+});
