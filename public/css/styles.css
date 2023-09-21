@@ -549,7 +549,6 @@ animation: spin 1s linear infinite;
 .dropdown {
 position: relative;
 display: inline-block;
-
 }
 
 .align {
@@ -600,7 +599,11 @@ display: block;
 }
 
 .dropdown-list {
-    display: none
+    display: none;
+}
+
+.dropdown-list li{
+    margin-bottom: 5px;
 }
 
 /* ************** BANDEAU ****************** */
