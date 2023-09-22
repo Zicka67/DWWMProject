@@ -67,7 +67,7 @@ class ContactType extends AbstractType
                         'max' => 500,
                         'maxMessage' => 'Votre message ne doit pas dépasser {{ limit }} caractères.'
                     ]),
-                    new NotBlank(['message' => 'Entrez un sujet']),
+                    new NotBlank(['message' => 'Entrez un message']),
                     new Regex([
                         'pattern' => '/^[a-zA-Z0-9\s.,?!\'"\n\r-]{5,500}$/',
                     ]),
@@ -78,7 +78,7 @@ class ContactType extends AbstractType
                 'required' => false,
                 'label' => false,
                 'attr' => [
-                    'style' => 'display:none;',
+                    'style' => 'display:;',
                 ],
             ])
         ;

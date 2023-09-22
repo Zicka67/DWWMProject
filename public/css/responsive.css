@@ -215,10 +215,6 @@ margin-top: 45px;
     -webkit-backdrop-filter: blur(6px); 
     }
 
-.dropdown-menu {
-    background-color: transparent;
-}
-
 .navbar-menu li a {
     /* width: 150px; */
     display: block;
@@ -248,8 +244,9 @@ margin-top: 45px;
 .dropdown-menu {
     min-width: 160px;
     z-index: 1;
-    margin-top: -2px;
+    margin-top: -6px;
     left: 253px;
+    background-color: transparent;
   }
 
 .dropdown-menu li a {
@@ -357,10 +354,6 @@ font-size: 1rem;
     -webkit-backdrop-filter: blur(6px); 
     }
 
-.dropdown-menu {
-    background-color: transparent;
-}
-
 .navbar-menu li a {
     /* width: 150px; */
     display: block;
@@ -390,8 +383,9 @@ font-size: 1rem;
 .dropdown-menu {
     min-width: 160px;
     z-index: 1;
-    margin-top: -2px;
+    margin-top: -5px;
     left: 253px;
+    background-color: transparent;
   }
 
 .dropdown-menu li a {
@@ -499,7 +493,7 @@ display: block;
     min-width: 160px;
     width: 294px;
     z-index: 1;
-    margin-top: -2px;
+    margin-top: -4px;
     left: 253px;
   }
 
@@ -544,7 +538,6 @@ display: block;
         line-height: 1.4; 
         padding: 15px 15px; 
     }
-
 
 }
 
@@ -634,6 +627,10 @@ font-size: 2.5rem;
 .text-presentation-container {
     margin-top: 0;
 }
+
+.dropdown-menu {
+    margin-top: -3px;
+  }
 
 }
 

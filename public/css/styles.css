@@ -272,6 +272,29 @@ width: 100%;
 
 
 /* ************************* ERREURS *************************** */
+.alert-danger{
+    color: red;
+    position: fixed;
+    top: 80px;
+    width: 100%;
+    z-index: 100;
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: 'Barlow', sans-serif;
+}
+
+.alert-success{
+    color: green;
+    position: fixed;
+    top: 80px;
+    width: 100%;
+    z-index: 100;
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: 'Barlow', sans-serif;
+}
+
+
 .custom-alert {
 position: fixed;
 left: 12%;
@@ -1685,7 +1708,7 @@ background-color: var(--darkPink-color);
 /* ***********ERROR************ */
 
 .error-test {
-    margin-left: 8px;
+    /* margin-left: 8px; */
     color: red;
     font-family: 'Barlow', sans-serif;
     font-weight: 500;

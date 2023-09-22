@@ -61,9 +61,19 @@ public function contact(Request $request, MailerInterface $mailer)
     $form->handleRequest($request);
 
     if ($form->isSubmitted()) {
+
+        // Vérification de la soumission précédente
+        $session = $request->getSession();
+        $lastSuspiciousSubmission = $session->get('last_suspicious_submission');
+        if ($lastSuspiciousSubmission && (time() - $lastSuspiciousSubmission < 60)) {  // 600 secondes = 10 minutes
+            $this->addFlash('error', 'Veuillez attendre encore quelques minutes avant de réessayer.');
+            return $this->redirectToRoute('app_home');
+        }
+
         if ($form->get('honeypot')->getData()) {
             // Le formulaire a probablement été soumis par un robot
-            // Redirige
+            $session->set('last_suspicious_submission', time());
+            $this->addFlash('error', 'Veuillez attendre quelques minutes avant de réessayer.');
             return $this->redirectToRoute('app_home');
         }
 
@@ -81,13 +91,13 @@ public function contact(Request $request, MailerInterface $mailer)
             $this->addFlash('success', 'Merci pour votre message, il a bien été envoyé');
 
             return $this->redirectToRoute('contacts');
-        }
-        
+        }   
     }
 
     return $this->render('pagesInfo/contacts.html.twig', [
         'contact_form' => $form->createView(),
     ]);
 }
+
 
 }
