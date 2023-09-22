@@ -568,7 +568,7 @@ display: inline-block;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     padding-bottom: 15px;
-    margin-top: 20px;
+    margin-top: 0px;
 }
 
 .dropdown-menu:hover {
@@ -597,6 +597,10 @@ display: block;
 
 .dropdown:hover .dropdown-menu {
 display: block;
+}
+
+.dropdown-list {
+    display: none
 }
 
 /* ************** BANDEAU ****************** */
