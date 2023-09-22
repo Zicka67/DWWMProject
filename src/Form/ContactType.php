@@ -50,12 +50,15 @@ class ContactType extends AbstractType
             ->add('sujet', TextType::class, [
                 'constraints' => [
                     new Assert\Length([
-                        'max' => 30
+                        'min' => 3,
+                        'minMessage' => 'Votre sujet doit avoir au moins {{ limit }} caractères.',
+                        'max' => 100,
+                        'maxMessage' => 'Votre sujet ne doit pas dépasser {{ limit }} caractères.'
                     ]),
                     new NotBlank(['message' => 'Entrez un sujet']),
                     new Regex([
                         'pattern' => '/^[a-zA-Z0-9\s.,?!\'-]{3,100}$/',
-                        'message' => 'Votre sujet ne doit pas dépasser {{ limit }} caractères.',
+                        'message' => '',
                     ]),
                 ]
             ])
