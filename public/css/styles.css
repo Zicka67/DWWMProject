@@ -549,7 +549,6 @@ animation: spin 1s linear infinite;
 .dropdown {
 position: relative;
 display: inline-block;
-
 }
 
 .align {
@@ -568,7 +567,7 @@ display: inline-block;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     padding-bottom: 15px;
-    margin-top: 0px;
+    margin-top: 20px;
 }
 
 .dropdown-menu:hover {
@@ -597,10 +596,6 @@ display: block;
 
 .dropdown:hover .dropdown-menu {
 display: block;
-}
-
-.dropdown-list {
-    display: none
 }
 
 /* ************** BANDEAU ****************** */
@@ -767,7 +762,7 @@ background-position: center 40%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('../img/portrait-jeune-famille.jpg');
+    background-image: url('../img/portrait-jeune-famille.webp');
     }
 
 .carte-cadeau {

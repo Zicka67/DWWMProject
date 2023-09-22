@@ -5,11 +5,15 @@
     <script src="{{ asset('js/tarteAuCitron.js') }}"></script>
 
     <meta charset="UTF-8">
-    <meta name="decription" content="Douceur de lune est un site proposant des cours d'allaitement, de portage de relaxation pour les jeunes ou futurs parents">
+    
+    {% block metaDescription %}
+    <meta name="description" content="Douceur de lune est un site proposant des cours d'allaitement, de portage de relaxation pour les jeunes ou futurs parents">
+    {% endblock %}
+    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Bienvenue sur Douceur de lune !{% endblock %}</title>
-    <link rel="icon" href="{{ asset('img/logo-croissant.png') }}">
+    <link rel="icon" href="{{ asset('img/logo-croissant.webp') }}">
     {# STRIPE #}
     <script src="https://js.stripe.com/v3/"></script>
     {# JS #}
@@ -63,7 +67,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
 
                 <div class="image-container">
-                    <img src="{{ asset('img/LOGO6.png') }}" alt="Image au centre de la page, c'est un cadre de miroir avec le nom du site Douceur de lune au milieu et décoré de fleurs et étoiles" class="center-image">
+                    <img src="{{ asset('img/LOGO6.webp') }}" alt="Image au centre de la page, c'est un cadre de miroir avec le nom du site Douceur de lune au milieu et décoré de fleurs et étoiles" class="center-image">
                 </div>
 
                 <div class="text-container">
