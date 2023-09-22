@@ -892,15 +892,17 @@ font-size: 1.8rem;
 
 @media (min-width: 970px) {
 
-    /* .align.padding-dropdown:hover ~ .dropdown-menu.dropdown-list {
-        display: block;
-    } */
-
     .mobile-link {
         display: none;
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
         
         } 
+}
+
+@media (min-width: 1171px) {
+    .dropdown:hover .dropdown-menu {
+        display: block !important;  
+    }
 }
    

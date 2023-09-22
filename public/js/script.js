@@ -45,33 +45,7 @@ if (!event.target.closest('.navbar-toggle')) {
 }
 });
 
-// ***************************
-
-// MESSAGES
-document.addEventListener("DOMContentLoaded", function() {
-  setTimeout(function() {
-      let alert = document.querySelector('.custom-alert');
-      if(alert) alert.style.display = 'none';
-  }, 3000); 
-});
-
-// ***************************
-
-// let eyeicon = document.getElementById("eyeicon");
-// let password = document.getElementById("password");
-
-
-// eyeicon.onclick = function(){
-//     if(password.type == "password"){
-//         password.type = "text";
-//     }else {
-//         password.type = "password";
-//     }
-// }
-
     
-
-
 // Dropdown behavior for "Cocon"
 const dropdown = document.querySelector('.dropdown');
 const dropdownMenu = document.querySelector('.dropdown-menu.dropdown-list');
@@ -95,3 +69,36 @@ document.addEventListener('click', function(event) {
         isDropdownActive = false;
     }
 });
+
+
+
+
+
+
+
+// ***************************
+
+// MESSAGES
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+        let alert = document.querySelector('.custom-alert');
+        if(alert) alert.style.display = 'none';
+    }, 3000); 
+  });
+
+
+
+// ***************************
+
+// let eyeicon = document.getElementById("eyeicon");
+// let password = document.getElementById("password");
+
+
+// eyeicon.onclick = function(){
+//     if(password.type == "password"){
+//         password.type = "text";
+//     }else {
+//         password.type = "password";
+//     }
+// }
+

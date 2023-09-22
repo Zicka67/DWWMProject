@@ -556,6 +556,10 @@ padding-top: 3px;
 display: inline-block;
 }
 
+.align:hover .dropdown-list{
+    display: block;
+}
+
 .dropdown-menu {
     display: none;
     position: absolute;
@@ -567,7 +571,7 @@ display: inline-block;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     padding-bottom: 15px;
-    margin-top: 20px;
+    /* margin-top: 20px; */
 }
 
 .dropdown-menu:hover {
@@ -584,12 +588,11 @@ display: inline-block;
 .dropdown-menu li {
 margin-left: 2vw;
 margin-top: 0.5vw;
-
 }
 
 .dropdown-menu li a {
 font-weight: 600;
-padding: 15px 15px;
+padding: 15px 15px; 
 text-decoration: none;
 display: block;
 }
@@ -1865,4 +1868,10 @@ animation: slideIn 0.5s forwards;
 
 .navbar-menu.animate-out {
 animation: slideOut 0.5s forwards;
+}
+/* Display the dropdown menu on hover for screens larger than 1170px */
+@media (min-width: 1171px) {
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
 }
