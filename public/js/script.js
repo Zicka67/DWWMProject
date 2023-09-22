@@ -72,19 +72,24 @@ document.addEventListener('click', function(event) {
 
 
 
-
-
-
-
 // ***************************
 
 // MESSAGES
 document.addEventListener("DOMContentLoaded", function() {
     setTimeout(function() {
-        let alert = document.querySelector('.custom-alert');
-        if(alert) alert.style.display = 'none';
-    }, 3000); 
-  });
+        let dangerAlerts = document.querySelectorAll('.alert-danger');
+        let successAlerts = document.querySelectorAll('.alert-success');
+        
+        dangerAlerts.forEach(function(alert) {
+            alert.style.display = 'none';
+        });
+        
+        successAlerts.forEach(function(alert) {
+            alert.style.display = 'none';
+        });
+    }, 4000); 
+});
+
 
 
 

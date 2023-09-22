@@ -295,7 +295,7 @@ width: 100%;
 }
 
 
-.custom-alert {
+/* .custom-alert {
 position: fixed;
 left: 12%;
 border-radius: 4px;
@@ -307,7 +307,7 @@ margin: 100px auto 0 auto;
 z-index: 1000;
 font-size: 1.2vw;
 font-family: 'Barlow', sans-serif;
-}
+} */
 
 .password-error {
 color: var(--red-color);
