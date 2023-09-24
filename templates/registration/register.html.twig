@@ -28,6 +28,10 @@
         <label for="email" class="form-label">Email</label>
         {{ form_widget(registrationForm.email, { 'attr': {'id': 'email', 'class': 'form-input'} }) }}
         <div class="error-test">{{ form_errors(registrationForm.email) }}</div> 
+        {#phone #}
+        <label for="phoneNumber" class="form-label">Téléphone</label>
+        {{ form_widget(registrationForm.phoneNumber, { 'attr': {'id': 'phoneNumber', 'class': 'form-input'} }) }}
+        <div class="error-test">{{ form_errors(registrationForm.phoneNumber) }}</div> 
         {#password #}
         <label id="passwordd" for="password" class="form-label">Mot de passe</label>
         {{ form_widget(registrationForm.plainPassword, { 'attr': {'id': 'password', 'class': 'form-input'} }) }}

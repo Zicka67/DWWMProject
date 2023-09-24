@@ -33,6 +33,7 @@ public function __construct(EmailVerifier $emailVerifier)
 public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
 {
     $user = new User();
+   
     $form = $this->createForm(RegistrationFormType::class, $user);
     $form->handleRequest($request);
 
@@ -49,7 +50,7 @@ public function register(Request $request, UserPasswordHasherInterface $userPass
 
         $entityManager->persist($user);
         $entityManager->flush();
-
+        // dd($user);
         // generate a signed url and email it to the user
         $this->emailVerifier->sendEmailConfirmation('app_verify_email', $user,
             (new TemplatedEmail())

@@ -40,6 +40,9 @@ private $isVerified = false;
 #[ORM\Column(length: 255)]
 private ?string $pseudo = null;
 
+#[ORM\Column(length: 15)]
+private ?string $phoneNumber = null;
+
 public function __construct()
 {
     $this->reservations = new ArrayCollection();
@@ -172,6 +175,18 @@ public function setPseudo(string $pseudo): self
 public function __toString(): string
 {
     return $this->getUserIdentifier();
+}
+
+public function getPhoneNumber(): ?string
+{
+    return $this->phoneNumber;
+}
+
+public function setPhoneNumber(string $phoneNumber): self
+{
+    $this->phoneNumber = $phoneNumber;
+
+    return $this;
 }
 
 }

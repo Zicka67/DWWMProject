@@ -146,6 +146,7 @@ public function save_reservation(Security $security, Request $request, EntityMan
 {
     // On utilise le service Security pour obtenir l'utilisateur actuellement connecté et on le stocke dans la variable
     $user = $security->getUser();
+    
     // On récupère le nom du cours à partir de la requête HTTP et on le stock
     $courseSlug  = $request->request->get('courseName');
     // On utilise l'EM, on récupère le chemin pour l'entité Cours, on cherche le cours correspondant au slug.
@@ -181,6 +182,7 @@ public function save_reservation(Security $security, Request $request, EntityMan
     // On enregistre et flush la reservation en DB
     $em->persist($reservation);
     $em->flush();
+    // dd($user);
     //  On vérifie si la méthode de paiement de la réservation est "payment-online"
     if ($reservation->getPayementMethod() == "payment-online") {
         //  On redirige l'utilisateur vers la page de paiement, en ajoutant l'ID de la réservation à l'URL.

@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des reservations{% endblock %}
+
+{% block body_class %}page-color-home{% endblock %}
+
+{% block body %}
+
+{% block bandeau %}
+<div class="bandeau-info"></div>
+{% endblock %}
+
+<div class="container-margin">
+
+    <div class="container-showCours">
+
+        {% for reservation in reservations|reverse|slice(0, 10)%}
+
+        <h2>{{ reservation.user.pseudo }} - {{ reservation.user.phoneNumber }} - {{ reservation.cours }} - {{ reservation.dtResa | date("m/d/Y") }} - {{ reservation.dtCours | date("m/d/Y") }}</h2> 
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endblock %}

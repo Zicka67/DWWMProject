@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Form\ContactType;
+use App\Repository\ReservationRepository;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
@@ -52,6 +53,16 @@ public function monParcours(): Response
     return $this->render('pagesInfo/mon-parcours.html.twig');
 }
 
+// Route pour la liste de resa
+#[Route('/mes-reservations', name: 'show_reservation')]
+public function reservation_list(ReservationRepository $reservationRepository): Response
+{
+    $reservations = $reservationRepository->findAll();
+
+    return $this->render('pagesInfo/showReservations.html.twig', [
+        'reservations' => $reservations,
+    ]);
+}
 
 // Route pour les contacts
 #[Route('/contacts', name: 'contacts')]
