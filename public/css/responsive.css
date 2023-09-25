@@ -521,6 +521,10 @@ display: block;
 
 @media (max-width: 768px) {
 
+    .image-parcours-container-card {
+        margin-bottom: 0px;
+    }
+
   
 
 

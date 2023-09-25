@@ -1835,9 +1835,9 @@ background-color: var(--darkPink-color);
 
 .image-parcours-container-card {
     margin-top: 100px;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
 }
-
+    
 .image-parcours-container-card img{
     border-radius: 5px;
     /* margin-bottom: 80px; */
