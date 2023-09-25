@@ -31,8 +31,6 @@
     {# MAP #}
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="crossorigin="">
     <link rel="stylesheet" href="{{ asset('css/map.css') }}">
-   
-
 
     {% block stylesheets %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
@@ -74,25 +72,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
 </div>
 
-
     {# Include de la nav #}
     {% include "_partials/_nav.html.twig" %}
 
-
             {% block body %}
-            
 
-            
             {% endblock %}
-
 
     {# Include du footer #}
     {% include "_partials/_footer.html.twig" %}
-
-
-    {# Pour afficher du contenu uniquement en dehors de la route reversationpayement #}
-    {# {% if app.request.attributes.get('_route') != 'reservation_payment' %}
-    {% endif %} #}
 
     {% block javascripts %}
     
@@ -117,8 +105,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             once: true,
         });
     </script>
-
-     
 
     {% endblock %}
 </body>
