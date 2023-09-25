@@ -4,6 +4,12 @@
 
 {% block title %}Paiement réussi{% endblock %}
 
+{% block stylesheets %}
+  <script src="{{ asset('js/payment.js') }}" defer></script>
+  <link rel="stylesheet" href="{{ asset('css/payment.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+{% endblock stylesheets %}
+
 {% block body %}
 
 {% block bandeau %}

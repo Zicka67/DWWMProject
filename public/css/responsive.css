@@ -36,6 +36,10 @@
 
 @media (max-width: 1400px) {
 
+    .form-success-container {
+        width: 70%;
+    }
+
 .img-dim {
 width: 230px;
 height: 230px;
@@ -81,7 +85,7 @@ margin-top: 15px;
 }
 
 .navbar-register {
-min-width: 240px;
+min-width: 260px;
 }
 
 .navbar-container li a {
@@ -91,7 +95,8 @@ font-size: 1.2rem;
 
 }
 
-@media (max-width: 1170px) {
+@media (max-width: 1175px) {
+
 
 .buttonBack{
 width: 80px;
@@ -263,6 +268,10 @@ display: block;
 
 @media (max-width: 970px) {
 
+    .StripeElement{
+        width: 50%;
+    }
+
 .enfant-home p {
 font-size: 0.8rem;
 font-weight: 500;
@@ -402,6 +411,7 @@ display: block;
 
 @media (max-width: 880px) {
 
+
 .container-mt-p {
     width: 75%;
     margin: 2vw auto;
@@ -510,6 +520,10 @@ display: block;
 } 
 
 @media (max-width: 768px) {
+
+  
+
+
     .main-section-video-text, .main-section-video-text2 {
         flex-direction: column;
     }
@@ -542,6 +556,19 @@ display: block;
 }
 
 @media (max-width: 760px) {
+
+    .form-success-container {
+        width: 80%;
+    }
+
+    .StripeElement{
+        width: 400px;
+    }
+
+.reservations-table th, .reservations-table td {
+    padding: 8px; 
+    font-size: 0.8rem;
+}
 
 .container-parcours {
     flex-direction: column;
@@ -635,6 +662,24 @@ font-size: 2.5rem;
 }
 
 @media (max-width: 600px) {
+
+    .form-success-container {
+        width: 90%;
+    }
+
+    .form-success-container h1 {
+        font-size: 2.8rem;
+      }
+
+    .StripeElement{
+        width: 350px;
+    }
+
+    .reservations-table th, .reservations-table td {
+        padding: 5px; 
+        font-size: 0.72rem;
+        
+    }
         
 .first-password {
     font-size: 0.9rem;
@@ -846,6 +891,11 @@ height: 350px;
 }
 
 @media (max-width: 480px) {
+
+    .StripeElement{
+        width:300px;
+    }
+
     #section-text p, #section-text h2 {
         font-size: 0.8rem;
     }

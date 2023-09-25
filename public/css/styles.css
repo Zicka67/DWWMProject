@@ -146,6 +146,10 @@ body.page-color-home {
 background-color: var(--lightPink-color);
 }
 
+body.page-color-home2 {
+    background-color: #ffffff;
+}
+
 body.page-color-allaitement{
 background-color: #ffe7fe;
 }
@@ -484,7 +488,7 @@ min-width: 566px;
 .navbar-register {
 display: inline-block;
 align-items: center;
-min-width: 292px;
+min-width: 290px;
 }
 
 .navbar-register ul{
@@ -639,7 +643,7 @@ background-color: #f18787;
 }
 
 .bandeau-info {
-height: 400px;
+height: 300px;
 width: 100%;
 background-image: url('../img/f76197_19da170fd28646b197f0c6fa3612fb81~mv2.webp');
 margin-bottom: 20px;
@@ -865,50 +869,20 @@ background-position: center 40%;
     .details-link {
         z-index: 1;
     }
-    
-    .buttonMore-cadeau .arrow-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
+
+    .details-link2 {
+        z-index: 1;
+        width: 185px;
+        display: flex;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+
+    .details-link2 button{
+        cursor: pointer;
     }
     
-    .buttonMore-cadeau .arrow {
-    margin-top: 1px;
-    width: var(--arrow-width);
-    background: var(--tertiary-color);
-    height: var(--arrow-stroke);
-    position: relative;
-    transition: 0.2s;
-    color: white !important;
-    }
-    
-    .buttonMore-cadeau .arrow::before {
-    content: "";
-    box-sizing: border-box;
-    position: absolute;
-    border: solid var(--tertiary-color);
-    border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
-    display: inline-block;
-    top: -3px;
-    right: 3px;
-    transition: 0.2s;
-    padding: 3px;
-    transform: rotate(-45deg);
-    }
-    
-    .buttonMore-cadeau:hover {
-    background-color: var(--darkPink-color);
-    cursor: pointer;
-    }
-    
-    .buttonMore-cadeau:hover .arrow {
-    background: var(--tertiary-color);
-    }
-    
-    .buttonMore-cadeau:hover .arrow:before {
-    right: 0;
-    }
+  
 
 /* ************** PAGES INFOS ****************** */
 .container-margin {
@@ -1014,6 +988,46 @@ border-radius: 5px;
 
 .underline {
     text-decoration: underline;
+}
+
+
+/* Reservations */
+
+.reservations-table {
+    width: 100%;
+    max-width: 90%; 
+    margin: 20px auto; 
+    border-collapse: collapse;
+    font-family: 'Barlow', sans-serif;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.reservations-table th, .reservations-table td {
+    padding: 15px 20px; 
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+}
+
+.reservations-table th {
+    background-color: var(--darkPink-color);
+    color: white;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.reservations-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.reservations-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.td-color {
+    color: var(--red-color);
 }
 
 /* ****************** FORM STYLES LOGIN/SUB ***************** */
@@ -1597,6 +1611,10 @@ background: var(--lightPink-color);
 right: 0;
 }
 
+.button-more-margin {
+    margin-top: 380px;
+}
+
 /* ************ BUTTON LOGIN LOGOUT ************* */
 
 .Btn {
@@ -1611,6 +1629,7 @@ cursor: pointer;
 position: relative;
 overflow: hidden;
 transition-duration: .3s;
+margin-left: -5px;
 }
 
 /* SIGN */
@@ -1632,7 +1651,7 @@ fill: white;
 /* text */
 .text {
 position: absolute;
-margin-left: 20px;
+margin-left: 30px;
 /* right: 5px; */
 opacity: 0;
 color: white;
@@ -1642,7 +1661,7 @@ transition-duration: .3s;
 }
 /* hover effect on button width */
 .Btn:hover {
-width: 150px;
+width: 130px;
 border-radius: 40px;
 transition-duration: .3s;
 }
@@ -1796,9 +1815,10 @@ background-color: var(--darkPink-color);
 
 .bandeau-info-presentation {
     height: auto;
+    min-height: 350px;
     background-color: #ffffff;
     position: relative;
-    padding: 0 5%;
+    /* padding: 0 5%; */
 }
 
 .carte-presentation {
@@ -1815,11 +1835,12 @@ background-color: var(--darkPink-color);
 
 .image-parcours-container-card {
     margin-top: 100px;
+    margin-bottom: 50px;
 }
 
 .image-parcours-container-card img{
     border-radius: 5px;
-    margin-bottom: 80px;
+    /* margin-bottom: 80px; */
 }
 
 .text-presentation {

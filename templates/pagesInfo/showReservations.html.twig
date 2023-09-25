@@ -11,17 +11,33 @@
 {% endblock %}
 
 <div class="container-margin">
-
-    <div class="container-showCours">
-
-        {% for reservation in reservations|reverse|slice(0, 10)%}
-
-        <h2>{{ reservation.user.pseudo }} - {{ reservation.user.phoneNumber }} - {{ reservation.cours }} - {{ reservation.dtResa | date("m/d/Y") }} - {{ reservation.dtCours | date("m/d/Y") }}</h2> 
-
-        {% endfor %}
-
+    <div class="container-showReservations">
+       
+        <table class="reservations-table">
+            
+            <thead>
+                <tr>
+                    <th>Pseudo</th>
+                    <th>Téléphone</th>
+                    <th>Cours</th>
+                    <th>Date de réservation</th>
+                    <th>Date du cours</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                {% for reservation in reservations|reverse|slice(0, 10) %}
+                <tr>
+                    <td>{{ reservation.user.pseudo }}</td>
+                    <td class="td-color">{{ reservation.user.phoneNumber }}</td>
+                    <td>{{ reservation.cours }}</td>
+                    <td>{{ reservation.dtResa | date("m/d/Y") }}</td>
+                    <td>{{ reservation.dtCours | date("m/d/Y") }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
-
 </div>
 
 {% endblock %}

@@ -2,7 +2,7 @@
 
 {% block title %}Douceur de lune{% endblock %}
 
-{% block body_class %}page-color-home{% endblock %}
+{% block body_class %}page-color-home2{% endblock %}
 
 {% block body %}
 
@@ -61,8 +61,18 @@
                     <br><br>
                         Je suis ravie de vous accueillir sur le site <span>"Douceur de lune"</span>. Moi-même maman comblée, j'ai eu à cœur d'accompagner les parents dans cette fabuleuse aventure qu'est la parentalité en proposant des ateliers allaitement, portage physiologique & yoga.[…] </div>
                     </p>
+                   
                 </div>
+               
             </div>
+            <a class="details-link2" href="{{ path('monParcours') }}">
+                <button class="buttonMore">
+                Me découvrir
+                    <div class="arrow-wrapper">
+                        <div class="arrow"></div>
+                    </div>
+                </button>
+            </a>
         </div>
 
     </div>
@@ -83,14 +93,14 @@
              votre bon cadeau. A très bientôt !
             </p> 
         </div>
-        <a class="details-link" href="{{ path('contacts') }}" >
-        <button class="buttonMore-cadeau">
-                En savoir plus !
+         <a class="details-link2" href="{{ path('monParcours') }}">
+                <button class="buttonMore button-more-margin">
+                Me découvrir
                     <div class="arrow-wrapper">
                         <div class="arrow"></div>
                     </div>
                 </button>
-        </a>
+            </a>
     </div>
 {% endblock %}
 
