@@ -14,6 +14,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Validator\Constraints\Regex;
 
 use Symfony\Component\Validator\Constraints as Assert;
@@ -64,11 +65,32 @@ public function buildForm(FormBuilderInterface $builder, array $options): void
                 ]),
             ],
         ])
-        ->add('plainPassword', PasswordType::class, [
-            // instead of being set onto the object directly,
-            // this is read and encoded in the controller
+        // ->add('plainPassword', PasswordType::class, [
+        //     'mapped' => false,
+        //     'attr' => ['autocomplete' => 'new-password'],
+        //     'constraints' => [
+        //         new NotBlank([
+        //             'message' => 'Veuillez entrer un mot de passe',
+        //         ]),
+        //         new Length([
+        //             'min' => 14,
+        //             'minMessage' => 'Votre mot de passe doit contenir au moins {{ limit }} caractères.',
+        //             'max' => 50,
+        //             'maxMessage' => 'Votre pseudo ne doit pas dépasser {{ limit }} caractères.'
+        //         ]),
+        //         new Regex([
+        //             'pattern' => '/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{14,}$/',
+        //             'message' => 'Votre mot de passe doit contenir au moins une lettre majuscule, une lettre minuscule, et un chiffre.',
+        //         ]),
+        //     ],
+        // ])
+        ->add('plainPassword', RepeatedType::class, [
+            'type' => PasswordType::class,
             'mapped' => false,
-            'attr' => ['autocomplete' => 'new-password'],
+            'invalid_message' => 'Les mots de passe doivent correspondre.',
+            'options' => ['attr' => ['autocomplete' => 'new-password']],
+            'first_options'  => ['label' => 'Mot de passe'],
+            'second_options' => ['label' => 'Confirmez le mot de passe'],
             'constraints' => [
                 new NotBlank([
                     'message' => 'Veuillez entrer un mot de passe',
@@ -85,30 +107,6 @@ public function buildForm(FormBuilderInterface $builder, array $options): void
                 ]),
             ],
         ])
-        ->add('confirmPassword', PasswordType::class, [
-            'mapped' => false,
-            'attr' => ['autocomplete' => 'new-password'],
-            'constraints' => [
-                new NotBlank([
-                    'message' => 'Veuillez confirmer le mot de passe',
-                ]),
-                new Length([
-                    'min' => 14,
-                    'minMessage' => 'Votre mot de passe doit contenir au moins {{ limit }} caractères.',
-                    'max' => 50,
-                    'maxMessage' => 'Votre pseudo ne doit pas dépasser {{ limit }} caractères.'
-                ]),
-                new Regex([
-                    'pattern' => '/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{14,}$/',
-                    'message' => 'Votre mot de passe doit contenir au moins une lettre majuscule, une lettre minuscule, et un chiffre.',
-                ]),
-                new Assert\EqualTo([
-                    'value' => 'plainPassword',
-                    'message' => 'Les mots de passe doivent correspondre.'
-                ])
-            ],
-        ])
-        
     ;
 }
 

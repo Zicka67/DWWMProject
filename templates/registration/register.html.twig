@@ -20,27 +20,32 @@
             <h1 class="form-title">S'enregistrer</h1>
         </div>
         {{ form_start(registrationForm) }}
+
         {#pseudo #}
         <label for="pseudo" class="form-label">Pseudo</label>
         {{ form_widget(registrationForm.pseudo, { 'attr': {'id': 'pseudo', 'class': 'form-input'} }) }}
         <div class="error-test">{{ form_errors(registrationForm.pseudo) }}</div> 
+
         {#email #}
         <label for="email" class="form-label">Email</label>
         {{ form_widget(registrationForm.email, { 'attr': {'id': 'email', 'class': 'form-input'} }) }}
         <div class="error-test">{{ form_errors(registrationForm.email) }}</div> 
+
         {#phone #}
         <label for="phoneNumber" class="form-label">Téléphone</label>
         {{ form_widget(registrationForm.phoneNumber, { 'attr': {'id': 'phoneNumber', 'class': 'form-input'} }) }}
         <div class="error-test">{{ form_errors(registrationForm.phoneNumber) }}</div> 
-        {#password #}
-        <label id="passwordd" for="password" class="form-label">Mot de passe</label>
-        {{ form_widget(registrationForm.plainPassword, { 'attr': {'id': 'password', 'class': 'form-input'} }) }}
-        {# <button id="eyeicon" type="button">👁️</button> #}
+
+        {# password #}
+        <label for="plainPassword" class="form-label">Mot de passe</label>
+        {{ form_widget(registrationForm.plainPassword.first, { 'attr': {'id': 'password', 'class': 'form-input'} }) }}
+        <div class="error-test">{{ form_errors(registrationForm.plainPassword.first) }}</div> 
+        
         {# confirmPassword #}
         <label for="confirmPassword" class="form-label">Confirmez le mot de passe</label>
-        {{ form_widget(registrationForm.confirmPassword, { 'attr': {'id': 'confirmPassword', 'class': 'form-input'} }) }}
-        <div class="error-test">{{ form_errors(registrationForm.confirmPassword) }}</div>
-        <div class="error-test">{{ form_errors(registrationForm.plainPassword) }}</div> 
+        {{ form_widget(registrationForm.plainPassword.second, { 'attr': {'id': 'confirmPassword', 'class': 'form-input'} }) }}
+        <di class="error-test">{{ form_errors(registrationForm.plainPassword.second) }}</di
+
         {#checkbox #}
         <div class="checkbox mb-3">
             {{ form_widget(registrationForm.agreeTerms, { 'attr': {'class': 'form-checkbox'} }) }}
@@ -54,26 +59,5 @@
         {{ form_end(registrationForm) }}
     </form>
 </div>  
-
-{# {% block javascripts %}
-<script>
-
-let eyeicon = document.getElementById("eyeicon");
-let password = document.getElementById("passwordd");
-
-
-eyeicon.onclick = function(){
-    if(password.type == "passwordd"){
-        password.type = "text";
-    }else {
-        password.type = "passwordd";
-    }
-}
-
-
-</script>
-{% endblock %} #}
-
-
 
 {% endblock %}
