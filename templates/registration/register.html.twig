@@ -36,6 +36,10 @@
         <label id="passwordd" for="password" class="form-label">Mot de passe</label>
         {{ form_widget(registrationForm.plainPassword, { 'attr': {'id': 'password', 'class': 'form-input'} }) }}
         {# <button id="eyeicon" type="button">👁️</button> #}
+        {# confirmPassword #}
+        <label for="confirmPassword" class="form-label">Confirmez le mot de passe</label>
+        {{ form_widget(registrationForm.confirmPassword, { 'attr': {'id': 'confirmPassword', 'class': 'form-input'} }) }}
+        <div class="error-test">{{ form_errors(registrationForm.confirmPassword) }}</div>
         <div class="error-test">{{ form_errors(registrationForm.plainPassword) }}</div> 
         {#checkbox #}
         <div class="checkbox mb-3">

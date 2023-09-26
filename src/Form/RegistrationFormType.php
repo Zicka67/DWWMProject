@@ -85,6 +85,30 @@ public function buildForm(FormBuilderInterface $builder, array $options): void
                 ]),
             ],
         ])
+        ->add('confirmPassword', PasswordType::class, [
+            'mapped' => false,
+            'attr' => ['autocomplete' => 'new-password'],
+            'constraints' => [
+                new NotBlank([
+                    'message' => 'Veuillez confirmer le mot de passe',
+                ]),
+                new Length([
+                    'min' => 14,
+                    'minMessage' => 'Votre mot de passe doit contenir au moins {{ limit }} caractères.',
+                    'max' => 50,
+                    'maxMessage' => 'Votre pseudo ne doit pas dépasser {{ limit }} caractères.'
+                ]),
+                new Regex([
+                    'pattern' => '/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{14,}$/',
+                    'message' => 'Votre mot de passe doit contenir au moins une lettre majuscule, une lettre minuscule, et un chiffre.',
+                ]),
+                new Assert\EqualTo([
+                    'value' => 'plainPassword',
+                    'message' => 'Les mots de passe doivent correspondre.'
+                ])
+            ],
+        ])
+        
     ;
 }
 
