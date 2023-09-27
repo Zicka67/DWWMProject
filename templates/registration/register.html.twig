@@ -44,7 +44,7 @@
         {# confirmPassword #}
         <label for="confirmPassword" class="form-label">Confirmez le mot de passe</label>
         {{ form_widget(registrationForm.plainPassword.second, { 'attr': {'id': 'confirmPassword', 'class': 'form-input'} }) }}
-        <di class="error-test">{{ form_errors(registrationForm.plainPassword.second) }}</di
+        <div class="error-test">{{ form_errors(registrationForm.plainPassword.second) }}</div>
 
         {#checkbox #}
         <div class="checkbox mb-3">

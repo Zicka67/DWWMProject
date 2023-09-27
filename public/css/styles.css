@@ -440,11 +440,12 @@ font-family: 'Barlow', sans-serif;
 .navbar {
 position: fixed;
 top: 0;
-width: 100vw;
+width: 100%;
 z-index: 100;
 background: rgba(255, 255, 255, 0.80);
 backdrop-filter: blur(6px); 
--webkit-backdrop-filter: blur(6px); 
+-webkit-backdrop-filter: blur(6px);
+/* display: none;  */
 }
 
 .navbar-color {
@@ -458,7 +459,7 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 height: 70px;
-padding: 0 20px;
+/* padding: 0 20px; */
 font-family: 'Barlow', sans-serif;
 }
 
@@ -471,6 +472,7 @@ margin-top: 15px;
 min-width: 257px;
 display: flex;
 align-items: center;
+margin-left: 10px;
 }
 
 .navbar-login a{
@@ -748,7 +750,7 @@ width: 100%;
 background-image: url('../img/mignon-petit-bebe-interieur.jpg');
 filter: hue-rotate(350deg) saturate(0.7);
 margin-top: 70px;
-padding-left: 20px;
+/* padding-left: 20px; */
 background-size: cover;
 background-attachment: fixed;
 overflow: hidden;
@@ -1057,7 +1059,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-height: 65vh;
+height: 60vh;
 z-index: 1;
 }
 

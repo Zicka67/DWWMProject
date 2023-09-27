@@ -1,3 +1,5 @@
+
+
 // Menu burger
 const navbarToggle = document.querySelector('.navbar-toggle');
 const navbarMenu = document.querySelector('.navbar-menu');
@@ -71,6 +73,38 @@ document.addEventListener('click', function(event) {
 });
 
 
+// *********** AOS CANCEL ****************
+
+function updateAOSAttributes() {
+    // Select all data-aos
+    const aosElements = document.querySelectorAll('[data-aos]');
+
+    if (window.innerWidth <= 1175) {
+        // Si width <= a 1175px
+        aosElements.forEach(element => {
+            element.removeAttribute('data-aos');
+            element.removeAttribute('data-aos-duration');
+        });
+    } else {
+        //  // Si width >= a 1175px
+        aosElements.forEach(element => {
+            if (element.classList.contains('fade-left')) {
+                element.setAttribute('data-aos', 'fade-left');
+                element.setAttribute('data-aos-duration', '2000');
+            } else if (element.classList.contains('fade-right')) {
+                element.setAttribute('data-aos', 'fade-right');
+                element.setAttribute('data-aos-duration', '2000');
+            }
+        });
+    }
+}
+
+window.addEventListener('resize', updateAOSAttributes);
+
+updateAOSAttributes();
+
+
+
 
 // ***************************
 
@@ -93,17 +127,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-// ***************************
-
-// let eyeicon = document.getElementById("eyeicon");
-// let password = document.getElementById("password");
 
 
-// eyeicon.onclick = function(){
-//     if(password.type == "password"){
-//         password.type = "text";
-//     }else {
-//         password.type = "password";
-//     }
-// }
 

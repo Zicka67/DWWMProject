@@ -97,6 +97,16 @@ font-size: 1.2rem;
 
 @media (max-width: 1175px) {
 
+    /* *********** AOS CANCEL ***********  */
+
+        [data-aos] {
+            animation-name: none !important;
+            transition: none !important;
+            visibility: visible !important;
+        }
+    
+    
+
 
 .buttonBack{
 width: 80px;
@@ -410,6 +420,15 @@ display: block;
 }
 
 @media (max-width: 880px) {
+
+    .enfant-cours {
+        flex: 1 0 100%;
+    }
+
+    .img-dim {
+        width: 300px;
+        height: 200px;
+    }
 
 
 .container-mt-p {
@@ -840,6 +859,10 @@ color: #90639c;
 
 @media (max-width: 500px) {
 
+    .enfant h2 {
+        font-size: 25px;
+        }
+
 .buttonBack {
 left: -35px;
 width: 75px;
@@ -895,6 +918,26 @@ height: 350px;
 }
 
 @media (max-width: 480px) {
+
+    .dropdown-menu li{
+        width: 195px;
+        
+    }
+
+    .dropdown-menu {
+        /* margin-left: -20px; */
+        left: 222px;
+        margin-top: -2px;
+    }
+
+    .navbar-menu li {
+        width: 195px;
+    }
+
+    .navbar-menu li a{
+        width: 195px;
+        font-size: 1.2rem;
+    }
 
     .StripeElement{
         width:300px;
