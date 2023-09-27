@@ -54,7 +54,7 @@ public function monParcours(): Response
 }
 
 // Route pour la liste de resa
-#[Route('/mes-reservations', name: 'show_reservation')]
+#[Route('/mes-reservations', name: 'show-reservations')]
 public function reservation_list(ReservationRepository $reservationRepository): Response
 {
     $reservations = $reservationRepository->findAll();

@@ -490,7 +490,7 @@ min-width: 566px;
 .navbar-register {
 display: inline-block;
 align-items: center;
-min-width: 290px;
+min-width: 285px;
 }
 
 .navbar-register ul{
@@ -1267,11 +1267,15 @@ bottom: 28vh;
 transform: translateX(-45%);
 left: 48.5%;
 color: var(--secondary-color);
-font-size: 1.2rem;
+font-size: 1.3rem;
 font-family: 'Barlow', sans-serif;
 text-align: center;
-font-weight: 500;
-width: 650px;
+font-weight: 600;
+min-width: 650px;
+}
+
+.span-color {
+    color: var(--midPink-color);
 }
 
 .text-left {

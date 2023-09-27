@@ -1,5 +1,12 @@
 /* ************* MEDIA QUERIES ****************** */
 
+
+@media (max-width: 1685px) {
+    .navbar-container li a {
+        font-size: 1.3rem;
+      }
+}
+
 @media (max-width: 1450px) {
 
     .main-section-video-text {
@@ -29,7 +36,7 @@
     }
 
     .navbar-container li a {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
       } 
 
 }
@@ -54,12 +61,12 @@ margin-top: 15px;
 }
 
 .navbar-container li a {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 }
 
-@media (max-width: 1330px) {
+@media (max-width: 1335px) {
 
 .buttonBack{
 width: 90px;
@@ -89,11 +96,19 @@ min-width: 260px;
 }
 
 .navbar-container li a {
-font-size: 1.2rem;
+font-size: 1.1rem;
 }
 
 
 }
+
+@media (max-width: 1220px) {
+
+    .navbar-container li a {
+        font-size: 1rem;
+      }
+    
+    }
 
 @media (max-width: 1175px) {
 
@@ -234,7 +249,7 @@ margin-top: 45px;
     /* width: 150px; */
     display: block;
     text-align: center;
-    font-size: 1.4rem;
+    font-size: 1rem;
     font-weight: 600;
     margin: 0 auto;
 }
@@ -680,7 +695,12 @@ font-size: 2.5rem;
 
 .dropdown-menu {
     margin-top: -3px;
-  }
+}
+
+.text-center {
+    font-size: 1.2rem;
+    left: 45%;
+}
 
 }
 
@@ -701,7 +721,6 @@ font-size: 2.5rem;
     .reservations-table th, .reservations-table td {
         padding: 5px; 
         font-size: 0.72rem;
-        
     }
         
 .first-password {
@@ -740,14 +759,15 @@ top: 75%;
 }
 
 .text-center {
-color: var(--secondary-color);
-font-size: 1.1rem;
-font-weight: 500;
-position: static;
-transform: none;
-margin: 0px auto 680px auto; 
-width: 100%;
-text-align: center;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+    /* transform: translateX(-45%); */
+    transform: none;
+    /* margin: 0px auto; */
+    min-width: 650px;
+    /* text-align: center; */
+    left: -29%;
 }
 
 .text-left {
@@ -957,10 +977,10 @@ height: 350px;
 
 @media (max-width: 400px) {
 
-    .padding-dropdown {
-        padding: 30px;
-        margin-top: 2px;
-    }
+.padding-dropdown {
+    padding: 30px;
+    margin-top: 2px;
+}
 
 .edit-button:hover {
 width: 85px;
@@ -984,19 +1004,18 @@ font-size: 1.8rem;
 
 /* ***********  MIN  *************** */
 
+@media (min-width: 1171px) {
+    .dropdown:hover .dropdown-menu {
+        display: block !important;  
+    }
+}
+
 @media (min-width: 970px) {
 
     .mobile-link {
         display: none;
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
-        
         } 
-}
-
-@media (min-width: 1171px) {
-    .dropdown:hover .dropdown-menu {
-        display: block !important;  
-    }
 }
    

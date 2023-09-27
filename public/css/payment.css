@@ -118,11 +118,11 @@ animation: loading 2s infinite ease;
   }
   
   .form-success-container h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  font-family: 'Barlow', sans-serif;
-  color: rgb(100, 201, 42);
-  }
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: 'Barlow', sans-serif;
+    color: rgb(100, 201, 42); 
+    }
 
   .form-success-container p {
     font-size: 1.8rem;
