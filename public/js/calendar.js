@@ -1,3 +1,4 @@
+//Initialisation
 var actualDate = new Date(); // Date actuelle
 
 var numWeeks = 6; // Nombre de semaines à afficher
@@ -26,7 +27,9 @@ startTime.setMinutes(startTime.getMinutes() + 30);
 // Appel de la fonction pour générer le calendrier
 generateCalendar();
 
-// Fonction pour générer le calendrier
+// Cette fonction est responsable de la génération du squelette du calendrier. 
+// Elle crée la structure HTML nécessaire pour afficher le calendrier, 
+// y compris les éléments pour le mois, les jours de la semaine, les boutons de navigation, etc.
 function generateCalendar() {
 
 var calendar = document.getElementById("calendar");
@@ -138,8 +141,9 @@ var monthNames = [
 return monthNames[monthIndex];
 }
 
-// Fonction pour afficher le contenu du calendrier
-// requête AJAX pour récupérer les jours non disponibles à partir du serveur
+// Cette fonction s'occupe d'afficher le contenu du calendrier. 
+// Elle envoie une requête AJAX pour récupérer les jours où un cours n'est pas disponible. 
+// Ensuite, elle remplit le calendrier avec les jours du mois, en marquant les jours non disponibles en conséquence.
 function displayCalendarContent(){
 
 // formater la date
@@ -280,7 +284,10 @@ actualDate.setMonth(actualDate.getMonth() + 1);
 displayCalendarContent();
 }
 
-// Fonction pour sélectionner une unité de calendrier (jour)
+// Cette fonction est déclenchée lorsque l'utilisateur clique sur une date (ou "unité") du calendrier. 
+// Elle met en évidence la date sélectionnée, récupère les créneaux horaires disponibles pour cette date 
+// et les affiche à l'utilisateur. Si un créneau horaire est indisponible, il est marqué comme tel. 
+// L'utilisateur peut alors choisir un créneau horaire pour sa réservation.
 function selectUnit(e){
 
 if(e.target.classList.contains("selected")){
@@ -416,7 +423,6 @@ return year + "-" + month + "-" + day;
 }
 
 // ***** CHANGE COLORS BUTTONS *****
-
 function setPaymentButtonColor(paymentMethodContainer, courseName) {
     const spanChild = paymentMethodContainer.querySelector('.radio-button__custom');
     const pTestElement = paymentMethodContainer.querySelector('.p-test'); 
@@ -446,10 +452,8 @@ function setPaymentButtonColor(paymentMethodContainer, courseName) {
             break;
     }
 }
-// *******************
 
 // ***** CLEAR ALL CLASSES *****
-
 function clearAllClasses() {
     const customButtons = document.querySelectorAll('.radio-button__custom');
     const labels = document.querySelectorAll('.radio-button__label');
@@ -467,37 +471,3 @@ function clearAllClasses() {
         elem.classList.remove("blue2", "orange2", "purple2", "red2");
     });
 }
-
-// *****
-
-
-
-
-
-
-
-
-
-//Parcour la liste des jours créer et leurs donne la classe slot pour les afficher et avaible, si le jour est 
-//selectionné ou est déjà dans la lsite unavailable il a la class unavailable a la place.
-
-// une fois un slot selectionner ca affiche les heures - avec le suite
-
-// Parcour la liste des heures var startTime = new Date(); // Heure de début pour les créneaux horaires
-// startTime.setHours(8, 0, 0);  Définit l'heure de début à 8h00
-
-// var timeSlots = [];  Tableau pour stocker les créneaux horaires
-
-// Boucle pour générer les créneaux horaires de 30 minutes
-// while(startTime.getHours()<18 || startTime.getMinutes()<30){
-
-//     var startTime_hours = startTime.getHours() > 9 ? startTime.getHours() : "0"+startTime.getHours();
-//     var startTime_minutes = startTime.getMinutes() > 9 ? startTime.getMinutes() : "0"+startTime.getMinutes();
-
-//     timeSlots.push(startTime_hours+":"+startTime_minutes);
-
-//     startTime.setMinutes(startTime.getMinutes() + 30);
-// }
-
-// Même système pour les horaires, parcours les horaires et voit si elles sont unavailable ou non, donne les class en conséquznces 
-// et les ajoutes dans le form caché a envoyer avec le jour 
