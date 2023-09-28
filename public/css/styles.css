@@ -526,7 +526,18 @@ text-decoration: none;
 font-family: 'Barlow', sans-serif;
 font-size: 1.5rem;
 font-weight: 500;
+transition: 0.3s;
 }
+
+.nav-hover:hover {
+   color: var(--darkPink-color);
+   transition: 0.3s;
+}
+
+.nav-hover a:hover {
+    color: var(--darkPink-color);
+    transition: 0.3s;
+ }
 
 .navbar-toggle {
 display: none;
@@ -1193,6 +1204,13 @@ color: var(--title-color);
 
 .delet-account {
 color: var(--red-color);
+transition: 0.3s;
+border-radius: 10px;
+}
+
+.delet-account a:hover {
+    box-shadow: inset 0px 0px 40px rgba(242, 20, 30, 0.359);
+    transition: 0.3s;
 }
 
 .flex-wrapper {

@@ -11,7 +11,7 @@
 
                 <li class="dropdown">
                     <img class="arrow-down padding-dropdown" src="{{ asset('img/expand_more_FILL0_wght400_GRAD0_opsz24.webp') }}" alt="Flèche vers le bas">
-                    <a class="align padding-dropdown" href="#"> Le Cocon</a>
+                    <a class="align padding-dropdown nav-hover" href="#"> Le Cocon</a>
 
                     <ul class="dropdown-menu dropdown-list">
                                                     {#nom du slug  cours/nom_du_slug #}
@@ -23,13 +23,13 @@
 
                 </li>
 
-                <li><a class="padding-dropdown" href="/mon-parcours">Qui suis-je ?</a></li>
-                <li><a class="padding-dropdown" href="/showCours ">Les prestations</a></li>
-                <li><a class="padding-dropdown"href="/contacts">Me contacter</a></li>
+                <li><a class="padding-dropdown nav-hover" href="/mon-parcours">Qui suis-je ?</a></li>
+                <li><a class="padding-dropdown nav-hover" href="/showCours ">Les prestations</a></li>
+                <li><a class="padding-dropdown nav-hover"href="/contacts">Me contacter</a></li>
 
                 {% if is_granted('ROLE_ADMIN') %}
-                    <li class="padding-dropdown" ><a class="padding-dropdown" href="/admin" target="_blank">Admin</a></li>
-                    <li class="padding-dropdown" ><a class="padding-dropdown" href="/mes-reservations">Resa</a></li>
+                    <li class="padding-dropdown" ><a class="padding-dropdown nav-hover" href="/admin" target="_blank">Admin</a></li>
+                    <li class="padding-dropdown" ><a class="padding-dropdown nav-hover" href="/mes-reservations">Resa</a></li>
                 {% endif %}
 
                 {% if not app.user %}
@@ -52,7 +52,7 @@
                 <li><a href="/register">S'enregistrer</a></li>
                 {% endif %}
                 {% if app.user %}
-                <li class="profil"><a href="/profil"><i class="fa-regular fa-user"></i>  Profil</a></li>
+                <li class="profil nav-hover"><a href="/profil"><i class="fa-regular fa-user"></i>  Profil</a></li>
                 <li class="register-ml">
                     <a href="/logout">
                         <button class="{{ app.user ? 'red' : 'green' }} Btn">
