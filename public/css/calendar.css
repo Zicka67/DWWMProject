@@ -133,11 +133,7 @@ border-top: 1px solid silver;
 border-bottom: 1px solid silver;
 }
 
-
-
 /* CHZNGE FOR .calandar-unit:hover */
-
-
 
 #calendar.atelier-de-portage .calandar-unit:not(.unavailable):not(.mitigate):hover,
 #calendar.atelier-de-portage .calandar-unit.selected,
@@ -166,7 +162,6 @@ border-bottom: 1px solid silver;
 #calendar.cercle-mamans-bebes #slot-list .slot.selected {
     background-color: #d36b5e; 
 }
-
 
 /* ***** CHANGER COLOR BOUTONS PAYER ***** */
 
