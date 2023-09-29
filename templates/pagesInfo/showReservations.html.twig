@@ -29,7 +29,11 @@
                 {% for reservation in reservations|reverse|slice(0, 10) %}
                 <tr>
                     <td>{{ reservation.user.pseudo }}</td>
-                    <td class="td-color">{{ reservation.user.phoneNumber }}</td>
+                    <td class="td-color">
+                        <a href="tel:{{ reservation.user.phoneNumber|split('', 2)|join(' ') }}">
+                            {{ reservation.user.phoneNumber|split('', 2)|join(' ') }}
+                        </a>
+                    </td>
                     <td>{{ reservation.cours }}</td>
                     <td>{{ reservation.dtResa | date("m/d/Y") }}</td>
                     <td>{{ reservation.dtCours | date("m/d/Y") }}</td>

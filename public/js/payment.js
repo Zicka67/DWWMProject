@@ -54,9 +54,8 @@ const paymentElement = elements.create("payment", paymentElementOptions);
 paymentElement.mount("#payment-element");
 }
 
-// La fonction handleSubmit() est appelée lorsque le formulaire de paiement est soumis. Elle fait appel à stripe.confirmPayment() pour confirmer le paiement avec Stripe. Si le paiement échoue, un message d'erreur est affiché. Sinon, l'utilisateur est redirigé vers la page de succès de paiement.
-// Cette fonction est appelée lorsque l'utilisateur soumet le formulaire de paiement.
-// Elle fait appel à stripe.confirmPayment() pour confirmer le paiement avec Stripe.
+// La fonction handleSubmit() est appelée lorsque le formulaire de paiement est soumis. 
+// Elle fait appel à stripe.confirmPayment() pour confirmer le paiement avec Stripe. 
 // Si le paiement est confirmé avec succès, l'utilisateur sera redirigé vers l'URL que spécifiée dans return_url (ici c'est http://localhost:8000/payment-success).
 // Si une erreur se produit (comme une erreur de carte ou une erreur de validation), un message d'erreur est affiché.
 async function handleSubmit(e) {
@@ -79,13 +78,14 @@ const { error } = await stripe.confirmPayment({
 if (error.type === "card_error" || error.type === "validation_error") {
   showMessage(error.message);
 } else {
-  showMessage("An unexpected error occurred.");
+  showMessage("Une erreur a été trouvé.");
 }
 
 setLoading(false);
 }
 
-//  La fonction checkStatus() vérifie le statut de l'intention de paiement en interrogeant Stripe. En fonction du statut, un message différent est affiché à l'utilisateur.
+//  La fonction checkStatus() vérifie le statut de l'intention de paiement en interrogeant Stripe. En fonction du statut, 
+// un message différent est affiché à l'utilisateur.
 async function checkStatus() {
 const clientSecret = new URLSearchParams(window.location.search).get(
   "payment_intent_client_secret"

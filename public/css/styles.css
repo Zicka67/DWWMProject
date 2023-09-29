@@ -409,8 +409,12 @@ z-index: 1;
 font-family: 'Barlow', sans-serif;
 color: var(--doree-color);
 font-size: 3rem;
-font-weight: 200;
-letter-spacing: -0.054em;
+font-weight: 400;
+  letter-spacing: -0.054em;
+  width: 485px;
+  margin: 0 auto;
+  padding-left: 25px;
+ 
 }
 
 .text-container img {
@@ -1037,6 +1041,10 @@ border-radius: 5px;
 
 .reservations-table tbody tr:last-child td {
     border-bottom: none;
+}
+
+.reservations-table tr:nth-child(even) {
+    background-color: #fdf1ea;
 }
 
 .td-color {

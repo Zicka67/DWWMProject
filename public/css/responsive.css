@@ -5,6 +5,12 @@
     .navbar-container li a {
         font-size: 1.3rem;
       }
+
+      #section-text p {
+      
+        font-size: 1.1rem;
+      }
+   
 }
 
 @media (max-width: 1450px) {
@@ -594,6 +600,10 @@ display: block;
 }
 
 @media (max-width: 760px) {
+
+    .text-container p {
+        font-size: 2rem;
+    }
 
     .form-success-container {
         width: 80%;
