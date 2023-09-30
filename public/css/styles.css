@@ -418,8 +418,8 @@ font-weight: 400;
 }
 
 .text-container img {
-width: 1rem;
-height: 3rem;
+    width: 1.1rem;
+    height: 3rem;
 }
 
 .image-container {
@@ -1216,10 +1216,10 @@ transition: 0.3s;
 border-radius: 10px;
 }
 
-.delet-account a:hover {
+/* .delet-account a:hover {
     box-shadow: inset 0px 0px 40px rgba(242, 20, 30, 0.359);
     transition: 0.3s;
-}
+} */
 
 .flex-wrapper {
 margin: 20px 0;

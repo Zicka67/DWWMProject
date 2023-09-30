@@ -81,7 +81,7 @@ class ContactType extends AbstractType
                 'required' => false,
                 'label' => false,
                 'attr' => [
-                    'style' => 'display:;',
+                    'style' => 'display',
                 ],
             ])
         ;
