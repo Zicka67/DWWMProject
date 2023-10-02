@@ -88,7 +88,7 @@ public function course_unavailability(string $name, Request $request, EntityMana
 {
     // Cette ligne crée un objet de type DateTime à partir de la date récupérée dans la requête HTTP et le stocke dans la variable $date.
     $date = date_create($request->request->get('date'));
-    // $date=date_create("2023-06-13");
+
                                         
     // Cette ligne récupère le cours dont le slug correspond à la variable $name dans la base de données en utilisant l'EntityManager $em.
     $course = $em->getRepository("App\Entity\Cours")->findOneBy(['slug_cours' => $name]);
@@ -148,7 +148,7 @@ public function save_reservation(Security $security, Request $request, EntityMan
     $user = $security->getUser();
     
     // On récupère le nom du cours à partir de la requête HTTP et on le stock
-    $courseSlug  = $request->request->get('courseName');
+    $courseSlug = filter_var($request->request->get('courseName'), FILTER_SANITIZE_STRING);
     // On utilise l'EM, on récupère le chemin pour l'entité Cours, on cherche le cours correspondant au slug.
     $course = $em->getRepository("App\Entity\Cours")->findOneBy(['slug_cours' => $courseSlug ]);
 
