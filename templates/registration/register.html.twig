@@ -18,8 +18,8 @@
         <div>
             <h1 class="form-title">S'enregistrer</h1>
         </div>
-        {{ form_start(registrationForm) }}
-
+        {{ form_start(registrationForm)}}
+        <div class="registration-form">
         {#pseudo #}
         <label for="pseudo" class="form-label">Pseudo</label>
         {{ form_widget(registrationForm.pseudo, { 'attr': {'id': 'pseudo', 'class': 'form-input'} }) }}
@@ -54,7 +54,7 @@
         </div>
 
         <button type="submit" class="btn form-button">S'enregistrer</button>
-        
+        </div>
         {{ form_end(registrationForm) }}
 </div>  
 

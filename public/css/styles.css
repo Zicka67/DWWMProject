@@ -1105,6 +1105,13 @@ width: 350px;
 z-index: 99;
 }
 
+.registration-form {
+    display: flex;
+  flex-direction: column;
+  z-index: 99;
+  min-width: 330px;
+}
+
 .form-input,
 .form-checkbox {
 margin-bottom: 10px;
