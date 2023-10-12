@@ -1,9 +1,17 @@
-/*
- * Welcome to your app's main JavaScript file!
- *
- * We recommend including the built version of this JavaScript file
- * (and its CSS file) in your base layout (base.html.twig).
- */
+import React from 'react';
+import ReactDOM from 'react-dom';
+import FramerMotion1 from './FramerMotion1';
+import FramerMotion2 from './FramerMotion2';
 
-// any CSS you import will output into a single css file (app.css in this case)
-// import './styles/app.css';
+document.addEventListener('DOMContentLoaded', () => {
+    const root1 = document.querySelector('.react-root1');
+    const root2 = document.querySelector('.react-root2');
+    
+    if (root1) {
+        ReactDOM.render(<FramerMotion1 />, root1);
+    }
+    
+    if (root2) {
+        ReactDOM.render(<FramerMotion2 />, root2);
+    }
+});

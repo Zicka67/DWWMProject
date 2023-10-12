@@ -15,6 +15,7 @@ nelmio_security:
                 - "https://unpkg.com"
                 - "https://region1.google-analytics.com"
                 - "'unsafe-inline'" # 
+                - "http://localhost:3000"
             style-src: 
                 - "'self'"
                 - "https://cdnjs.cloudflare.com"

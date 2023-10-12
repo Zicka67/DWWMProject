@@ -1479,9 +1479,9 @@ font-weight: 600;
 display: flex;
 align-items: center;
 justify-content: center;
-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+/* box-shadow: 9px 15px 19px 0px rgba(0,0,0,0.1); */
 cursor: pointer;
-transition-duration: 0.3s;
+transition-duration: 0.6s;
 overflow: hidden;
 position: relative;
 text-decoration: none;
@@ -1489,7 +1489,7 @@ text-decoration: none;
 
 .edit-svgIcon {
 width: 20px;
-transition-duration: 0.3s;
+transition-duration: 0.6s;
 }
 
 .edit-svgIcon path {
@@ -1667,14 +1667,14 @@ border-radius: 50%;
 cursor: pointer;
 position: relative;
 overflow: hidden;
-transition-duration: .3s;
+transition-duration: 0.5s;
 margin-left: -5px;
 }
 
 /* SIGN */
 .sign {
 width: 100%;
-transition-duration: .3s;
+transition-duration: 0.5s;
 display: flex;
 align-items: center;
 justify-content: center;
