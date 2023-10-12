@@ -76,7 +76,7 @@ public function contact(Request $request, MailerInterface $mailer)
         // On vérifie la soumission précédente
         $session = $request->getSession();
         $lastWeirdSubmission = $session->get('last_weird_submission');
-        if ($lastWeirdSubmission && (time() - $lastWeirdSubmission < 60)) {  // 1min
+        if ($lastWeirdSubmission && (time() - $lastWeirdSubmission < 20)) {  // 20sec
             $this->addFlash('error', 'Veuillez attendre encore quelques minutes avant de réessayer.');
             return $this->redirectToRoute('app_home');
         }
