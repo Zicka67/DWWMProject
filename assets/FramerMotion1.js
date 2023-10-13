@@ -45,11 +45,11 @@ const FramerMotion1 = () => {
         hidden: { opacity: 0, x: 800 },
       }}
       transition={{ duration: 1.8, ease: "easeInOut" }}
-
     >
       Bienvenue au cours d'allaitement : Un voyage d'amour et de nutrition
     </motion.p>
   );
+
 };
 
 export default FramerMotion1;

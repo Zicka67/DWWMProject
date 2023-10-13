@@ -855,6 +855,7 @@ background-position: center 40%;
     font-size: 3rem;
     color: var(--darkPink-color);
     font-weight: 600;
+    width: 450px;
 }
 
 .buttonMore-cadeau {
@@ -1651,7 +1652,8 @@ right: 0;
 }
 
 .button-more-margin {
-    margin-top: 380px;
+    position: absolute;
+    bottom: 100px;
 }
 
 /* ************ BUTTON LOGIN LOGOUT ************* */
