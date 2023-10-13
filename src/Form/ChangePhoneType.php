@@ -32,7 +32,10 @@ public function buildForm(FormBuilderInterface $builder, array $options): void
                 'message' => 'Entrez un nouveau numéro',
             ]),
             new Regex([
-                'pattern' => '/^[a-zA-Z0-9\s.,?!\'-]{5,30}$/',
+                // Deux chiffres suivis optionnellement par un point, un tiret ou espace. 
+                // On répète 4 fois
+                'pattern' => '/^(\d{2}[.-\s]?){4}\d{2}$/',
+                'message' => 'Entrez un numéro de téléphone valide',
             ]),
         ],
     ]);

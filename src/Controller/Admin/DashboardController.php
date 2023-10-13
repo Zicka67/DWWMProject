@@ -54,6 +54,5 @@ public function configureMenuItems(): iterable
 
     yield MenuItem::linkToCrud('UnavailableDate', 'fas fa-solid fa-arrow-right', UnavailableDate::class);
 
-    // yield MenuItem::linkToCrud('', 'fas fa-solid fa-arrow-right', ::class);
 }
 }

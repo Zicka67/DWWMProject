@@ -73,7 +73,7 @@ public function contact(Request $request, MailerInterface $mailer)
 
     if ($form->isSubmitted()) {
 
-        // On vérifie la soumission précédente
+        //Vérifie la soumission précédente
         $session = $request->getSession();
         $lastWeirdSubmission = $session->get('last_weird_submission');
         if ($lastWeirdSubmission && (time() - $lastWeirdSubmission < 20)) {  // 20sec
@@ -83,7 +83,7 @@ public function contact(Request $request, MailerInterface $mailer)
 
         //Si le honeypot est rempli 
         if ($form->get('honeypot')->getData()) {
-            // Surement un robot donc redirection et message
+            //Surement un robot donc redirection et message
             $session->set('last_weird_submission', time());
             $this->addFlash('error', 'Veuillez attendre quelques minutes avant de réessayer.');
             return $this->redirectToRoute('app_home');
