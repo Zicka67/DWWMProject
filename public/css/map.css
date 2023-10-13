@@ -16,7 +16,8 @@ margin: 20px 0;
 .contact-title {
 font-family: 'Barlow', sans-serif;
 font-size: 1.5em;
-text-align: center;
+text-align: justify;
+padding: 0 10px;
 }
 
 .form-contact-container, #map {

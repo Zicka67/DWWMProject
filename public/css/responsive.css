@@ -603,6 +603,7 @@ display: block;
 
     .text-container p {
         font-size: 2rem;
+        width: 365px;
     }
 
     .form-success-container {
@@ -777,7 +778,7 @@ top: 75%;
     /* margin: 0px auto; */
     min-width: 650px;
     /* text-align: center; */
-    left: -29%;
+    left: -28%;
 }
 
 .text-left {
@@ -870,8 +871,8 @@ color: #90639c;
 }
 
 .carte-cadeau {
-    width: 400px;
-    height: 450px;
+    width: 380px;
+    height: 490px;
 }
 
 .carte-cadeau p {
@@ -1003,6 +1004,15 @@ width: 100%;
 .margin-tb p{
 font-size: 1rem;
 }
+
+}
+
+@media (max-width: 400px) { 
+
+    .text-center {
+        left: -33%;
+        font-size: 0.85rem;
+    }
 
 }
 
