@@ -93,8 +93,11 @@ public function course_unavailability(string $name, Request $request, EntityMana
     // Cette ligne récupère le cours dont le slug correspond à la variable $name dans la base de données en utilisant l'EntityManager $em.
     $course = $em->getRepository("App\Entity\Cours")->findOneBy(['slug_cours' => $name]);
 
-    // Le bloc de code suivant exécute une requête pour obtenir les dates non disponibles (UnavailableDate) pour le cours spécifique ou pour tous les cours (si all_courses est défini comme vrai) pour la date spécifique :
+    // DQL => exécute une requête pour obtenir les dates non disponibles (UnavailableDate) pour le cours spécifique ou pour tous les cours (si all_courses est défini comme vrai) pour la date spécifique :
     $unavailabilities = $em->createQuery(
+        //On selectionne slot et all_day de l'entité Unavailable
+        // Compare le champ date de l'entité à une valeur lier pus tard via setParameter(":date", $date)
+        // Si all_courses=true OU si ud.course est égal à la valeur lier plus tard via setParameter(":idCourse", $course->getId()) => vraie
         "SELECT ud.slot, ud.all_day 
         FROM App\Entity\UnavailableDate ud 
         WHERE ud.date = :date 
