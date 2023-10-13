@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Form\ChangeEmailType;
 use App\Form\ChangePseudoType;
+use App\Form\ChangePhoneType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Security;
@@ -71,4 +72,25 @@ public function changeEmail(Request $request, EntityManagerInterface $entityMana
         'changeEmailForm' => $form->createView(),
     ]);
 }
+
+#[Route('/user/changePhone', name: 'account_change_phone')]
+public function changePhone(Request $request, EntityManagerInterface $entityManager): Response
+{
+    $user = $this->getUser();
+    $form = $this->createForm(ChangePhoneType::class, $user);
+
+    $form->handleRequest($request);
+    if ($form->isSubmitted() && $form->isValid()) {
+        $entityManager->flush();
+
+        $this->addFlash('success', 'Votre numéro a été modifié avec succès.');
+        
+        return $this->redirectToRoute('app_user');
+    }
+
+    return $this->render('user/changePhone.html.twig', [
+        'changePhoneForm' => $form->createView(),
+    ]);
+}
+
 }
