@@ -53,6 +53,10 @@
         width: 70%;
     }
 
+    .bg-image {
+        animation: none !important;
+      }
+
 .img-dim {
 width: 230px;
 height: 230px;
@@ -71,6 +75,7 @@ margin-top: 15px;
 }
 
 }
+  
 
 @media (max-width: 1335px) {
 
@@ -716,6 +721,10 @@ font-size: 2.5rem;
 }
 
 @media (max-width: 600px) {
+
+    .carte-cadeau h2 {
+        margin-left: -25px;
+    }
 
     .form-success-container {
         width: 90%;

@@ -395,6 +395,18 @@ left: 0;
 right: 0;
 }
 
+.animate-this-text {
+ 
+    font-family: 'Barlow', sans-serif;
+    color: var(--doree-color);
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: -0.054em;
+    width: 680px;
+    margin: 0 auto;
+    padding-left: 25px;
+}
+
 .text-container-bis {
 text-align: center;
 position: absolute;
@@ -411,7 +423,7 @@ color: var(--doree-color);
 font-size: 3rem;
 font-weight: 400;
   letter-spacing: -0.054em;
-  width: 485px;
+  width: 680px;
   margin: 0 auto;
   padding-left: 25px;
  
@@ -856,6 +868,7 @@ background-position: center 40%;
     color: var(--darkPink-color);
     font-weight: 600;
     width: 450px;
+    /* margin-left: -25px; */
 }
 
 .buttonMore-cadeau {
@@ -1774,6 +1787,7 @@ background-color: var(--darkPink-color);
     font-weight: 500;
     padding-bottom: -20px !important;
     margin-bottom: 0px !important;
+    font-size: 0.8rem;
 }
 
 .form-contact-container label {

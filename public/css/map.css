@@ -120,6 +120,8 @@ width: 350px;
 margin: 15vh auto;
 color: rgb(250, 174, 157);
 /* color: linear-gradient(90deg, rgba(255,196,184,0.9933705904236695) 0%, rgba(162,185,255,0.5) 100%); */
+padding-top: 30px;
+
 }
 
 span[aria-hidden="true"] {
