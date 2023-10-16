@@ -26,18 +26,14 @@ public function __construct(
 #[Route('/admin', name: 'admin')]
 public function index(): Response
 {
-    // return parent::index();
-    $url = $this->adminUrlGenerator
-        ->setController(CoursCrudController::class)
-        ->generateUrl();
-
-    return $this->redirect($url);
+    return $this->render('admin/dashboard.html.twig');
 }
 
 public function configureDashboard(): Dashboard
 {
     return Dashboard::new()
-        ->setTitle('LittleCocon');
+        ->setTitle('LittleCocon')
+        ->renderContentMaximized();
 }
 
 public function configureMenuItems(): iterable
