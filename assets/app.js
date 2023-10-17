@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import FramerMotion1 from './FramerMotion1';
 import FramerMotion2 from './FramerMotion2';
 import TextAnimation from './TextAnimation';
+import './app.css';
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const root1 = document.querySelector('.react-root1');

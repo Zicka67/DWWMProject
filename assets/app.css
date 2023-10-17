@@ -1,0 +1,36 @@
+.style-react {
+    color: #AB873D;
+    font-family: "Barlow", sans-serif;
+    font-size: 3rem;
+    font-weight: 400;
+    /* letter-spacing: -0.054em; */
+    width: 700px;
+    margin: "0 auto";
+    
+}
+
+
+
+@media (max-width: 800px) {
+    .style-react {
+    font-size: 1.5rem;
+    letter-spacing: -2em;
+    font-weight: 600;
+    }
+
+    .text-container p {
+      font-size: 2rem;
+      width: 380px;
+      margin: 0 auto;
+      letter-spacing: -2em;
+    }
+
+    .text-container {
+      text-align: center;
+    }
+
+    strong {
+      letter-spacing: -2em;
+    }
+
+}

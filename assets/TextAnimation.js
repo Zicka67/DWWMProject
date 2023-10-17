@@ -1,13 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import './styleREACT.css';
-
+import './app.css';
 
 const TextAnimation = ({ text }) => {
   const [visibleText, setVisibleText] = useState("");
   const [isVisible, setIsVisible] = useState(false); 
   const ref = useRef(null);
-  const delay = 100; // délai en millisecondes entre chaque lettre
+  const delay = 100;
 
   useEffect(() => {
     setIsVisible(true); 
@@ -29,14 +28,14 @@ const TextAnimation = ({ text }) => {
     <div 
       ref={ref} 
       style={{ 
-        fontFamily: "'Barlow', sans-serif",
-        color: "#AB873D",
-        fontSize: "3rem",
-        fontWeight: 600,
-        letterSpacing: "-0.054em",
-        width: "680px",
-        margin: "0 auto",
-        paddingLeft: "25px",
+        // fontFamily: "'Barlow', sans-serif",
+        // color: "#AB873D",
+        // fontSize: "3rem",
+        // fontWeight: 600,
+        // letterSpacing: "-0.054em",
+        // width: "680px",
+        // margin: "0 auto",
+        // paddingLeft: "25px",
         visibility: isVisible ? 'visible' : 'hidden' 
       }}
     >

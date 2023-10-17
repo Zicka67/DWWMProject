@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
     <link rel="stylesheet" href="{{ asset('css/calendar.css') }}">
     <link rel="stylesheet" href="{{ asset('css/payment.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/app.css') }}">
     {# FONTS #}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -89,6 +90,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     {% if app.request.attributes.get('_route') == 'app_home' %}
     <script src="{{ asset('js/imgMouvement.js') }}"></script>
     <script src="{{ asset('js/carousel.js') }}"></script>
+    <script src="{{ asset('build/app.js') }}"></script>
     {% endif %}
     <script type="text/javascript" src="{{ asset('js/script.js') }}"></script> 
     {# Pour uniquement charger le script sur la page success #}

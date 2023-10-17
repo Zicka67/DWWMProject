@@ -395,17 +395,17 @@ left: 0;
 right: 0;
 }
 
-.animate-this-text {
+/* .animate-this-text {
  
     font-family: 'Barlow', sans-serif;
     color: var(--doree-color);
     font-size: 3rem;
     font-weight: 400;
-    letter-spacing: -0.054em;
+
     width: 680px;
     margin: 0 auto;
     padding-left: 25px;
-}
+} */
 
 .text-container-bis {
 text-align: center;
@@ -422,10 +422,9 @@ font-family: 'Barlow', sans-serif;
 color: var(--doree-color);
 font-size: 3rem;
 font-weight: 400;
-  letter-spacing: -0.054em;
+  /* letter-spacing: -0.054em; */
   width: 680px;
   margin: 0 auto;
-  padding-left: 25px;
  
 }
 
