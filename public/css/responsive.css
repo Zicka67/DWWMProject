@@ -10,7 +10,66 @@
       
         font-size: 1.1rem;
       }
+
+
+
+     
+        
+        /* .full-screen {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 100vh;
+          }
+          
+          .bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;  
+            height: 100%;
+            background: url('../img/first_enhanced_background.webp') no-repeat;
+            background-size: 80% 100%; 
+         
+            animation: slide 70s linear infinite;
+          }
+          
+          @keyframes slide {
+            0%, 100% {
+                left: 0;
+            }
+            98% {
+                left: -100%;
+            }
+            99% {
+                left: 0;
+            }
+        } */
+
+
+
+
+
+
+
+
+
+
    
+}
+
+@media (max-width: 1540px) {
+    .navbar-container li a {
+        font-size: 1.2rem;
+      }
+
+      .navbar-register {
+        min-width: 217px;
+      }
+
+      .navbar-logo {
+        font-size: 2rem;
+      }
 }
 
 @media (max-width: 1450px) {
@@ -42,7 +101,7 @@
     }
 
     .navbar-container li a {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
       } 
 
 }
@@ -53,9 +112,6 @@
         width: 70%;
     }
 
-    /* .bg-image {
-        animation: none !important;
-    } */
 
 .img-dim {
 width: 230px;
@@ -75,7 +131,6 @@ margin-top: 15px;
 }
 
 }
-  
 
 @media (max-width: 1335px) {
 
@@ -98,16 +153,16 @@ padding-top: 5px;
 }   
 
 .navbar-logo {
-font-size: 2rem;
+font-size: 1.8rem;
 margin-top: 15px;
 }
 
 .navbar-register {
-min-width: 260px;
+min-width: 215px;
 }
 
 .navbar-container li a {
-font-size: 1.1rem;
+font-size: 1rem;
 }
 
 
@@ -116,10 +171,10 @@ font-size: 1.1rem;
 @media (max-width: 1220px) {
 
     .navbar-container li a {
-        font-size: 1rem;
+        font-size: 0.9rem;
       }
     
-    }
+}
 
 @media (max-width: 1175px) {
 
@@ -562,7 +617,30 @@ display: block;
     padding: 30px;
 }
 
+.style-react {
+
+    letter-spacing: -0.1rem !important;
+    
+}
+
 } 
+
+@media (max-width: 800px) {
+    .style-react {
+    font-size: 1.5rem;
+    letter-spacing: -2em;
+    font-weight: 600;
+    }
+
+    .text-container {
+      text-align: center;
+    }
+
+    strong {
+      letter-spacing: -2em;
+    }
+
+}
 
 @media (max-width: 768px) {
 
@@ -570,8 +648,9 @@ display: block;
         margin-bottom: 0px;
     }
 
-  
-
+        /* .bg-image {
+            animation: none !important;
+        } */
 
     .main-section-video-text, .main-section-video-text2 {
         flex-direction: column;
@@ -605,11 +684,6 @@ display: block;
 }
 
 @media (max-width: 760px) {
-
-    .text-container p {
-        font-size: 2rem;
-        width: 365px;
-    }
 
     .form-success-container {
         width: 80%;
@@ -782,11 +856,8 @@ top: 75%;
     color: var(--secondary-color);
     font-size: 0.9rem;
     font-weight: 500;
-    /* transform: translateX(-45%); */
     transform: none;
-    /* margin: 0px auto; */
     min-width: 650px;
-    /* text-align: center; */
     left: -28%;
 }
 
@@ -964,19 +1035,22 @@ height: 350px;
         
     }
 
+    .text-container p {
+        width: 360px    ;
+    }
+
     .dropdown-menu {
-        /* margin-left: -20px; */
-        left: 222px;
+        left: 213px;
         margin-top: -2px;
     }
 
     .navbar-menu li {
-        width: 195px;
-    }
+        width: 185px;
+      }
 
     .navbar-menu li a{
         width: 195px;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     .StripeElement{
@@ -1014,14 +1088,14 @@ width: 100%;
 font-size: 1rem;
 }
 
+.text-center {
+    left: -33%;
+    font-size: 0.85rem;
 }
 
-@media (max-width: 400px) { 
-
-    .text-center {
-        left: -33%;
-        font-size: 0.85rem;
-    }
+.text-container p {
+    width: 325px;
+}
 
 }
 
@@ -1046,5 +1120,19 @@ font-size: 1.8rem;
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
         } 
+}
+
+@media (min-width: 800px) {
+
+    .text-container p {
+        width: 81   0px;
+    }
+}
+
+@media (min-width: 800px) {
+    .text-container p {
+        padding-left: 30px;
+    }
+    
 }
    

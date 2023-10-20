@@ -437,9 +437,9 @@ font-family: 'Barlow', sans-serif;
 color: var(--doree-color);
 font-size: 3rem;
 font-weight: 400;
-padding-left: 30px;
-  width: 680px;
-  margin: 0 auto;
+/* padding-left: 30px; */
+width: 815px;
+margin: 0 auto;
  
 }
 
