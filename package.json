@@ -2,7 +2,7 @@
     "devDependencies": {
         "@babel/core": "^7.17.0",
         "@babel/preset-env": "^7.16.0",
-        "@babel/preset-react": "^7.22.15",
+        "@babel/preset-react": "^7.0.0",
         "@symfony/webpack-encore": "^4.0.0",
         "core-js": "^3.23.0",
         "css-loader": "^6.8.1",

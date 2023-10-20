@@ -35,6 +35,7 @@ nelmio_security:
                 - "'self'"
                 - "https://fonts.gstatic.com"
                 - "https://cdnjs.cloudflare.com"
+                - "https://fonts.gstatic.com/s/barlow/v12/7cHpv4kjgoGqM7E_DMs5.woff2"
             frame-src: 
                 - "'self'"
                 - "https://www.googletagmanager.com"

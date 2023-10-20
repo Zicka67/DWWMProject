@@ -422,7 +422,7 @@ font-family: 'Barlow', sans-serif;
 color: var(--doree-color);
 font-size: 3rem;
 font-weight: 400;
-  /* letter-spacing: -0.054em; */
+padding-left: 30px;
   width: 680px;
   margin: 0 auto;
  
@@ -1957,7 +1957,7 @@ transform: rotateY(1turn);
 /* SLIDE IMAGE HOME */
 @keyframes slide {
 from { background-position: 0 0; }
-to { background-position: -100% 0; }
+to { background-position: 100% 0; }
 }
 
 .navbar-menu.animate-in {
