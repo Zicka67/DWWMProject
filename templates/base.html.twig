@@ -19,11 +19,11 @@
     {# JS #}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     {# CSS #}
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
     <link rel="stylesheet" href="{{ asset('css/calendar.css') }}">
     <link rel="stylesheet" href="{{ asset('css/payment.css') }}">
     <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     {# FONTS #}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,31 +49,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         {% if app.request.attributes.get('_route') == 'app_home' %}
         <div class="background-animation">
 
-    <div class="full-screen">
-        
-        <div class="bg-image"></div>
+            <div class="full-screen">
+                
+                <div class="bg-image"></div>
 
-            <div class="overlay">
-                <div class="text-container-bis">
-                    <img src="{{ asset('img/picmix.com_2359990.gif') }}" alt="Des étoiles tombent sur le centre de la page principale">
-                </div>
+                    <div class="overlay">
+                        <div class="text-container-bis">
+                            <img src="{{ asset('img/picmix.com_2359990.gif') }}" alt="Des étoiles tombent sur le centre de la page principale">
+                        </div>
 
-                <div class="image-container">
-                    <img src="{{ asset('img/LOGO6.webp') }}" alt="Image au centre de la page, c'est un cadre de miroir avec le nom du site Douceur de lune au milieu et décoré de fleurs et étoiles" class="center-image">
-                </div>
+                        <div class="image-container">
+                            <img src="{{ asset('img/LOGO6.webp') }}" alt="Image au centre de la page, c'est un cadre de miroir avec le nom du site Douceur de lune au milieu et décoré de fleurs et étoiles" class="center-image">
+                        </div>
 
-                <div class="text-container">
-                    <p class="animate-this-text" style="visibility: hidden;">Enchanter &nbsp sa &nbsp parental<img src="{{ asset('img/plante.webp') }}" alt="la phrase enchanter sa parentalité est écrite, mais le L de parentalité est en forme de fleur">ité</p>
-                </div>
+                        <div class="text-container">
+                            <p class="animate-this-text" style="visibility: hidden;">Enchanter &nbsp sa &nbsp parental<img src="{{ asset('img/plante.webp') }}" alt="la phrase enchanter sa parentalité est écrite, mais le L de parentalité est en forme de fleur">ité</p>
+                        </div>
+
+                    </div>
 
             </div>
+        
         </div>
         {% endif %}
-    
-    </div>
-    
-</div>
-
+        
     {# Include de la nav #}
     {% include "_partials/_nav.html.twig" %}
 

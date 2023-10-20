@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (textContainer) {
         const initialContent = textContainer.textContent || textContainer.innerText;
-        const initialStyle = window.getComputedStyle(textContainer).cssText; // Récupérer le style CSS
+        const initialStyle = window.getComputedStyle(textContainer).cssText; 
         ReactDOM.render(<TextAnimation text={initialContent} style={initialStyle} />, textContainer);
     }
       
