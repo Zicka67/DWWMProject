@@ -28,14 +28,6 @@ const TextAnimation = ({ text }) => {
     <div 
       ref={ref} 
       style={{ 
-        // fontFamily: "'Barlow', sans-serif",
-        // color: "#AB873D",
-        // fontSize: "3rem",
-        // fontWeight: 600,
-        // letterSpacing: "-0.054em",
-        // width: "680px",
-        // margin: "0 auto",
-        // paddingLeft: "25px",
         visibility: isVisible ? 'visible' : 'hidden' 
       }}
     >

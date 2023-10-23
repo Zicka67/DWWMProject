@@ -1251,11 +1251,6 @@ transition: 0.3s;
 border-radius: 10px;
 }
 
-/* .delet-account a:hover {
-    box-shadow: inset 0px 0px 40px rgba(242, 20, 30, 0.359);
-    transition: 0.3s;
-} */
-
 .flex-wrapper {
 margin: 20px 0;
 }
@@ -1287,7 +1282,7 @@ margin-top: 30px;
 /* ****************** FOOTER ***************** */
 
 .footer {
-height: 570px;
+height: 500px;
 width: 100%;
 background-image: url('../img/f76197_19da170fd28646b197f0c6fa3612fb81~mv2.webp');
 background-repeat: no-repeat;
@@ -1324,7 +1319,7 @@ color: white;
 
 .text-center {
 position: absolute;
-bottom: 28vh;
+bottom: 230px;
 transform: translateX(-45%);
 left: 48.5%;
 color: var(--secondary-color);
@@ -1341,19 +1336,19 @@ min-width: 650px;
 
 .text-left {
 position: absolute;
-left: 3vh;
-top: 5vh;
+left: 30px;
+top: -10px;
 color: var(--secondary-color);
-font-size: 1rem;
+font-size: 1.2rem;
 font-family: 'Barlow', sans-serif; 
 }
 
 .text-right {
 position: absolute;
-right: 3vh;
-top: 5vh;
+right: 30px;
+top: -10px;
 color: var(--secondary-color);
-font-size: 1rem;
+font-size: 1.2rem;
 font-family: 'Barlow', sans-serif;
 text-align: right;
 }
