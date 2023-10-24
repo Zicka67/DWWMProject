@@ -11,6 +11,10 @@
         font-size: 1.1rem;
       }
 
+      .enfant h2 {
+        font-size: 1.8rem;
+      }
+
    
 }
 
@@ -59,6 +63,10 @@
     .navbar-container li a {
         font-size: 1.1rem;
       } 
+
+      .enfant h2 {
+        font-size: 1.6rem;
+      }
 
 }
 
@@ -121,6 +129,9 @@ min-width: 215px;
 font-size: 1rem;
 }
 
+.enfant h2 {
+    font-size: 1.4rem;
+  }
 
 }
 
@@ -142,8 +153,6 @@ font-size: 1rem;
             visibility: visible !important;
         }
     
-    
-
 
 .buttonBack{
 width: 80px;
@@ -223,6 +232,10 @@ display: none;
 .text-container-bis {
 margin-top: 45px;
 }
+
+.enfant h2 {
+    font-size: 1.3rem;
+  }
 
 /* ******************* */
 
@@ -313,6 +326,13 @@ display: block;
 
 }
 
+@media (max-width: 1042px) {
+    .img-dim {
+        width: 350px;
+        height: 200px;
+    }
+}
+
 @media (max-width: 970px) {
 
     .StripeElement{
@@ -338,9 +358,9 @@ font-size: 2.5rem;
 }
 
 .img-dim {
-width: 190px;
-height: 190px;
-margin: 0 25px;
+    width: 350px;
+    height: 200px;
+    margin: 0 25px;
 }
 
 .enfant-home h2 {
@@ -458,14 +478,15 @@ display: block;
 
 @media (max-width: 880px) {
 
-    .enfant-cours {
-        flex: 1 0 100%;
-    }
 
     .img-dim {
         width: 300px;
         height: 200px;
     }
+
+    .enfant h2 {
+        font-size: 1.5rem;
+      }
 
 
 .container-mt-p {
@@ -596,6 +617,10 @@ display: block;
       letter-spacing: -2em;
     }
 
+    .enfant h2 {
+        font-size: 1.4rem;
+      }
+
 }
 
 @media (max-width: 768px) {
@@ -640,6 +665,14 @@ display: block;
 }
 
 @media (max-width: 760px) {
+
+     .enfant-cours {
+        flex: 1 0 100%;
+    }
+
+    .enfant h2 {
+        font-size: 1.8rem;
+      }
 
     .form-success-container {
         width: 80%;
@@ -1123,14 +1156,9 @@ font-size: 1.8rem;
 @media (min-width: 800px) {
 
     .text-container p {
-        width: 81   0px;
+        /* width: 81px   0px; */
+        padding-left: 30px;
     }
 }
 
-@media (min-width: 800px) {
-    .text-container p {
-        padding-left: 30px;
-    }
-    
-}
    

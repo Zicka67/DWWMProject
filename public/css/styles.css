@@ -55,7 +55,7 @@ border-spacing: 0;
 --doree-color: #AB873D;
 --red-color: #e83b3b;
 --green-color: #4fcf57;
---darkPink-color: rgb(243, 160, 144);
+--darkPink-color: rgb(231, 127, 107);
 --midPink-color: #f6cec8;
 --lightPink-color: rgb(255, 242, 239); 
 }
@@ -1008,10 +1008,11 @@ line-height: 22px;
 }
 
 .enfant h2 {
-font-size: 30px;
+font-size: 2rem;
 line-height: 30px;
 font-family: 'Knewave', cursive;
 padding: 2.5vh 2vw 0 2vw;
+width: 450px;
 }
 
 .image-responsive {
