@@ -28,12 +28,17 @@
             <tbody>
                 {% for reservation in reservations|reverse|slice(0, 10) %}
                 <tr>
+                    {% if reservation.user != null %}
                     <td>{{ reservation.user.pseudo }}</td>
                     <td class="td-color">
                         <a href="tel:{{ reservation.user.phoneNumber|split('', 2)|join(' ') }}">
                             {{ reservation.user.phoneNumber|split('', 2)|join(' ') }}
                         </a>
                     </td>
+                    {% else %}
+                    <td>Utilisateur supprimé</td>
+                    <td>Utilisateur supprimé</td>
+                    {% endif %}
                     <td>{{ reservation.cours }}</td>
                     <td>{{ reservation.dtResa | date("m/d/Y") }}</td>
                     <td>{{ reservation.dtCours | date("m/d/Y") }}</td>
