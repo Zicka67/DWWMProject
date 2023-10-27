@@ -21,11 +21,11 @@ private ?\DateTimeInterface $dt_resa = null;
 private ?\DateTimeInterface $dt_cours = null;
 
 #[ORM\ManyToOne(inversedBy: 'reservations')]
-#[ORM\JoinColumn(nullable: false)]
+#[ORM\JoinColumn(nullable: true, onDelete: 'SET NULL')]
 private ?Cours $cours = null;
 
 #[ORM\ManyToOne(inversedBy: 'reservations')]
-#[ORM\JoinColumn(nullable: false)]
+#[ORM\JoinColumn(nullable: true, onDelete: 'SET NULL')]
 private ?User $user = null;
 
 #[ORM\Column(length: 250)]
@@ -33,6 +33,12 @@ private ?string $payement_method = null;
 
 #[ORM\OneToOne(mappedBy: 'reservation', cascade: ['persist', 'remove'])]
 private ?Payement $payement = null;
+
+#[ORM\Column(length: 50, nullable: true)]
+private ?string $userName = null;
+
+#[ORM\Column(nullable: false, options: ["default" => 0])]
+private ?bool $isPaid = null;
 
 public function getId(): ?int
 {
@@ -112,6 +118,30 @@ public function getPayementMethod(): ?string
 public function setPayementMethod(string $payement_method): self
 {
     $this->payement_method = $payement_method;
+
+    return $this;
+}
+
+public function getUserName(): ?string
+{
+    return $this->userName;
+}
+
+public function setUserName(?string $userName): self
+{
+    $this->userName = $userName;
+
+    return $this;
+}
+
+public function isIsPaid(): ?bool
+{
+    return $this->isPaid;
+}
+
+public function setIsPaid(bool $isPaid): self
+{
+    $this->isPaid = $isPaid;
 
     return $this;
 }

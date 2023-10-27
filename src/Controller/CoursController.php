@@ -159,9 +159,11 @@ public function save_reservation(Security $security, Request $request, EntityMan
 {
     // On utilise le service Security pour obtenir l'utilisateur actuellement connecté et on le stocke dans la variable
     $user = $security->getUser();
-    
+    // Récupération du nom de l'utilisateur du formulaire
+    $userName = $security->getUser(); //tester en deconnectant reconnectant
+    // dd($security->getUser());
     // On récupère le nom du cours à partir de la requête HTTP et on le stock
-    $courseSlug = filter_var($request->request->get('courseName'), FILTER_SANITIZE_STRING);
+    $courseSlug = filter_var($request->request->get('courseName'), FILTER_SANITIZE_SPECIAL_CHARS);
     // On utilise l'EM, on récupère le chemin pour l'entité Cours, on cherche le cours correspondant au slug.
     $course = $em->getRepository("App\Entity\Cours")->findOneBy(['slug_cours' => $courseSlug ]);
 
@@ -191,24 +193,12 @@ public function save_reservation(Security $security, Request $request, EntityMan
     //date du cours selectionné avec les slotDate et slotTime plus haut (jour + heure)
     $reservation->setDtCours(new DateTime($date." ".$time));
     $reservation->setPayementMethod($request->request->get('payment-method'));
+    $reservation->setUserName($userName);
+    $reservation->setIsPaid(0);
 
     // On enregistre et flush la reservation en DB
     $em->persist($reservation);
     $em->flush();
-
-    // ****************
-    // Génére le PDF
-    $html = $this->renderView('invoice/invoice.html.twig', [
-        'reservation' => $reservation,
-        // ... autres données pour la facture
-    ]);
-    $pdfContent = $this->pdfGenerator->generatePdf($html);
-
-    // Sauvegarde le PDF 
-    $pdfPath = 'C:\Users\guillaumekezic\OneDrive - Elan Formation\Bureau\Factures\invoice_' . $reservation->getId() . '.pdf';
-    
-    file_put_contents($pdfPath, $pdfContent);
-    // ****************
    
     //  On vérifie si la méthode de paiement de la réservation est "payment-online"
     if ($reservation->getPayementMethod() == "payment-online") {

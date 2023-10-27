@@ -10,6 +10,7 @@ nelmio_security:
             script-src: 
                 - "'self'"
                 - "https://js.stripe.com"
+                - "https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.3/lottie.min.js:13"
                 - "https://cdnjs.cloudflare.com"
                 - "https://www.googletagmanager.com"
                 - "https://unpkg.com"

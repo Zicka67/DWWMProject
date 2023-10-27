@@ -10,4 +10,4 @@ var animation = lottie.loadAnimation({
   
   setTimeout(function() {
       window.location.href = "http://localhost:8000/showCours";
-  }, 3800); 
+  }, 380000); 

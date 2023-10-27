@@ -5,11 +5,10 @@ namespace App\Controller;
 require_once __DIR__ . '/../../vendor/autoload.php';
 require_once __DIR__ . '/../../stripe/secret.php';
 
-
-
 use Exception;
 use App\Entity\Cours;
 use Stripe\StripeClient;
+use App\Service\PdfGenerator;
 use App\Repository\CoursRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Repository\ReservationRepository;
@@ -25,24 +24,33 @@ use Symfony\Bundle\SecurityBundle\SecurityBundle;
 class PaymentController extends AbstractController
 {
 
-#[Route('/payment/{id}', name: 'reservation_payment')]
-public function reservationPayment (int $id, ReservationRepository $reservationRepository, EntityManagerInterface $em, Security $security) 
-{
-    $reservation = $reservationRepository->find($id);
-    $reservationUser = $reservation->getUser();
-    $user = $security->getUser();
+    private $pdfGenerator;
 
-    /** @var \App\Entity\User $user docblock */ 
-    if ($user->getId() != $reservationUser->getId()) 
+    public function __construct(PdfGenerator $pdfGenerator)
     {
-        return $this->redirect('/');
+        $this->pdfGenerator = $pdfGenerator;
     }
 
-    return $this->render('payment/index.html.twig',[
-        'reservationId' => $id,
-        'userMail' => $reservationUser->getEmail()
+    #[Route('/payment/{id}', name: 'reservation_payment')]
+    public function reservationPayment (int $id, ReservationRepository $reservationRepository, EntityManagerInterface $em, Security $security) 
+    {
+        $reservation = $reservationRepository->find($id);
+        $reservationUser = $reservation->getUser();
+        $user = $security->getUser();
+    
+        /** @var \App\Entity\User $user docblock */ 
+        if ($user->getId() != $reservationUser->getId()) 
+        {
+            return $this->redirect('/');
+        }
+    
+        return $this->render('payment/index.html.twig',[
+            'reservationId' => $id,
+            'userMail' => $reservationUser->getEmail(),
+            'name' => $reservationUser->getName(),  
         ]);
-}
+    }
+    
 
 #[Route('/create-payment-intent', name: 'checkout')]
 public function checkout(ReservationRepository $reservationRepository, EntityManagerInterface $em, Request $request): Response
@@ -88,13 +96,41 @@ public function checkout(ReservationRepository $reservationRepository, EntityMan
 }
 
 
-#[Route('/payment-success', name: 'success_payment')]
-public function paymentSuccess(): Response
+#[Route('/payment-success/{id}', name: 'success_payment')]
+public function paymentSuccess(int $id, ReservationRepository $reservationRepository, EntityManagerInterface $em, Security $security): Response
 {
-    // Ajouter email de confirmation ?
-    // un reçu ?
 
+    $reservation = $reservationRepository->find($id);
+    $user = $security->getUser();
+
+    if (!$reservation) {
+        throw $this->createNotFoundException('La réservation demandée n\'existe pas.');
+    }
+
+    // Mettre à jour le champ isPaid de la réservation
+    $reservation->setIsPaid(1);
+    $em->persist($reservation);
+    $em->flush();
+
+  
+    // ****************
+    // Génére le PDF
+    $html = $this->renderView('invoice/invoice.html.twig', [
+        'reservation' => $reservation,
+        'user' => $user,
+        // ... autres données pour la facture
+    ]);
+    $pdfContent = $this->pdfGenerator->generatePdf($html);
+
+    // Sauvegarde le PDF 
+    $pdfPath = 'C:\Users\guillaumekezic\OneDrive - Elan Formation\Bureau\Factures\invoice_' . $reservation->getId() . '.pdf';
+    
+    file_put_contents($pdfPath, $pdfContent);
+    // ****************
+
+    // Rendre la vue de succès de paiement
     return $this->render('payment/success.html.twig');
 }
+
 
 }
