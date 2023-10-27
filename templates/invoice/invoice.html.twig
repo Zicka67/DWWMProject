@@ -50,15 +50,20 @@
             <th>Cours</th>
             <td>{{ reservation.cours.nom }}</td>
         </tr> #}
-        <tr>
+        {# <tr>
             <th>Date de Réservation</th>
             <td>{{ reservation.dtResa|date('d-m-Y H:i') }}</td>
-        </tr>
+        </tr> #}
 
         <tr>
             <th>Date du Cours</th>
             <td>{{ reservation.dtCours|date('d-m-Y H:i') }}</td>
         </tr>
+
+        <tr>
+            <th>Nom du cours</th>
+            <td>{{ reservation.cours.nomCours }}</td>
+        </tr> 
         <tr>
             <th>Méthode de Paiement</th>
             <td>{{ reservation.payementMethod }}</td>
@@ -66,7 +71,7 @@
 
         <tr>
             <th>Prix</th>
-              <td>{{ reservation.cours.prix }}</td>
+              <td>{{ reservation.cours.prix }}€</td>
             {# <td>{{ cours.price }}</td> #}
         </tr>
     </table>
