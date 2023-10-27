@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facture</title>
+</head>
+<body>
+    
+</body>
+</html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Facture</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .invoice-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .invoice-details {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .invoice-details th, .invoice-details td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+        .invoice-details th {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="invoice-header">
+        <h1>Facture</h1>
+        <p>Date de Réservation : {{ reservation.dtResa|date('d-m-Y') }}</p>
+    </div>
+
+    <table class="invoice-details">
+        <tr>
+            <th>Utilisateur</th>
+            <td>{{ reservation.user.pseudo }}</td>
+        </tr>
+        {# <tr>
+            <th>Cours</th>
+            <td>{{ reservation.cours.nom }}</td>
+        </tr> #}
+        <tr>
+            <th>Date de Réservation</th>
+            <td>{{ reservation.dtResa|date('d-m-Y H:i') }}</td>
+        </tr>
+
+        <tr>
+            <th>Date du Cours</th>
+            <td>{{ reservation.dtCours|date('d-m-Y H:i') }}</td>
+        </tr>
+        <tr>
+            <th>Méthode de Paiement</th>
+            <td>{{ reservation.payementMethod }}</td>
+        </tr>
+
+        <tr>
+            <th>Prix</th>
+              <td>{{ reservation.cours.prix }}</td>
+            {# <td>{{ cours.price }}</td> #}
+        </tr>
+    </table>
+</body>
+</html>

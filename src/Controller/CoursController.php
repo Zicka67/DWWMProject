@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use DateTime;
 use App\Entity\Reservation;
+use App\Service\PdfGenerator;
 use App\Repository\CoursRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\SecurityBundle\Security;
@@ -15,6 +16,15 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class CoursController extends AbstractController
 {
+
+private $pdfGenerator;
+
+public function __construct(PdfGenerator $pdfGenerator)
+{
+    $this->pdfGenerator = $pdfGenerator;
+}
+
+
 #[Route('/showCours', name: 'app_cours')]
 public function index(CoursRepository $coursRepository): Response
 {
@@ -185,7 +195,21 @@ public function save_reservation(Security $security, Request $request, EntityMan
     // On enregistre et flush la reservation en DB
     $em->persist($reservation);
     $em->flush();
-    // dd($user);
+
+    // ****************
+    // Génére le PDF
+    $html = $this->renderView('invoice/invoice.html.twig', [
+        'reservation' => $reservation,
+        // ... autres données pour la facture
+    ]);
+    $pdfContent = $this->pdfGenerator->generatePdf($html);
+
+    // Sauvegarde le PDF 
+    $pdfPath = 'C:\Users\guillaumekezic\OneDrive - Elan Formation\Bureau\Factures\invoice_' . $reservation->getId() . '.pdf';
+    
+    file_put_contents($pdfPath, $pdfContent);
+    // ****************
+   
     //  On vérifie si la méthode de paiement de la réservation est "payment-online"
     if ($reservation->getPayementMethod() == "payment-online") {
         //  On redirige l'utilisateur vers la page de paiement, en ajoutant l'ID de la réservation à l'URL.
