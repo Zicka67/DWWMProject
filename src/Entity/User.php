@@ -174,5 +174,14 @@ public function __toString(): string
     return $this->getUserIdentifier();
 }
 
+public function anonymizeReservations(): void {
+    foreach ($this->reservations as $reservation) {
+        $reservation->setUserFirstname('Compte supprimé');
+        $reservation->setUserLastname('Compte supprimé');
+        $reservation->setUserPhone('0000000000');
+        $reservation->setUserAdress('Adresse supprimée');
+    }
+}
+
 
 }
