@@ -97,28 +97,21 @@ public function checkout(ReservationRepository $reservationRepository, EntityMan
 
 
 #[Route('/payment-success/{id}', name: 'success_payment')]
-public function paymentSuccess(int $id, ReservationRepository $reservationRepository, EntityManagerInterface $em, Security $security): Response
+public function paymentSuccess(int $id, ReservationRepository $reservationRepository, EntityManagerInterface $em): Response
 {
-
     $reservation = $reservationRepository->find($id);
-    $user = $security->getUser();
 
     if (!$reservation) {
         throw $this->createNotFoundException('La réservation demandée n\'existe pas.');
     }
-
     // Mettre à jour le champ isPaid de la réservation
     $reservation->setIsPaid(1);
     $em->persist($reservation);
     $em->flush();
-
-  
     // ****************
     // Génére le PDF
     $html = $this->renderView('invoice/invoice.html.twig', [
         'reservation' => $reservation,
-        // 'user' => $user,
-        // ... autres données pour la facture
     ]);
     $pdfContent = $this->pdfGenerator->generatePdf($html);
 
@@ -127,8 +120,7 @@ public function paymentSuccess(int $id, ReservationRepository $reservationReposi
     
     file_put_contents($pdfPath, $pdfContent);
     // ****************
-
-    // Rendre la vue de succès de paiement
+    // Rendre la vue 
     return $this->render('payment/success.html.twig');
 }
 

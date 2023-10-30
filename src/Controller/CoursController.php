@@ -160,14 +160,10 @@ public function save_reservation(Security $security, Request $request, EntityMan
 {
     // On utilise le service Security pour obtenir l'utilisateur actuellement connecté et on le stocke dans la variable
     $user = $security->getUser();
-    // Récupération du nom de l'utilisateur du formulaire
-    // $userName = $security->getUser(); 
-
     // On récupère le nom du cours à partir de la requête HTTP et on le stock
     $courseSlug = filter_var($request->request->get('courseName'), FILTER_SANITIZE_SPECIAL_CHARS);
     // On utilise l'EM, on récupère le chemin pour l'entité Cours, on cherche le cours correspondant au slug.
     $course = $em->getRepository("App\Entity\Cours")->findOneBy(['slug_cours' => $courseSlug ]);
-
     // On vérifie si un utilisateur est connecté.
     if (!$user) {
         // On utilise l'objet Request pour obtenir la session en cours.
@@ -177,7 +173,6 @@ public function save_reservation(Security $security, Request $request, EntityMan
         // On redirige l'utilisateur vers la page de connexion.
         return $this->redirectToRoute('app_login');
     }
-
     // On récupère la date du créneau à réserver à partir de la requête HTTP.
     $date = $request->request->get('slotDate');
     // On récupère la lheure du créneau à réserver à partir de la requête HTTP.
@@ -194,85 +189,29 @@ public function save_reservation(Security $security, Request $request, EntityMan
     //date du cours selectionné avec les slotDate et slotTime plus haut (jour + heure)
     $reservation->setDtCours(new DateTime($date." ".$time));
     $reservation->setPayementMethod($request->request->get('payment-method'));
-    // $reservation->setUserName($userName);
     $reservation->setIsPaid(0);
-
-    // $reservation->setUserPhone('test');
-    // $reservation->setUserFirstname('test');
-    // $reservation->setUserLastname('test');
-    // $reservation->setUserAdress('test');
-
 
     // On enregistre et flush la reservation en DB
     $em->persist($reservation);
     $em->flush();
-    // dd($reservation);
+
     //  On vérifie si la méthode de paiement de la réservation est "payment-online"
     if ($reservation->getPayementMethod() == "payment-online") {
-
         return $this->redirectToRoute("user_details", ['id' => $reservation->getId()]);
-        //  On redirige l'utilisateur vers la page de paiement, en ajoutant l'ID de la réservation à l'URL.
-        // return $this->redirect("user_details.html.twig/".$reservation->getId());
-        // return $this->redirectToRoute('user_details', ['id' => $reservation->getId()]);
-
     }
     // Si la méthode de paiement n'est pas "payment-online", on redirige l'utilisateur vers le cours après payement.
     return $this->redirect("cours/".$courseSlug);
 }
-
-// #[Route('/user_details/{id}', name: 'user_details')]
-// public function userDetails($id, Request $request, EntityManagerInterface $em): Response
-// {
-//     // Récupère la réservation existante en utilisant l'ID
-//     $reservation = $em->getRepository(Reservation::class)->find($id);
-
-//     // Vérifie si la réservation existe
-//     if (!$reservation) {
-//         throw $this->createNotFoundException('Aucune réservation trouvée pour cet ID');
-//     }
-
-//     // Créer le formulaire
-//     $form = $this->createFormBuilder()
-//         ->add('user_firstname')
-//         ->add('user_lastname')
-//         ->add('user_adress')
-//         ->add('user_phone')
-//         ->getForm();
-
-//     $form->handleRequest($request);
-
-//     if ($form->isSubmitted() && $form->isValid()) {
-//         // update de la réservation existante
-//         $data = $form->getData();
-//         $reservation->setUserFirstname($data['user_firstname']);
-//         $reservation->setUserLastname($data['user_lastname']);
-//         $reservation->setUserAdress($data['user_adress']);
-//         $reservation->setUserPhone($data['user_phone']);
-//         $em->flush();
-
-//         // Redirige vers page de paiement
-//         // return $this->redirectToRoute('', ['id' => $reservation->getId()]);
-//         // return $this->redirect("payement/index.html.twig/".$reservation->getId());
-//         return $this->redirectToRoute("reservation_payment", ['id' => $reservation->getId()]);
-//     }
-
-//     return $this->render('payment/userDetails.html.twig', [
-//         'form' => $form->createView(),
-//         'reservation' => $reservation
-//     ]);
-// }
 
 #[Route('/user_details/{id}', name: 'user_details')]
 public function userDetails($id, Request $request, EntityManagerInterface $em): Response
 {
     // Récupère la réservation existante en utilisant l'ID
     $reservation = $em->getRepository(Reservation::class)->find($id);
-
     // Vérifie si la réservation existe
     if (!$reservation) {
         throw $this->createNotFoundException('Aucune réservation trouvée pour cet ID');
     }
-
     // Créer le formulaire
     $form = $this->createForm(UserDetailsFormType::class, $reservation);
 
