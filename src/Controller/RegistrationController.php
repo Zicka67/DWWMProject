@@ -88,7 +88,7 @@ public function verifyUserEmail(Request $request, TranslatorInterface $translato
 
     // @TODO Change the redirect on success and handle or remove the flash message in your templates
     $this->addFlash('success', 'Votre email à bien été vérifié');
-
+    
     return $this->redirectToRoute('app_home');
 }
 
@@ -97,11 +97,36 @@ public function deleteAccount(Request $request, EntityManagerInterface $entityMa
 {
     $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 
+    // Récupérer l'utilisateur actuel
     $user = $this->getUser();
-    $entityManager->remove($user);
-    $entityManager->flush();
 
-    // Logout the user
+    // Début de la transaction
+    $entityManager->beginTransaction();
+
+    try {
+        // Anonymise les réservations liées à cet utilisateur
+        /** @var \App\Entity\User $user */  // Pour empêcher l'erreur undefined de la function
+        $user->anonymizeReservations();  
+        
+        // Sauvegarde les changements sur les réservations
+        $entityManager->flush();
+
+        // Supprime l'utilisateur
+        $entityManager->remove($user);
+        $entityManager->flush();
+
+        // Tout s'est bien passé
+        $entityManager->commit();
+    } catch (\Exception $e) {
+        // Une erreur s'est produite
+        $entityManager->rollback();
+
+        $this->addFlash('error', 'Une erreur s\'est produite pendant la suppression de votre compte.');
+
+        return $this->redirectToRoute('app_home');
+    }
+
+    // Déconnecte l'utilisateur
     $tokenStorage->setToken(null);
     $session->invalidate();
 
@@ -109,5 +134,7 @@ public function deleteAccount(Request $request, EntityManagerInterface $entityMa
 
     return $this->redirectToRoute('app_home');
 }
+
+
 
 }
