@@ -50,10 +50,8 @@ CREATE TABLE IF NOT EXISTS `doctrine_migration_versions` (
   PRIMARY KEY (`version`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
--- Listage des données de la table littlecocon2.doctrine_migration_versions : ~1 rows (environ)
+-- Listage des données de la table littlecocon2.doctrine_migration_versions : ~0 rows (environ)
 DELETE FROM `doctrine_migration_versions`;
-INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_time`) VALUES
-	('DoctrineMigrations\\Version20231030102219', '2023-10-30 10:22:29', 80);
 
 -- Listage de la structure de table littlecocon2. messenger_messages
 CREATE TABLE IF NOT EXISTS `messenger_messages` (
@@ -105,16 +103,13 @@ CREATE TABLE IF NOT EXISTS `reservation` (
   KEY `IDX_42C84955A76ED395` (`user_id`),
   CONSTRAINT `FK_42C849557ECF78B0` FOREIGN KEY (`cours_id`) REFERENCES `cours` (`id`) ON DELETE SET NULL,
   CONSTRAINT `FK_42C84955A76ED395` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Listage des données de la table littlecocon2.reservation : ~5 rows (environ)
+-- Listage des données de la table littlecocon2.reservation : ~2 rows (environ)
 DELETE FROM `reservation`;
 INSERT INTO `reservation` (`id`, `cours_id`, `user_id`, `dt_resa`, `dt_cours`, `payement_method`, `is_paid`, `user_phone`, `user_firstname`, `user_lastname`, `user_adress`) VALUES
-	(51, 2, 1, '2023-10-30 10:15:54', '2023-10-08 15:00:00', 'payment-online', 1, '1234567890', 'dqzdqzdq', 'dzqdqzdzq', 'dzqdqzd'),
-	(52, 5, 1, '2023-10-30 10:23:06', '2023-10-15 15:00:00', 'payment-online', 1, '1234567890', 'dqzdqzd', 'qzdqzdzq', 'dzqdqzd'),
-	(53, 2, 1, '2023-10-30 10:25:03', '2023-10-08 16:30:00', 'payment-online', 1, '123456789', 'dzqdd', 'dqzdqzd', '2 dzqdqzd'),
-	(54, 2, 1, '2023-10-30 10:42:07', '2023-10-15 15:00:00', 'payment-online', 1, '1234567890', 'qzdqd', 'dzqdqz', 'dzqd'),
-	(56, 2, 1, '2023-10-30 10:53:55', '2023-10-15 15:30:00', 'payment-online', 1, '0606060606', 'KEZIC', 'Guillaume', '2 rue de l\'église');
+	(62, 3, NULL, '2023-10-30 13:55:54', '2023-10-08 15:00:00', 'payment-online', 1, '0000000000', 'Compte supprimé', 'Compte supprimé', 'Adresse supprimée'),
+	(63, 3, 23, '2023-10-30 14:04:32', '2023-10-29 15:00:00', 'payment-online', 1, '05 16 25 84 25', 'John', 'Doe', '2 rue de la ville');
 
 -- Listage de la structure de table littlecocon2. reset_password_request
 CREATE TABLE IF NOT EXISTS `reset_password_request` (
@@ -147,10 +142,9 @@ CREATE TABLE IF NOT EXISTS `unavailable_date` (
   CONSTRAINT `FK_42DFE3CB591CC992` FOREIGN KEY (`course_id`) REFERENCES `cours` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Listage des données de la table littlecocon2.unavailable_date : ~4 rows (environ)
+-- Listage des données de la table littlecocon2.unavailable_date : ~3 rows (environ)
 DELETE FROM `unavailable_date`;
 INSERT INTO `unavailable_date` (`id`, `course_id`, `all_courses`, `date`, `all_day`, `slot`) VALUES
-	(24, NULL, 0, '2023-08-20', 0, NULL),
 	(26, 2, 1, '2023-08-22', 0, '10:00:00'),
 	(27, 5, 1, '2023-09-29', 0, '17:00:00'),
 	(28, 3, 1, '2023-10-31', 1, '15:00:00');
@@ -165,20 +159,14 @@ CREATE TABLE IF NOT EXISTS `user` (
   `pseudo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UNIQ_8D93D649E7927C74` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Listage des données de la table littlecocon2.user : ~9 rows (environ)
+-- Listage des données de la table littlecocon2.user : ~3 rows (environ)
 DELETE FROM `user`;
 INSERT INTO `user` (`id`, `email`, `roles`, `password`, `is_verified`, `pseudo`) VALUES
 	(1, 'littlecocon@gmail.com', '["ROLE_ADMIN"]', '$2y$13$A5UfZHtJ8Qc1VZ57mU3X2.4iCkHJ3Z3Ef.yZ9eQG7P5tQy6DH6f3.', 1, 'Guillaume'),
 	(2, 'user@gmail.com', '["ROLE_USER"]', '$2y$13$JRK332Byb4uvsK/EafzlGuxSbtOtyQv1vGn7wLqsQa4FGVILKADYS', 1, 'User'),
-	(9, 'Zicka@zicka.com', '["ROLE_USER"]', '$2y$13$6g7P7giqXLOgcHSRers8geIPXFq/72lDLm/RX4jmaE0WtQiMobYWC', 0, 'Zicka67'),
-	(10, 'Testsub@hotmail.fr', '["ROLE_USER"]', '$2y$13$DFjiCO/NSL3Pio/aml8fOuvMocpwDgUzl4bCtO5nJH9kFPJNfgco.', 0, 'Testsub'),
-	(11, 'testt@outlook.fr', '["ROLE_USER"]', '$2y$13$Bwug8jKHVvPXN0eEgpCE0eiOluiqLExtVs8xBRuGMatYg08IJ75EG', 0, 'testt'),
-	(12, 'testtelephone@gmail.com', '["ROLE_USER"]', '$2y$13$BE8qo2VJt4Qk60pIljT.zeib/z73YEnacbdIqEp10WS2gA7j2wSb6', 0, 'dzdzd'),
-	(13, 'telephone@gmail.com', '["ROLE_USER"]', '$2y$13$ZUeiNgJyRZbuKy7gotliC.yyKZVWrU1HY9b14XQN.G1Fv6SubwEz2', 0, 'TestTelephone'),
-	(14, 'dqzdqcocon@gmail.com', '["ROLE_USER"]', '$2y$13$o0b6OOMzt8VZ4lh8RmTGd.dYSJPPQp6rTjiBjC.1uIy.04wgeyi3C', 0, 'zdzdff'),
-	(15, 'ee@ee.fr', '["ROLE_USER"]', '$2y$13$OnXDSs0TKLnApdqBNhQfq.qQ.4I9iiSlAYu0Sd0ZX2T3TpNqKVwBi', 0, 'eeee55');
+	(23, 'CompteAsupprimer@gmail.com', '["ROLE_USER"]', '$2y$13$JiologYCi8PRFtAFlRC5JumIbOhQld7DPp3D5xBqSE3lfueD7BDMa', 0, 'CompteAsupprimer');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
