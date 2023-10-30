@@ -46,8 +46,8 @@ class PaymentController extends AbstractController
     
         return $this->render('payment/index.html.twig',[
             'reservationId' => $id,
-            'userMail' => $reservationUser->getEmail(),
-            'name' => $reservationUser->getName(),  
+            // 'userMail' => $reservationUser->getEmail(),
+            // 'name' => $reservationUser->getName(),  
         ]);
     }
     
@@ -117,13 +117,13 @@ public function paymentSuccess(int $id, ReservationRepository $reservationReposi
     // Génére le PDF
     $html = $this->renderView('invoice/invoice.html.twig', [
         'reservation' => $reservation,
-        'user' => $user,
+        // 'user' => $user,
         // ... autres données pour la facture
     ]);
     $pdfContent = $this->pdfGenerator->generatePdf($html);
 
     // Sauvegarde le PDF 
-    $pdfPath = 'C:\Users\guillaumekezic\OneDrive - Elan Formation\Bureau\Factures\invoice_' . $reservation->getId() . '.pdf';
+    $pdfPath = 'C:\Users\guillaumekezic.AzureAD\Desktop\invoice_' . $reservation->getId() . '.pdf';
     
     file_put_contents($pdfPath, $pdfContent);
     // ****************

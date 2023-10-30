@@ -4,7 +4,7 @@ const stripe = Stripe("pk_test_51NAwNZJWIv9Iz53oUTcDu6QGU8c29nvuRPQ0jLe4WNom3WJm
 
 // Ces lignes récupèrent des valeurs d'identifiant de réservation et de courriel d'utilisateur à partir d'éléments HTML sur la page.
 const reservationId = document.getElementById('reservationId').getAttribute('value');
-const userMail = document.getElementById('userMail').getAttribute('value');
+// const userMail = document.getElementById('userMail').getAttribute('value');
 
 let elements;
 
@@ -40,7 +40,7 @@ const paymentElementOptions = {
   defaultValues: {
       //Pour préremplir le mail de l'user
       billingDetails: {
-          email: userMail
+          // email: userMail
       }
   },
   wallets: {
