@@ -48,15 +48,15 @@ public function buildForm(FormBuilderInterface $builder, array $options): void
                 ]),
             ],
         ])
-        ->add('phoneNumber', TextType::class, [
-            'constraints' => [
-                new NotBlank(['message' => 'Entrez un numéro de téléphone']),
-                new Regex([
-                    'pattern' => '/^(\+\d{1,3}[- ]?)?\d{10,15}$/',
-                    'message' => 'Veuillez entrer un numéro de téléphone valide',
-                ]),
-            ],
-        ])
+        // ->add('phoneNumber', TextType::class, [
+        //     'constraints' => [
+        //         new NotBlank(['message' => 'Entrez un numéro de téléphone']),
+        //         new Regex([
+        //             'pattern' => '/^(\+\d{1,3}[- ]?)?\d{10,15}$/',
+        //             'message' => 'Veuillez entrer un numéro de téléphone valide',
+        //         ]),
+        //     ],
+        // ])
         ->add('agreeTerms', CheckboxType::class, [
             'mapped' => false,
             'constraints' => [

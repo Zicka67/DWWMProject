@@ -29,10 +29,10 @@
                 {% for reservation in reservations|reverse|slice(0, 10) %}
                 <tr>
                     {% if reservation.user != null %}
-                    <td>{{ reservation.user.pseudo }}</td>
+                    <td>{{ reservation.userLastname }}</td>
                     <td class="td-color">
-                        <a href="tel:{{ reservation.user.phoneNumber|split('', 2)|join(' ') }}">
-                            {{ reservation.user.phoneNumber|split('', 2)|join(' ') }}
+                        <a href="tel:{{ reservation.userPhone|split('', 2)|join(' ') }}">
+                            {{ reservation.userPhone|split('', 2)|join(' ') }}
                         </a>
                     </td>
                     {% else %}

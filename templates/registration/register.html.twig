@@ -31,9 +31,9 @@
         <div class="error-test">{{ form_errors(registrationForm.email) }}</div> 
 
         {#phone #}
-        <label for="phoneNumber" class="form-label">Téléphone</label>
+        {# <label for="phoneNumber" class="form-label">Téléphone</label>
         {{ form_widget(registrationForm.phoneNumber, { 'attr': {'id': 'phoneNumber', 'class': 'form-input'} }) }}
-        <div class="error-test">{{ form_errors(registrationForm.phoneNumber) }}</div> 
+        <div class="error-test">{{ form_errors(registrationForm.phoneNumber) }}</div>  #}
 
         {# password #}
         <label for="plainPassword" class="form-label">Mot de passe</label>
