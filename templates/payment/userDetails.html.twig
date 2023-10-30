@@ -1,14 +1,8 @@
 {% extends 'base.html.twig' %}
 
-{% block body_class %}page-color{% endblock %}
-
 {% block title %}Coordonnées{% endblock %}
 
-{% block stylesheets %}
-  <script src="{{ asset('js/payment.js') }}" defer></script>
-  <link rel="stylesheet" href="{{ asset('css/payment.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
-{% endblock stylesheets %}
+{% block body_class %}page-color{% endblock %}
 
 {% block body %}
 
@@ -16,15 +10,36 @@
 <div class="bandeau-info"></div>
 {% endblock %}
 
-  <h1>Coordonnées utilisateur</h1>
+<div class="form-container coordonnees">
+    {% for flash_error in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
 
-  {{ form_start(form) }}
-      {{ form_row(form.user_firstname) }}
-      {{ form_row(form.user_lastname) }}
-      {{ form_row(form.user_adress) }}
-      {{ form_row(form.user_phone) }}
-      <button type="submit">Envoyer</button>
-  {{ form_end(form) }}
-  
+    {{ form_start(form) }}
+    <div class="registration-form">
+        {# Prénom #}
+        <label for="user_firstname" class="form-label">Prénom</label>
+        {{ form_widget(form.user_firstname, { 'attr': {'id': 'user_firstname', 'class': 'form-input'} }) }}
+        <div class="error-test">{{ form_errors(form.user_firstname) }}</div> 
+
+        {# Nom de famille #}
+        <label for="user_lastname" class="form-label">Nom de famille</label>
+        {{ form_widget(form.user_lastname, { 'attr': {'id': 'user_lastname', 'class': 'form-input'} }) }}
+        <div class="error-test">{{ form_errors(form.user_lastname) }}</div>
+
+        {# Adresse #}
+        <label for="user_adress" class="form-label">Adresse</label>
+        {{ form_widget(form.user_adress, { 'attr': {'id': 'user_address', 'class': 'form-input'} }) }}
+        <div class="error-test">{{ form_errors(form.user_adress) }}</div>
+
+        {# Numéro de téléphone #}
+        <label for="user_phone" class="form-label">Numéro de téléphone</label>
+        {{ form_widget(form.user_phone, { 'attr': {'id': 'user_phone', 'class': 'form-input'} }) }}
+        <div class="error-test">{{ form_errors(form.user_phone) }}</div>
+
+        <button type="submit" class="btn form-button">Envoyer</button>
+    </div>
+    {{ form_end(form) }}
+</div>  
 
 {% endblock %}

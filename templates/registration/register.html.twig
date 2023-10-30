@@ -20,40 +20,40 @@
         </div>
         {{ form_start(registrationForm)}}
         <div class="registration-form">
-        {#pseudo #}
-        <label for="pseudo" class="form-label">Pseudo</label>
-        {{ form_widget(registrationForm.pseudo, { 'attr': {'id': 'pseudo', 'class': 'form-input'} }) }}
-        <div class="error-test">{{ form_errors(registrationForm.pseudo) }}</div> 
+            {#pseudo #}
+            <label for="pseudo" class="form-label">Pseudo</label>
+            {{ form_widget(registrationForm.pseudo, { 'attr': {'id': 'pseudo', 'class': 'form-input'} }) }}
+            <div class="error-test">{{ form_errors(registrationForm.pseudo) }}</div> 
 
-        {#email #}
-        <label for="email" class="form-label">Email</label>
-        {{ form_widget(registrationForm.email, { 'attr': {'id': 'email', 'class': 'form-input'} }) }}
-        <div class="error-test">{{ form_errors(registrationForm.email) }}</div> 
+            {#email #}
+            <label for="email" class="form-label">Email</label>
+            {{ form_widget(registrationForm.email, { 'attr': {'id': 'email', 'class': 'form-input'} }) }}
+            <div class="error-test">{{ form_errors(registrationForm.email) }}</div> 
 
-        {#phone #}
-        {# <label for="phoneNumber" class="form-label">Téléphone</label>
-        {{ form_widget(registrationForm.phoneNumber, { 'attr': {'id': 'phoneNumber', 'class': 'form-input'} }) }}
-        <div class="error-test">{{ form_errors(registrationForm.phoneNumber) }}</div>  #}
+            {#phone #}
+            {# <label for="phoneNumber" class="form-label">Téléphone</label>
+            {{ form_widget(registrationForm.phoneNumber, { 'attr': {'id': 'phoneNumber', 'class': 'form-input'} }) }}
+            <div class="error-test">{{ form_errors(registrationForm.phoneNumber) }}</div>  #}
 
-        {# password #}
-        <label for="plainPassword" class="form-label">Mot de passe</label>
-        {{ form_widget(registrationForm.plainPassword.first, { 'attr': {'id': 'password', 'class': 'form-input'} }) }}
-        <div class="error-test">{{ form_errors(registrationForm.plainPassword.first) }}</div> 
-        
-        {# confirmPassword #}
-        <label for="confirmPassword" class="form-label">Confirmez le mot de passe</label>
-        {{ form_widget(registrationForm.plainPassword.second, { 'attr': {'id': 'confirmPassword', 'class': 'form-input'} }) }}
-        <div class="error-test">{{ form_errors(registrationForm.plainPassword.second) }}</div>
+            {# password #}
+            <label for="plainPassword" class="form-label">Mot de passe</label>
+            {{ form_widget(registrationForm.plainPassword.first, { 'attr': {'id': 'password', 'class': 'form-input'} }) }}
+            <div class="error-test">{{ form_errors(registrationForm.plainPassword.first) }}</div> 
+            
+            {# confirmPassword #}
+            <label for="confirmPassword" class="form-label">Confirmez le mot de passe</label>
+            {{ form_widget(registrationForm.plainPassword.second, { 'attr': {'id': 'confirmPassword', 'class': 'form-input'} }) }}
+            <div class="error-test">{{ form_errors(registrationForm.plainPassword.second) }}</div>
 
-        {#checkbox #}
-        <div class="checkbox mb-3">
-            {{ form_widget(registrationForm.agreeTerms, { 'attr': {'class': 'form-checkbox'} }) }}
-            <label class="terms">
-                <a href="{{ path('politiqueDeConf') }}" target="_blank">  J'accepte les termes et conditions
-            </label>
-        </div>
+            {#checkbox #}
+            <div class="checkbox mb-3">
+                {{ form_widget(registrationForm.agreeTerms, { 'attr': {'class': 'form-checkbox'} }) }}
+                <label class="terms">
+                    <a href="{{ path('politiqueDeConf') }}" target="_blank">  J'accepte les termes et conditions
+                </label>
+            </div>
 
-        <button type="submit" class="btn form-button">S'enregistrer</button>
+            <button type="submit" class="btn form-button">S'enregistrer</button>
         </div>
         {{ form_end(registrationForm) }}
 </div>  
