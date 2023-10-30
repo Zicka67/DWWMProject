@@ -1934,6 +1934,29 @@ background-color: var(--darkPink-color);
     margin-bottom: 30px;
 }
 
+/* ************** FORM COORDONNES*************** */
+
+.invoice-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.invoice-details {
+    width: 100%;
+    border-collapse: collapse;
+}
+.invoice-details th, .invoice-details td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: left;
+}
+.invoice-details th {
+    background-color: #f0f0f0;
+}
+
+.coordonnees {
+    font-family: 'Barlow', sans-serif;
+}
+
 
 /* *************** KEYFRAMES **************** */
 
