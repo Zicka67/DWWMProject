@@ -34,11 +34,20 @@ private ?string $payement_method = null;
 #[ORM\OneToOne(mappedBy: 'reservation', cascade: ['persist', 'remove'])]
 private ?Payement $payement = null;
 
-#[ORM\Column(length: 50, nullable: true)]
-private ?string $userName = null;
-
 #[ORM\Column(nullable: false, options: ["default" => 0])]
 private ?bool $isPaid = null;
+
+#[ORM\Column(length: 15, nullable: true)]
+private ?string $user_phone = null;
+
+#[ORM\Column(length: 100, nullable: true)]
+private ?string $user_firstname = null;
+
+#[ORM\Column(length: 100, nullable: true)]
+private ?string $user_lastname = null;
+
+#[ORM\Column(length: 150, nullable: true)]
+private ?string $user_adress = null;
 
 public function getId(): ?int
 {
@@ -122,18 +131,6 @@ public function setPayementMethod(string $payement_method): self
     return $this;
 }
 
-public function getUserName(): ?string
-{
-    return $this->userName;
-}
-
-public function setUserName(?string $userName): self
-{
-    $this->userName = $userName;
-
-    return $this;
-}
-
 public function isIsPaid(): ?bool
 {
     return $this->isPaid;
@@ -142,6 +139,54 @@ public function isIsPaid(): ?bool
 public function setIsPaid(bool $isPaid): self
 {
     $this->isPaid = $isPaid;
+
+    return $this;
+}
+
+public function getUserPhone(): ?string
+{
+    return $this->user_phone;
+}
+
+public function setUserPhone(string $user_phone): self
+{
+    $this->user_phone = $user_phone;
+
+    return $this;
+}
+
+public function getUserFirstname(): ?string
+{
+    return $this->user_firstname;
+}
+
+public function setUserFirstname(string $user_firstname): self
+{
+    $this->user_firstname = $user_firstname;
+
+    return $this;
+}
+
+public function getUserLastname(): ?string
+{
+    return $this->user_lastname;
+}
+
+public function setUserLastname(string $user_lastname): self
+{
+    $this->user_lastname = $user_lastname;
+
+    return $this;
+}
+
+public function getUserAdress(): ?string
+{
+    return $this->user_adress;
+}
+
+public function setUserAdress(string $user_adress): self
+{
+    $this->user_adress = $user_adress;
 
     return $this;
 }
