@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body_class %}page-color{% endblock %}
+
+{% block title %}Coordonnées{% endblock %}
+
+{% block stylesheets %}
+  <script src="{{ asset('js/payment.js') }}" defer></script>
+  <link rel="stylesheet" href="{{ asset('css/payment.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+{% endblock stylesheets %}
+
+{% block body %}
+
+{% block bandeau %}
+<div class="bandeau-info"></div>
+{% endblock %}
+
+  <h1>Coordonnées utilisateur</h1>
+
+  {{ form_start(form) }}
+      {{ form_row(form.user_firstname) }}
+      {{ form_row(form.user_lastname) }}
+      {{ form_row(form.user_adress) }}
+      {{ form_row(form.user_phone) }}
+      <button type="submit">Envoyer</button>
+  {{ form_end(form) }}
+  
+
+{% endblock %}

@@ -42,21 +42,31 @@
     </div>
 
     <table class="invoice-details">
+
         <tr>
-            <th>Utilisateur</th>
-            <td>{{ reservation.user.pseudo }}</td>
-            <td>{{ reservation.user.name }}</td>
+            <th>Madame, Monsieur</th>
+            <td>{{ reservation.userLastname}} {{ reservation.userFirstname}}</td>
         </tr>
 
         <tr>
-            <th>Date du Cours</th>
+            <th>Votre cours aura lieu le </th>
             <td>{{ reservation.dtCours|date('d-m-Y H:i') }}</td>
         </tr>
 
         <tr>
-            <th>Nom du cours</th>
+            <th>Votre réservation concerne le cours </th>
             <td>{{ reservation.cours.nomCours }}</td>
         </tr> 
+
+        <tr>
+            <th>Lieu du cours</th>
+            <td>{{ reservation.userAdress}}</td>
+        </tr>
+
+        <tr>
+            <th>Votre numéro de téléphone</th>
+            <td>{{ reservation.userPhone}}</td>
+        </tr>
 
         <tr>
             <th>Méthode de Paiement</th>
@@ -67,6 +77,7 @@
             <th>Prix</th>
               <td>{{ reservation.cours.prix }}€</td>
         </tr>
+
     </table>
 </body>
 </html>
