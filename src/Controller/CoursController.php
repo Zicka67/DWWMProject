@@ -217,12 +217,20 @@ public function userDetails($id, Request $request, EntityManagerInterface $em): 
 
     $form->handleRequest($request);
 
-    if ($form->isSubmitted() && $form->isValid()) {
-        // update de la réservation existante
-        $em->flush();
+    if ($form->isSubmitted()) {
+        
+        // Vérifie le honeypot
+        if ($form->get('honeypot')->getData()) {
+            $this->addFlash('error', 'Veuillez attendre quelques minutes avant de réessayer.');
+            return $this->redirectToRoute('app_home'); 
+        }
 
-        // Redirige vers page de paiement
-        return $this->redirectToRoute("reservation_payment", ['id' => $reservation->getId()]);
+        if ($form->isValid()) {
+            // Update de la réservation existante
+            $em->flush();
+            // Redirige vers page de paiement
+            return $this->redirectToRoute("reservation_payment", ['id' => $reservation->getId()]);
+        }
     }
 
     return $this->render('payment/userDetails.html.twig', [

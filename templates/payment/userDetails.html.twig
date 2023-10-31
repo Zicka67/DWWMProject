@@ -17,23 +17,27 @@
 
     {{ form_start(form) }}
     <div class="registration-form">
+
+        <div>
+            <h1 class="form-title">Coordonnées</h1>
+        </div>
+        {# Nom de famille #}
+        <label for="user_lastname" class="form-label">Nom</label>
+        {{ form_widget(form.user_lastname, { 'attr': {'id': 'user_lastname', 'class': 'form-input'} }) }}
+        <div class="error-test">{{ form_errors(form.user_lastname) }}</div>
+
         {# Prénom #}
         <label for="user_firstname" class="form-label">Prénom</label>
         {{ form_widget(form.user_firstname, { 'attr': {'id': 'user_firstname', 'class': 'form-input'} }) }}
         <div class="error-test">{{ form_errors(form.user_firstname) }}</div> 
 
-        {# Nom de famille #}
-        <label for="user_lastname" class="form-label">Nom de famille</label>
-        {{ form_widget(form.user_lastname, { 'attr': {'id': 'user_lastname', 'class': 'form-input'} }) }}
-        <div class="error-test">{{ form_errors(form.user_lastname) }}</div>
-
         {# Adresse #}
-        <label for="user_adress" class="form-label">Adresse</label>
+        <label for="user_adress" class="form-label">Adresse postal</label>
         {{ form_widget(form.user_adress, { 'attr': {'id': 'user_address', 'class': 'form-input'} }) }}
         <div class="error-test">{{ form_errors(form.user_adress) }}</div>
 
         {# Numéro de téléphone #}
-        <label for="user_phone" class="form-label">Numéro de téléphone</label>
+        <label for="user_phone" class="form-label">Téléphone</label>
         {{ form_widget(form.user_phone, { 'attr': {'id': 'user_phone', 'class': 'form-input'} }) }}
         <div class="error-test">{{ form_errors(form.user_phone) }}</div>
 
