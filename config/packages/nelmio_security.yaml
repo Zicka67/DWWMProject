@@ -7,10 +7,10 @@ nelmio_security:
                 - "'self'"
                 - "http://localhost:8000"
                 - "https://region1.google-analytics.com"
+                - "https://lottie.host"
             script-src: 
                 - "'self'"
                 - "https://js.stripe.com"
-                - "https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.3/lottie.min.js:13"
                 - "https://cdnjs.cloudflare.com"
                 - "https://www.googletagmanager.com"
                 - "https://unpkg.com"

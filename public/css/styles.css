@@ -1961,6 +1961,16 @@ background-color: var(--darkPink-color);
     font-weight: 600;
     color: var(--hover-color);
 }
+
+
+.form-success-container h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: 'Barlow', sans-serif;
+    color: rgb(100, 201, 42);
+    margin-bottom: 45px;
+}
+
 /* *************** KEYFRAMES **************** */
 
 @keyframes slideOut {
