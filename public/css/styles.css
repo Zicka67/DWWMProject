@@ -1347,7 +1347,7 @@ font-family: 'Barlow', sans-serif;
 .text-right {
 position: absolute;
 right: 30px;
-top: -10px;
+top: -32px;
 color: var(--secondary-color);
 font-size: 1.2rem;
 font-family: 'Barlow', sans-serif;
@@ -1883,7 +1883,6 @@ background-color: var(--darkPink-color);
     min-height: 350px;
     background-color: #ffffff;
     position: relative;
-    /* padding: 0 5%; */
 }
 
 .carte-presentation {
@@ -1905,7 +1904,6 @@ background-color: var(--darkPink-color);
     
 .image-parcours-container-card img{
     border-radius: 5px;
-    /* margin-bottom: 80px; */
 }
 
 .text-presentation {
@@ -1957,7 +1955,12 @@ background-color: var(--darkPink-color);
     font-family: 'Barlow', sans-serif;
 }
 
-
+.cgv {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-weight: 600;
+    color: var(--hover-color);
+}
 /* *************** KEYFRAMES **************** */
 
 @keyframes slideOut {

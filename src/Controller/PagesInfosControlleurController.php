@@ -47,6 +47,12 @@ public function termesConditions(): Response
     return $this->render('pagesInfo/termes-conditions.html.twig');
 }
 
+#[Route('/cgv', name: 'cgv')]
+public function cgv(): Response
+{
+    return $this->render('pagesInfo/cgv.html.twig');
+}
+
 // Route pour la bio
 #[Route('/mon-parcours', name: 'monParcours')]
 public function monParcours(): Response
