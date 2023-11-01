@@ -33,10 +33,15 @@
         .invoice-details th {
             background-color: #f0f0f0;
         }
+        .footer {
+            position: fixed;
+            bottom: 0;
+        }
     </style>
 </head>
 <body>
     <div class="invoice-header">
+        {# <img src="{{ asset('public/img/image-centrale2.png') }}" alt="Logo" /> #}
         <h1>Facture</h1>
         <p>Date de Réservation : {{ reservation.dtResa|date('d-m-Y') }}</p>
     </div>
@@ -79,5 +84,9 @@
         </tr>
 
     </table>
+    <div class="footer">
+        <p>Contact : DouceurDeLune@gmail.com</p>
+    </div>
+    
 </body>
 </html>
