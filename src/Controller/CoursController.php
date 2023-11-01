@@ -200,7 +200,8 @@ public function save_reservation(Security $security, Request $request, EntityMan
         return $this->redirectToRoute("user_details", ['id' => $reservation->getId()]);
     }
     // Si la méthode de paiement n'est pas "payment-online", on redirige l'utilisateur vers le cours après payement.
-    return $this->redirect("cours/".$courseSlug);
+    // return $this->redirect("cours/".$courseSlug);
+    return $this->redirectToRoute("user_details", ['id' => $reservation->getId()]);
 }
 
 #[Route('/user_details/{id}', name: 'user_details')]
@@ -228,6 +229,14 @@ public function userDetails($id, Request $request, EntityManagerInterface $em): 
         if ($form->isValid()) {
             // Update de la réservation existante
             $em->flush();
+
+            // Veérifie le mode de paiement
+            if ($reservation->getPayementMethod() == "payment-sur-place") {
+                
+                // Redirige vers la page des cours
+                $this->addFlash('success', 'Votre reservation à bien été faite');
+                return $this->redirect('http://localhost:8000/showCours');
+            }
             // Redirige vers page de paiement
             return $this->redirectToRoute("reservation_payment", ['id' => $reservation->getId()]);
         }
