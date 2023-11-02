@@ -12,7 +12,7 @@
 
 <div class="container-margin">
 <div class="container-showCours">
-{% for cours in listeCours %}
+{% for cours in listeCours|slice(0, 3) %}
     <div class="enfant enfant-cours">
         <h2>{{ cours.nomCours }}</h2> 
         <div class="img-dim">
@@ -20,8 +20,8 @@
         </div>
 
     <p>
-        {{ cours.description | slice(0, 164) | raw }}
-        <div class="more-text text-hidden">{{ cours.description | slice(164) | raw }}</div>
+        {{ cours.description|slice(0, 164)|raw }}
+        <div class="more-text text-hidden">{{ cours.description|slice(164)|raw }}</div>
     </p>
         <button class="read-more-btn">Lire la suite</button>
 
@@ -39,7 +39,12 @@
         <div class="enfant enfant-cours pastel-blue2">
             <h2>{{ cours.nomCours }}</h2> 
             <div class="img-dim"><img class="image-responsive" src="{{ asset('imgVich/' ~ cours.imageName) }}" alt="Images des cours proposés chez Douceur de lune"></div>
-            <p>{{ cours.description | raw  }}</p>
+        <p>
+            {{ cours.description|slice(0, 290)|raw }}
+            <div class="more-text text-hidden">{{ cours.description|slice(290)|raw }}</div>
+        </p>
+
+        <button class="read-more-btn">Lire la suite</button>
             <p class="price2">{{ cours.prix }}€</p>
             <a class="details-link" href="{{ path('detailCours', {templateName: cours.slugCours}) }}">
                 <button class="buttonMore">
@@ -52,30 +57,22 @@
         </div>
     {% endfor %}
 
-  {% for cours in listeCours %}
-    <div class="enfant enfant-cours">
-        <h2>{{ cours.nomCours }}</h2> 
-        <div class="img-dim">
-            <img class="image-responsive" src="{{ asset('imgVich/' ~ cours.imageName) }}" alt="Images des cours proposés chez Douceur de lune">
+  {% for cours in listeCours|slice(6, 3) %}
+        <div class="enfant enfant-cours pastel-blue1">
+            <h2>{{ cours.nomCours }}</h2> 
+            <div class="img-dim"><img class="image-responsive" src="{{ asset('imgVich/' ~ cours.imageName) }}" alt="Images des cours proposés chez Douceur de lune"></div>
+            <p>{{ cours.description | raw  }}</p> 
+            <p class="price2">{{ cours.prix }}€</p>
+            <a class="details-link" href="{{ path('detailCours', {templateName: cours.slugCours}) }}">
+                <button class="buttonMore">
+                En savoir plus !
+                    <div class="arrow-wrapper">
+                        <div class="arrow"></div>
+                    </div>
+                </button>
+            </a>
         </div>
-
-        <p>
-            {{ cours.description | slice(0, 150) | raw }}
-            <span class="text-hidden">{{ cours.description | slice(150) | raw }}</span>
-        </p>
-       
-        <button class="read-more-btn">Lire la suite</button>
-        <p class="price2">{{ cours.prix }}€</p>
-        <a class="details-link" href="{{ path('detailCours', {templateName: cours.slugCours}) }}">
-            <button class="buttonMore">
-            Reservez maintenant !
-                <div class="arrow-wrapper">
-                    <div class="arrow"></div>
-                </div>
-            </button>
-        </a>
-    </div>
-{% endfor %}
+    {% endfor %}
 
 </div>
 </div>
