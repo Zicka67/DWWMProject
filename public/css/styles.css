@@ -968,7 +968,9 @@ text-align: justify;
 }
 
 .enfant-cours a{
-margin: 15px 0;
+/* margin-top: auto; */
+margin-bottom: 20px;
+margin-top: 20px;
 }
 
 .enfant-cours h2 {
@@ -995,7 +997,7 @@ font-weight: 400;
 font-size: 1.4rem;
 font-family: 'Knewave', cursive;
 color: var(--darkPink-color);
-margin-bottom: 10px;
+margin-top: auto;
 }
 
 .enfant p, .enfant ul {
@@ -1035,6 +1037,57 @@ border-radius: 5px;
 .underline {
     text-decoration: underline;
 }
+
+.more-text.text-hidden {
+    display: none;
+    overflow: hidden;
+    transition: 0.8s;
+}
+
+.more-text.text-shown {
+    display: inline;
+    padding:0 2vw 0 2vw;
+    font-family: 'Barlow', sans-serif;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    transition: 0.8s;
+}
+
+.read-more-btn {
+--primary-color: #645bff;
+  --secondary-color: #fff;
+  --hover-color: #111;
+  --arrow-width: 10px;
+  --arrow-stroke: 2px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 20px;
+  color: var(--lightPink-color);
+  padding: 1em 1.8em;
+  background: rgb(239, 161, 146);
+  display: flex;
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.6em;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 50px;
+}
+
+.text-hidden {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.7s ease; 
+}
+  
+.text-shown {
+    max-height: 500px; 
+    transition: max-height 0.7s ease; 
+}
+
 
 
 /* Reservations */
@@ -1489,6 +1542,7 @@ font-size: 1.2rem;
 font-family: 'Barlow', sans-serif;
 font-weight: 600;
 margin-bottom: 20px;
+
 }
 
 /* ************* BUTONS ****************** */
@@ -1630,6 +1684,7 @@ align-items: center;
 gap: 0.6em;
 font-weight: bold;
 font-size: 1rem;
+
 }
 
 .buttonMore .arrow-wrapper {

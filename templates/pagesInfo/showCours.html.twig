@@ -12,22 +12,28 @@
 
 <div class="container-margin">
 <div class="container-showCours">
-    {% for cours in listeCours|slice(0, 3) %}
-        <div class="enfant enfant-cours pastel-blue1">
-            <h2>{{ cours.nomCours }}</h2> 
-            <div class="img-dim"><img class="image-responsive" src="{{ asset('imgVich/' ~ cours.imageName) }}" alt="Images des cours proposés chez Douceur de lune"></div>
-            <p>{{ cours.description | raw }}</p> 
-            <p class="price2">{{ cours.prix }}€</p>
-            <a class="details-link" href="{{ path('detailCours', {templateName: cours.slugCours}) }}">
-                <button class="buttonMore">
-                En savoir plus !
-                    <div class="arrow-wrapper">
-                        <div class="arrow"></div>
-                    </div>
-                </button>
-            </a>
+{% for cours in listeCours %}
+    <div class="enfant enfant-cours">
+        <h2>{{ cours.nomCours }}</h2> 
+        <div class="img-dim">
+            <img class="image-responsive" src="{{ asset('imgVich/' ~ cours.imageName) }}" alt="Image du cours">
         </div>
-    {% endfor %}
+
+    <p>
+        {{ cours.description | slice(0, 164) | raw }}
+        <div class="more-text text-hidden">{{ cours.description | slice(164) | raw }}</div>
+    </p>
+        <button class="read-more-btn">Lire la suite</button>
+
+
+        <p class="price2">{{ cours.prix }}€</p>
+        <a class="details-link" href="{{ path('detailCours', {templateName: cours.slugCours}) }}">
+            <button class="buttonMore">
+            Reservez maintenant !</button>
+        </a>
+    </div>
+{% endfor %}
+
     
     {% for cours in listeCours|slice(3, 3) %}
         <div class="enfant enfant-cours pastel-blue2">
@@ -37,7 +43,7 @@
             <p class="price2">{{ cours.prix }}€</p>
             <a class="details-link" href="{{ path('detailCours', {templateName: cours.slugCours}) }}">
                 <button class="buttonMore">
-                En savoir plus !
+                Reservez maintenant !
                     <div class="arrow-wrapper">
                         <div class="arrow"></div>
                     </div>
@@ -46,23 +52,52 @@
         </div>
     {% endfor %}
 
-    {% for cours in listeCours|slice(6, 3) %}
-        <div class="enfant enfant-cours pastel-blue1">
-            <h2>{{ cours.nomCours }}</h2> 
-            <div class="img-dim"><img class="image-responsive" src="{{ asset('imgVich/' ~ cours.imageName) }}" alt="Images des cours proposés chez Douceur de lune"></div>
-            <p>{{ cours.description | raw  }}</p> 
-            <p class="price2">{{ cours.prix }}€</p>
-            <a class="details-link" href="{{ path('detailCours', {templateName: cours.slugCours}) }}">
-                <button class="buttonMore">
-                En savoir plus !
-                    <div class="arrow-wrapper">
-                        <div class="arrow"></div>
-                    </div>
-                </button>
-            </a>
+  {% for cours in listeCours %}
+    <div class="enfant enfant-cours">
+        <h2>{{ cours.nomCours }}</h2> 
+        <div class="img-dim">
+            <img class="image-responsive" src="{{ asset('imgVich/' ~ cours.imageName) }}" alt="Images des cours proposés chez Douceur de lune">
         </div>
-    {% endfor %}
+
+        <p>
+            {{ cours.description | slice(0, 150) | raw }}
+            <span class="text-hidden">{{ cours.description | slice(150) | raw }}</span>
+        </p>
+       
+        <button class="read-more-btn">Lire la suite</button>
+        <p class="price2">{{ cours.prix }}€</p>
+        <a class="details-link" href="{{ path('detailCours', {templateName: cours.slugCours}) }}">
+            <button class="buttonMore">
+            Reservez maintenant !
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </a>
+    </div>
+{% endfor %}
+
 </div>
 </div>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function () {
+  var readMoreBtns = document.querySelectorAll('.read-more-btn');
+  
+  readMoreBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var text = this.parentNode.querySelector('.more-text');
+      text.classList.toggle('text-hidden');
+      text.classList.toggle('text-shown');
+      this.textContent = text.classList.contains('text-shown') ? 'Lire moins' : 'Lire la suite';
+    });
+  });
+});
+
+
+</script>
 
 {% endblock %}
+
+
