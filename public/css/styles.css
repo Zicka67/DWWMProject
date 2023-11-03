@@ -1299,6 +1299,17 @@ margin-bottom: 80px;
 color: var(--title-color);
 }
 
+.bandeau-title2 {
+    font-family: 'Knewave', cursive;
+    font-size: 3em;
+    width: 350px;
+    margin-left: 75px;
+    margin-top: 30px;
+    color: rgb(250, 174, 157);
+    color: linear-gradient(90deg, rgba(255,196,184,0.9933705904236695) 0%, rgba(162,185,255,0.5) 100%);
+    padding-top: 30px;
+}
+
 .delet-account {
 color: var(--red-color);
 transition: 0.3s;
