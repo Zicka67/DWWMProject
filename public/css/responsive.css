@@ -335,9 +335,9 @@ display: block;
 
 @media (max-width: 970px) {
 
-    .StripeElement{
-        width: 50%;
-    }
+.StripeElement{
+    width: 50%;
+}
 
 .enfant-home p {
 font-size: 0.8rem;

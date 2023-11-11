@@ -37,7 +37,7 @@ public function buildForm(FormBuilderInterface $builder, array $options): void
                         'max' => 50,
                     ]),
                     new Regex([
-                        'pattern' => '/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{12,}$/',
+                        'pattern' => '/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{14,50}$/',
                         'message' => 'Votre mot de passe doit contenir au moins une lettre majuscule, une lettre minuscule, et un chiffre.',
                     ]),
                 ],

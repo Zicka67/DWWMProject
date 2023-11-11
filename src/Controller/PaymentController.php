@@ -116,7 +116,7 @@ public function paymentSuccess(int $id, ReservationRepository $reservationReposi
     $pdfContent = $this->pdfGenerator->generatePdf($html);
 
     // Sauvegarde le PDF 
-    $pdfPath = 'C:\Users\guillaumekezic\OneDrive - Elan Formation\Bureau\Factures' . $reservation->getId() . '.pdf';
+    $pdfPath = 'C:\Users\artbo\Desktop\Factures' . $reservation->getId() . '.pdf';
     
     file_put_contents($pdfPath, $pdfContent);
     // ****************
