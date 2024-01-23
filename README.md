@@ -1,0 +1,7 @@
+Projet de fin de formation ELAN formation ( réussi )
+
+Page d'accueil:
+![Capture d'écran du projet]([http](https://github.com/Zicka67/DWWMProject/blob/main/public/img/1.png)https://github.com/Zicka67/DWWMProject/blob/main/public/img/1.png)
+
+Calendrier en jS/HTML:
+![Capture d'écran du projet]([http](https://github.com/Zicka67/DWWMProject/blob/main/public/img/1.png)https://github.com/Zicka67/DWWMProject/blob/main/public/img/2.png)
